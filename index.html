@@ -1,103 +1,145 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>XD Waterless | Cucian Kereta Tanpa Air - Shah Alam</title>
-  <meta name="description" content="XD Waterless Car Wash Shah Alam. Cucian kereta tanpa air profesional. WhatsApp booking pantas."/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XD Waterless Shah Alam | Servis Cuci Kereta Mobile Profesional</title>
+<meta name="description" content="XD Waterless Shah Alam – Kami datang ke lokasi anda. Cucian kereta tanpa air, jimat masa, dan hasil berkilat. WhatsApp sekarang!">
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+<style>
+:root { --primary: #22c55e; --bg: #020617; --card: #0f172a; --text: #ffffff; --dim: #94a3b8; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:auto;padding:0 20px}
+
+/* HERO */
+.hero{
+  padding:120px 20px;
+  text-align:center;
+  background:linear-gradient(rgba(2,6,23,0.85),rgba(2,6,23,0.95)), url('https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=1600&q=80');
+  background-size:cover;background-position:center;
+}
+.hero h1{font-size: 42px; margin-bottom:15px; color: var(--primary);}
+.hero p{font-size:18px; margin-bottom:30px; color: var(--dim);}
+
+.btn{
+  display:inline-block; background:var(--primary); color:#000; padding:16px 32px;
+  border-radius:50px; font-weight:700; transition:0.3s;
+}
+.btn:hover{transform:translateY(-3px); box-shadow: 0 10px 20px rgba(34,197,94,0.3);}
+
+/* SERVICE AREA STRIP */
+.area-strip { background: #1e293b; padding: 15px; text-align: center; font-size: 14px; border-bottom: 1px solid #334155; }
+
+/* PRICE GRID */
+section{padding:80px 0}
+.section-title{text-align:center; font-size:32px; margin-bottom:10px}
+.section-sub{text-align:center; color:var(--dim); margin-bottom:50px}
+
+.price-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px}
+.card{background:var(--card); border:1px solid #1e293b; border-radius:20px; padding:30px;}
+.card h3{margin-bottom:15px; font-size: 20px; color: var(--primary)}
+.card ul{list-style:none}
+.card ul li{padding:10px 0; border-bottom:1px solid #1e293b; display:flex; justify-content:space-between}
+
+/* GOOGLE SAB SECTION */
+.google-box { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 30px; align-items: center; }
+.map-wrapper iframe { width:100%; height:350px; border:0; border-radius:20px; filter: invert(90%) hue-rotate(180deg); }
+.review-content { background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid #1e293b; }
+
+footer{padding:50px 20px; text-align:center; border-top:1px solid #1e293b; color:var(--dim); font-size: 14px;}
+
+@media(max-width:768px){ .google-box{grid-template-columns:1fr} }
+</style>
 </head>
+
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="container nav-inner">
-      <div class="brand">
-        <div class="brand-badge">XD</div>
-        <div class="brand-text">
-          <strong>WATERLESS</strong>
-          <span>Shah Alam</span>
-        </div>
+<div class="area-strip">
+    📍 <strong>Mobile Detailing:</strong> Kami servis terus ke rumah atau pejabat anda di Shah Alam & Klang.
+</div>
+
+<section class="hero">
+  <div class="container">
+    <h1>Cucian Kereta Waterless <br> Terus Ke Lokasi Anda</h1>
+    <p>Tak perlu beratur. Tak perlu keluar rumah. <br>Pakar kami datang kepada anda dengan servis cucian tanpa air yang premium.</p>
+    <a class="btn" href="https://wa.me/60167003569?text=Hi%20XD%20Waterless,%20saya%20nak%20tempah%20slot%20mobile" target="_blank">
+      📲 WhatsApp Tempah Sekarang
+    </a>
+  </div>
+</section>
+
+<section id="harga">
+  <div class="container">
+    <h2 class="section-title">Harga Servis Mobile</h2>
+    <p class="section-sub">Harga telus. Tiada caj tersembunyi untuk kawasan Shah Alam.</p>
+
+    <div class="price-grid">
+      <div class="card">
+        <h3>Waterless Exterior</h3>
+        <ul>
+          <li>Kecil <span>RM35</span></li>
+          <li>Sedang <span>RM45</span></li>
+          <li>Besar <span>RM55</span></li>
+          <li>Premium <span>RM65</span></li>
+        </ul>
       </div>
-      <a class="btn-wa" href="https://wa.me/60167003569" target="_blank">
-        <i class="fab fa-whatsapp"></i> WhatsApp
-      </a>
-    </div>
-  </nav>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="container hero-inner">
-      <h1>Cucian Kereta <span>Tanpa Air</span> Professional</h1>
-      <p>Mobile service di Shah Alam • Harga dari RM35</p>
-      <a class="cta" href="#pricing"><i class="fa-solid fa-tags"></i> Lihat Harga</a>
-      <a class="cta ghost" href="https://wa.me/60167003569" target="_blank">
-        <i class="fab fa-whatsapp"></i> Tempah Sekarang
-      </a>
-    </div>
-  </header>
+      <div class="card" style="border-color: var(--primary)">
+        <h3>Exterior + Interior</h3>
+        <ul>
+          <li>Kecil <span>RM80</span></li>
+          <li>Sedang <span>RM100</span></li>
+          <li>Besar <span>RM130</span></li>
+          <li>Premium <span>RM160</span></li>
+        </ul>
+      </div>
 
-  <!-- PRICING -->
-  <section id="pricing" class="section">
-    <div class="container">
-      <h2>🚗 Price List</h2>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Waterless Exterior</h3>
-          <ul>
-            <li>Kecil RM35</li><li>Sedang RM45</li><li>Besar RM55</li><li>Premium RM65</li>
-          </ul>
-          <a class="btn-wa small" href="https://wa.me/60167003569">WhatsApp</a>
-        </div>
-
-        <div class="card">
-          <h3>Exterior + Interior</h3>
-          <ul>
-            <li>Kecil RM80</li><li>Sedang RM100</li><li>Besar RM130</li><li>Premium RM160</li>
-          </ul>
-          <a class="btn-wa small" href="https://wa.me/60167003569">WhatsApp</a>
-        </div>
-
-        <div class="card highlight">
-          <h3>Slick Bana</h3>
-          <ul>
-            <li>Kecil RM100</li><li>Sedang RM120</li><li>Besar RM150</li><li>Premium RM180</li>
-          </ul>
-          <a class="btn-wa small" href="https://wa.me/60167003569">WhatsApp</a>
-        </div>
+      <div class="card">
+        <h3>Slick Bana Treatment</h3>
+        <ul>
+          <li>Kecil <span>RM100</span></li>
+          <li>Sedang <span>RM120</span></li>
+          <li>Besar <span>RM150</span></li>
+          <li>Premium <span>RM180</span></li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA -->
-  <section class="section dark">
-    <div class="container center">
-      <h2>📱 Booking Pantas</h2>
-      <p>WhatsApp → Pilih servis → Kami datang</p>
-      <a class="cta" href="https://wa.me/60167003569">
-        <i class="fab fa-whatsapp"></i> WhatsApp Sekarang
-      </a>
+<section style="background: #010409;">
+  <div class="container">
+    <h2 class="section-title">Kawasan Liputan</h2>
+    <p class="section-sub">Kami beroperasi sepenuhnya secara mobile (SAB). Tiada kedai fizikal untuk walk-in.</p>
+
+    <div class="google-box">
+      <div class="map-wrapper">
+        <iframe 
+          src="https://www.google.com/maps?q=Shah%20Alam,%20Selangor&output=embed" 
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <div class="review-content">
+        <h3 style="color:var(--primary); margin-bottom:10px;">⭐ Rating Google</h3>
+        <p style="margin-bottom:20px; opacity:0.8;">"Senang deal, kerja kemas dan berkilat. Sangat membantu untuk yang tak sempat nak ke carwash."</p>
+        <a class="btn" href="https://share.google/LHHNt3C3eZBtI6paM" target="_blank" style="padding: 10px 20px; font-size: 14px;">
+          Lihat Review Sebenar
+        </a>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>© XD Waterless Shah Alam</p>
-      <p>10:00 AM – 10:00 PM • Mobile Service</p>
-    </div>
-  </footer>
+<footer>
+  <p><strong>XD Waterless Shah Alam</strong></p>
+  <p>Mobile Detailing Specialist • Shah Alam & Klang</p>
+  <p style="margin-top:10px; opacity: 0.5;">Operasi: 10AM – 10PM (Setiap Hari)</p>
+</footer>
 
-  <!-- JS -->
-  <script src="assets/js/script.js"></script>
 </body>
 </html>
