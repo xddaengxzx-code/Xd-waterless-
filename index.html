@@ -150,7 +150,7 @@ section{padding:80px 0}
   margin-top:14px;
 }
 
-/* LIVE GOOGLE MAP */
+/* MAP SECTION */
 .google-box{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -158,22 +158,17 @@ section{padding:80px 0}
   align-items:center;
 }
 .map-container {
-  position: relative;
-  overflow: hidden;
   width: 100%;
-  padding-top: 75%; /* 4:3 Aspect Ratio */
+  height: 350px;
   border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
 }
 .map-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   width: 100%;
   height: 100%;
-  border: none;
-  filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%); /* Dark Mode Map */
+  border: 0;
+  filter: invert(90%) hue-rotate(180deg) brightness(95%);
 }
 .review-card{
   background:var(--card);
@@ -269,64 +264,51 @@ footer{
         <span class="badge">FOUNDATION</span>
         <h3>4 Sesi / Bulan</h3>
         <ul>
-          <li>4× Exterior + Interior</li>
-          <li>Priority Booking</li>
+          <li>4× WE + Interior</li>
         </ul>
-        <div class="price-box">
-          Kecil RM279 • Sedang RM349<br>
-          Besar RM459 • Premium RM579
-        </div>
+        <div class="price-box">Kecil RM279 • Sedang RM349<br>Besar RM459 • Premium RM579</div>
       </div>
 
       <div class="card" style="border-color:var(--primary)">
         <span class="badge">BEST SELLER</span>
         <h3>PROTECTION – 6 Sesi</h3>
         <ul>
-          <li>6× Exterior + Interior</li>
+          <li>6× WE + Interior</li>
           <li>6× Slick Bana</li>
         </ul>
-        <div class="price-box">
-          Kecil RM499 • Sedang RM599<br>
-          Besar RM799 • Premium RM999
-        </div>
+        <div class="price-box">Kecil RM499 • Sedang RM599<br>Besar RM799 • Premium RM999</div>
       </div>
 
       <div class="card">
         <span class="badge">PREMIUM</span>
         <h3>CONCIERGE – 8 Sesi</h3>
         <ul>
-          <li>8× Exterior + Interior</li>
+          <li>8× WE + Interior</li>
           <li>1× Polish 1 Stage</li>
         </ul>
-        <div class="price-box">
-          Kecil RM899 • Sedang RM1,099<br>
-          Besar RM1,299 • Premium RM1,599
-        </div>
+        <div class="price-box">Kecil RM899 • Sedang RM1,099<br>Besar RM1,299 • Premium RM1,599</div>
       </div>
-    </div>
-
-    <div style="text-align:center;margin-top:40px">
-      <a class="btn" href="https://wa.me/60167003569?text=Saya%20berminat%20membership%20XD%20Waterless">
-        📲 Daftar Membership
-      </a>
     </div>
   </div>
 </section>
 
 <section id="review">
   <div class="container">
-    <h2 class="section-title">Liputan Servis</h2>
-    <p class="section-sub">Kami 100% Mobile berpusat di Shah Alam & Klang.</p>
+    <h2 class="section-title">Liputan & Review</h2>
+    <p class="section-sub">Operasi Mobile sepenuhnya di Shah Alam & Klang.</p>
 
     <div class="google-box">
       <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d127482.44185799308!2d101.44297123985038!3d3.073363945391307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc498b2b2a6d71%3A0x6e65e085ab9491c5!2sShah%20Alam%2C%20Selangor!5e0!3m2!1sms!2smy!4v1700000000000!5m2!1sms!2smy" allowfullscreen="" loading="lazy"></iframe>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m103.0039209568285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4d0909560f37%3A0x6b8764b8109d73c5!2sShah%20Alam%2C%20Selangor!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
       </div>
       <div class="review-card">
         <div style="color:#fbbf24;margin-bottom:10px">⭐⭐⭐⭐⭐</div>
-        <p style="color:var(--dim); font-style: italic;">“Servis paling senang. Tinggal kereta di rumah, balik kerja terus berkilat. Tak perlu pening cari parking car wash.”</p>
-        <p style="margin-top:10px; font-weight: 700;">— Pelanggan Puas Hati</p>
-        <a class="btn" href="https://share.google/LHHNt3C3eZBtI6paM" target="_blank" style="font-size:13px;margin-top:20px">
+        <p style="color:var(--dim)">“Senang deal, kereta berkilat depan rumah. Memang jimat masa untuk orang yang busy macam saya.”</p>
+        <a class="btn" href="https://share.google/LHHNt3C3eZBtI6paM" target="_blank" style="font-size:13px;margin-top:15px">
           Tulis Review Google
         </a>
       </div>
@@ -336,8 +318,7 @@ footer{
 
 <footer>
   <p><strong>XD Waterless Shah Alam</strong></p>
-  <p>Mobile Car Detailing & Waterless Wash</p>
-  <p style="opacity:.6;margin-top:8px">© 2024 • Operasi 10AM – 10PM</p>
+  <p>© 2026 • Operasi 10AM – 10PM</p>
 </footer>
 
 </body>
