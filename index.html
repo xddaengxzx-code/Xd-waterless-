@@ -4,593 +4,218 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XD Waterless | Cucian Kereta Tanpa Air Professional - Shah Alam</title>
-    <meta name="description" content="XD Waterless Car Wash - Servis cucian kereta tanpa air professional di Shah Alam. Harga dari RM35 untuk kereta kecil.">
-    <meta name="keywords" content="cucian kereta tanpa air shah alam, waterless car wash murah, detailing kereta, nano coating">
-    <meta name="author" content="XD Waterless">
-    
+
+    <!-- SEO -->
+    <meta name="description" content="XD Waterless Car Wash - Servis cucian kereta tanpa air professional di Shah Alam. Jimat masa, selamat untuk cat. Harga bermula RM25.">
+    <meta name="keywords" content="waterless car wash shah alam, cuci kereta tanpa air, xd waterless, car wash mobile">
+    <meta name="author" content="XD DAENGXZX LAGACY">
+
     <!-- Fonts & Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0b0b0b;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* ===== HERO ===== */
+        header {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+        }
+
+        header p {
+            margin-top: 10px;
+            color: #cccccc;
+        }
+
+        .cta-btn {
+            margin-top: 25px;
+            display: inline-block;
+            background: #f4c400;
+            color: #000;
+            padding: 14px 26px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        /* ===== SECTION ===== */
+        section {
+            padding: 50px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        /* ===== GRID ===== */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #151515;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #222;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #f4c400;
+        }
+
+        /* ===== PRICE ===== */
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* ===== FIXED WHATSAPP ===== */
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: #fff;
+            padding: 14px 16px;
+            border-radius: 50%;
+            font-size: 22px;
+            z-index: 999;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.9rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/60167003569" class="whatsapp-float" target="_blank" aria-label="WhatsApp Tempah">
-        <i class="fab fa-whatsapp"></i>
-        <span class="float-text">Tempah Sekarang</span>
-    </a>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="#home" class="logo">
-                <div class="logo-icon">XD</div>
-                <div class="logo-text">
-                    <div class="logo-main">WATERLESS</div>
-                    <div class="logo-sub">CAR DETAILING</div>
-                </div>
-            </a>
-            
-            <div class="nav-links" id="navLinks">
-                <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
-                <a href="#pricing" class="nav-link"><i class="fas fa-tags"></i> Harga</a>
-                <a href="#process" class="nav-link"><i class="fas fa-cogs"></i> Proses</a>
-                <a href="#gallery" class="nav-link"><i class="fas fa-images"></i> Gallery</a>
-                <a href="#contact" class="nav-link"><i class="fas fa-phone"></i> Hubungi</a>
-                <a href="https://wa.me/60167003569" class="nav-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Tempah
-                </a>
-            </div>
-            
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-        </div>
-    </nav>
+<!-- HERO -->
+<header>
+    <h1>XD Waterless</h1>
+    <p>Cucian Kereta Tanpa Air • Professional • Shah Alam</p>
+    <a href="#harga" class="cta-btn">Tempah Sekarang</a>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <div class="hero-badge">
-                <i class="fas fa-award"></i> SHAH ALAM'S #1 WATERLESS SERVICE
+<!-- ABOUT -->
+<section>
+    <div class="container">
+        <h2>Kenapa XD Waterless?</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🚫 Tanpa Air</h3>
+                <p>Tidak perlu hose atau baldi. Sesuai untuk apartment & pejabat.</p>
             </div>
-            
-            <h1 class="hero-title">
-                Cucian Kereta <span class="hero-highlight">Tanpa Air</span> Professional
-            </h1>
-            
-            <p class="hero-subtitle">
-                Teknologi nano cleaning terkini yang lebih efisien, mesra alam dan memberikan kilauan seperti baru. 
-                Servis di Shah Alam & seluruh Klang Valley. Harga dari RM35.
-            </p>
-            
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number" data-count="50">0</div>
-                    <div class="stat-label">Liter Air Dijimatkan</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="30">0</div>
-                    <div class="stat-label">Minit Siap</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="100">0</div>
-                    <div class="stat-label">% Tanpa Air</div>
-                </div>
+            <div class="card">
+                <h3>🛡️ Selamat Untuk Cat</h3>
+                <p>Formulasi tinggi lubricity untuk kurangkan risiko calar.</p>
             </div>
-            
-            <div class="hero-cta">
-                <a href="https://wa.me/60167003569" class="btn-whatsapp" target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp Tempah Sekarang
-                </a>
-                <a href="#pricing" class="btn-secondary">
-                    <i class="fas fa-tags"></i> Lihat Harga & Pakej
-                </a>
-            </div>
-            
-            <div class="hero-features">
-                <div class="feature-item">
-                    <i class="fas fa-check-circle"></i>
-                    <span>100% Tanpa Air</span>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Produk Mesra Alam</span>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-check-circle"></i>
-                    <span>30 Minit Siap</span>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Kalis Air 2 Minggu</span>
-                </div>
+            <div class="card">
+                <h3>⏱️ Jimat Masa</h3>
+                <p>Siap dalam 30–45 minit sahaja.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Harga & Pakej Servis</h2>
-                <p class="section-subtitle">Pilih pakej yang sesuai dengan keperluan anda. Harga berpatutan untuk semua saiz kereta.</p>
+<!-- PRICING -->
+<section id="harga">
+    <div class="container">
+        <h2>Harga Servis</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Kereta Kecil</h3>
+                <p>Axia, Myvi, Saga</p>
+                <div class="price">RM25</div>
             </div>
-            
-            <div class="pricing-tabs">
-                <button class="tab-btn active" data-tab="ala-carte">Servis Ala Carte</button>
-                <button class="tab-btn" data-tab="membership">Pakej Membership</button>
+            <div class="card">
+                <h3>Sedan / Hatchback</h3>
+                <p>City, Vios, Persona</p>
+                <div class="price">RM30</div>
             </div>
-            
-            <!-- Ala Carte Pricing -->
-            <div id="ala-carte" class="pricing-content active">
-                <div class="pricing-grid">
-                    <!-- WE Service -->
-                    <div class="price-card">
-                        <div class="price-header">
-                            <h3 class="price-name">WATERLESS EXTERIOR (WE)</h3>
-                            <p>Cucian luaran tanpa air sahaja</p>
-                        </div>
-                        <ul class="price-features">
-                            <li><i class="fas fa-car"></i> <strong>Myvi/Axia/Bezza:</strong> RM35</li>
-                            <li><i class="fas fa-car"></i> <strong>Civic/Altis/HR-V:</strong> RM45</li>
-                            <li><i class="fas fa-car"></i> <strong>SUV/MPV/Pickup:</strong> RM55</li>
-                            <li><i class="fas fa-car"></i> <strong>Mercedes/BMW:</strong> RM65</li>
-                        </ul>
-                        <a href="https://wa.me/60167003569?text=Saya%20nak%20tempah%20servis%20Waterless%20Exterior" 
-                           class="btn-whatsapp" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Tempah Servis Ini
-                        </a>
-                    </div>
-                    
-                    <!-- WE+I Service -->
-                    <div class="price-card popular">
-                        <div class="popular-badge">POPULAR</div>
-                        <div class="price-header">
-                            <h3 class="price-name">WATERLESS EXTERIOR + INTERIOR (WE+I)</h3>
-                            <p>Cucian lengkap dalam & luar</p>
-                        </div>
-                        <ul class="price-features">
-                            <li><i class="fas fa-car"></i> <strong>Myvi/Axia/Bezza:</strong> RM80</li>
-                            <li><i class="fas fa-car"></i> <strong>Civic/Altis/HR-V:</strong> RM100</li>
-                            <li><i class="fas fa-car"></i> <strong>SUV/MPV/Pickup:</strong> RM130</li>
-                            <li><i class="fas fa-car"></i> <strong>Mercedes/BMW:</strong> RM160</li>
-                        </ul>
-                        <a href="https://wa.me/60167003569?text=Saya%20nak%20tempah%20servis%20Waterless%20Exterior%20%2B%20Interior" 
-                           class="btn-whatsapp" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Tempah Servis Ini
-                        </a>
-                    </div>
-                    
-                    <!-- Slick Bana -->
-                    <div class="price-card">
-                        <div class="price-header">
-                            <h3 class="price-name">SLICK BANA TREATMENT</h3>
-                            <p>Treatment perlindungan khas</p>
-                        </div>
-                        <ul class="price-features">
-                            <li><i class="fas fa-car"></i> <strong>Myvi/Axia/Bezza:</strong> RM100</li>
-                            <li><i class="fas fa-car"></i> <strong>Civic/Altis/HR-V:</strong> RM120</li>
-                            <li><i class="fas fa-car"></i> <strong>SUV/MPV/Pickup:</strong> RM150</li>
-                            <li><i class="fas fa-car"></i> <strong>Mercedes/BMW:</strong> RM180</li>
-                        </ul>
-                        <a href="https://wa.me/60167003569?text=Saya%20nak%20tempah%20servis%20Slick%20Bana%20Treatment" 
-                           class="btn-whatsapp" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Tempah Servis Ini
-                        </a>
-                    </div>
-                </div>
+            <div class="card">
+                <h3>SUV / MPV</h3>
+                <p>HR-V, X50, Alza</p>
+                <div class="price">RM35</div>
             </div>
-            
-            <!-- Membership Pricing -->
-            <div id="membership" class="pricing-content">
-                <div class="pricing-grid">
-                    <!-- Foundation Package -->
-                    <div class="price-card">
-                        <div class="price-header">
-                            <h3 class="price-name">FOUNDATION PACKAGE</h3>
-                            <div class="price-amount">RM279<span>-579</span></div>
-                            <div class="price-period">/ bulan</div>
-                        </div>
-                        <ul class="price-features">
-                            <li><i class="fas fa-check"></i> 4x WE+I setiap bulan</li>
-                            <li><i class="fas fa-check"></i> Priority booking</li>
-                            <li><i class="fas fa-check"></i> Free maintenance check</li>
-                            <li><i class="fas fa-car"></i> <strong>Myvi/Axia:</strong> RM279/bulan</li>
-                            <li><i class="fas fa-car"></i> <strong>Civic/Altis:</strong> RM349/bulan</li>
-                            <li><i class="fas fa-car"></i> <strong>SUV/MPV:</strong> RM459/bulan</li>
-                            <li><i class="fas fa-car"></i> <strong>Premium:</strong> RM579/bulan</li>
-                        </ul>
-                        <div class="savings-badge">
-                            <i class="fas fa-piggy-bank"></i> Jimat RM41-RM61 sebulan
-                        </div>
-                        <a href="https://wa.me/60167003569?text=Saya%20nak%20daftar%20Foundation%20Package" 
-                           class="btn-whatsapp" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Daftar Sekarang
-                        </a>
-                    </div>
-                    
-                    <!-- Protection Package -->
-                    <div class="price-card popular">
-                        <div class="popular-badge">NILAI TERBAIK</div>
-                        <div class="price-header">
-                            <h3 class="price-name">PROTECTION PACKAGE</h3>
-                            <div class="price-amount">RM499<span>-999</span></div>
-                            <div class="price-period">/ bulan</div>
-                        </div>
-                        <ul class="price-features">
-                            <li><i class="fas fa-check"></i> 6x WE+I + 6x Slick Bana</li>
-                            <li><i class="fas fa-check"></i> Extra protection layer</li>
-                            <li><i class="fas fa-check"></i> Water beading effect</li>
-                            <li><i class="fas fa-car"></i> <strong>Myvi/Axia:</strong> RM499/bulan</li>
-                            <li><i class="fas fa-car"></i> <strong>Civic/Altis:</strong> RM599/bulan</li>
-                            <li><i class="fas fa-car"></i> <strong>SUV/MPV:</strong> RM799/bulan</li>
-                            <li><i class="fas fa-car"></i> <strong>Premium:</strong> RM999/bulan</li>
-                        </ul>
-                        <div class="savings-badge">
-                            <i class="fas fa-piggy-bank"></i> Jimat RM581-RM1,041 sebulan
-                        </div>
-                        <a href="https://wa.me/60167003569?text=Saya%20nak%20daftar%20Protection%20Package" 
-                           class="btn-whatsapp" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Daftar Sekarang
-                        </a>
-                    </div>
-                    
-                    <!-- Concierge Package -->
-                    <div class="price-card">
-                        <div class="price-header">
-                            <h3 class="price-name">CONCIERGE PACKAGE</h3>
-                            <div class="price-amount">RM899<span>-1,599</span></div>
-                            <div class="price-period">/ bulan</div>
-                        </div>
-                        <ul class="price-features">
-                            <li><i class="fas fa-check"></i> 8x WE+I + 5x Slick Bana</li>
-                            <li><i class="fas fa-check"></i> 1x Polish 1 Stage bulanan</li>
-                            <li><i class="fas fa-check"></i> Complete maintenance system</li>
-                            <li><i class="fas fa-car"></i> <strong>Myvi/Axia:</strong> RM899/bulan</li>
-                            <li><i class="fas fa-car"></i> <strong>Civic/Altis:</strong> RM1,099/bulan</li>
-                            <li><i class="fas fa-car"></i> <strong>SUV/MPV:</strong> RM1,299/bulan</li>
-                            <li><i class="fas fa-car"></i> <strong>Premium:</strong> RM1,599/bulan</li>
-                        </ul>
-                        <div class="savings-badge">
-                            <i class="fas fa-piggy-bank"></i> Jimat RM441-RM931 sebulan
-                        </div>
-                        <a href="https://wa.me/60167003569?text=Saya%20nak%20daftar%20Concierge%20Package" 
-                           class="btn-whatsapp" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Daftar Sekarang
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="pricing-note">
-                <p><i class="fas fa-info-circle"></i> Semua harga termasuk GST. Tempahan melalui WhatsApp sahaja.</p>
+            <div class="card">
+                <h3>XL / Premium</h3>
+                <p>Alphard, Vellfire</p>
+                <div class="price">RM40+</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Process Section -->
-    <section class="process" id="process">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Proses Waterless Wash Kami</h2>
-                <p class="section-subtitle">Bagaimana kami membersihkan kereta anda tanpa menggunakan air</p>
-            </div>
-            
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3>Pre-Cleaning Inspection</h3>
-                    <p>Periksa keadaan kereta dan kenalpasti kawasan yang kotor</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-icon">
-                        <i class="fas fa-spray-can"></i>
-                    </div>
-                    <h3>Spray Nano Formula</h3>
-                    <p>Spray formula waterless khas untuk mengangkat kotoran</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-icon">
-                        <i class="fas fa-hand-sparkles"></i>
-                    </div>
-                    <h3>Microfiber Wiping</h3>
-                    <p>Lap dengan microfiber premium untuk hasil terbaik</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Protection Layer</h3>
-                    <p>Apply wax atau sealant untuk perlindungan tambahan</p>
-                </div>
-            </div>
-            
-            <div class="process-benefits">
-                <div class="benefit">
-                    <i class="fas fa-water"></i>
-                    <h4>Jimat Air</h4>
-                    <p>Setiap servis menjimatkan sehingga 50 liter air</p>
-                </div>
-                <div class="benefit">
-                    <i class="fas fa-leaf"></i>
-                    <h4>Mesra Alam</h4>
-                    <p>Produk biodegradable, tiada bahan kimia berbahaya</p>
-                </div>
-                <div class="benefit">
-                    <i class="fas fa-bolt"></i>
-                    <h4>Cepat & Efisien</h4>
-                    <p>Hanya 30 minit untuk hasil yang sempurna</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- CTA -->
+<section>
+    <div class="container" style="text-align:center">
+        <h2>Tempahan Mudah</h2>
+        <p>WhatsApp terus untuk slot hari ini.</p>
+        <a class="cta-btn" href="https://wa.me/60167003569?text=Hi%20XD%20Waterless,%20saya%20nak%20tempah%20servis.">
+            WhatsApp Sekarang
+        </a>
+    </div>
+</section>
 
-    <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Gallery Hasil Kerja</h2>
-                <p class="section-subtitle">Lihat perbezaan sebelum dan selepas servis kami</p>
-            </div>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1565689221359-4d87d79f4b11?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Waterless Car Wash Result" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h4>Kilauan Professional</h4>
-                        <p>Hasil selepas waterless wash</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1565689221361-2bd69661fbf4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Car Interior Detailing" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h4>Interior Detailing</h4>
-                        <p>Pembersihan dalaman profesional</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Car Detailing Process" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h4>Proses Waterless</h4>
-                        <p>Teknik cucian tanpa air</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="gallery-cta">
-                <p>Nak lihat lebih banyak hasil kerja kami?</p>
-                <a href="https://wa.me/60167003569" class="btn-whatsapp" target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp untuk Gallery Lengkap
-                </a>
-            </div>
-        </div>
-    </section>
+<!-- FOOTER -->
+<footer>
+    © 2026 XD DAENGXZX LAGACY<br>
+    Shah Alam • Mobile Service
+</footer>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Hubungi & Tempah Servis</h2>
-                <p class="section-subtitle">Tempah servis anda sekarang melalui WhatsApp</p>
-            </div>
-            
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Telefon / WhatsApp</h4>
-                            <a href="tel:0167003569">016-700 3569</a>
-                            <small>Klik untuk call atau WhatsApp</small>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Waktu Operasi</h4>
-                            <p>Setiap Hari: 10:00 AM - 10:00 PM</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Lokasi Servis</h4>
-                            <p>Shah Alam, Selangor</p>
-                            <small>Servis mobile available untuk kawasan tertentu</small>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-car"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Kawasan Servis</h4>
-                            <p>Shah Alam & Klang Valley</p>
-                            <small>Seksyen 7, 13, 14, 24, U5, Bukit Jelutong, Setia Alam</small>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="booking-form">
-                    <h3>Quick Booking</h3>
-                    <p>Pilih servis dan hantarkan terus ke WhatsApp kami:</p>
-                    
-                    <form id="bookingForm">
-                        <div class="form-group">
-                            <label for="serviceType">Jenis Servis</label>
-                            <select id="serviceType" required>
-                                <option value="">Pilih servis</option>
-                                <option value="Waterless Exterior (WE)">Waterless Exterior (WE)</option>
-                                <option value="Waterless Exterior + Interior (WE+I)">Waterless Exterior + Interior (WE+I)</option>
-                                <option value="Slick Bana Treatment">Slick Bana Treatment</option>
-                                <option value="Foundation Package">Foundation Package</option>
-                                <option value="Protection Package">Protection Package</option>
-                                <option value="Concierge Package">Concierge Package</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="vehicleSize">Saiz Kenderaan</label>
-                            <select id="vehicleSize" required>
-                                <option value="">Pilih saiz</option>
-                                <option value="Kecil (Myvi/Axia/Bezza)">Kecil (Myvi/Axia/Bezza)</option>
-                                <option value="Sedang (Civic/Altis/HR-V)">Sedang (Civic/Altis/HR-V)</option>
-                                <option value="Besar (SUV/MPV/Pickup)">Besar (SUV/MPV/Pickup)</option>
-                                <option value="Premium (Mercedes/BMW)">Premium (Mercedes/BMW)</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="preferredDate">Tarikh Prefered</label>
-                            <input type="date" id="preferredDate" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phoneNumber">Nombor Telefon</label>
-                            <input type="tel" id="phoneNumber" placeholder="Contoh: 0123456789" required>
-                        </div>
-                        
-                        <button type="submit" class="btn-whatsapp">
-                            <i class="fab fa-whatsapp"></i> Hantar Tempahan ke WhatsApp
-                        </button>
-                    </form>
-                </div>
-            </div>
-            
-            <div class="location-map">
-                <h3>Lokasi Shah Alam</h3>
-                <p>Kami servis seluruh kawasan Shah Alam dan Klang Valley</p>
-                <!-- Simple Map Placeholder -->
-                <div class="map-placeholder">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <p>Shah Alam, Selangor</p>
-                    <small>Servis mobile - kami datang ke lokasi anda</small>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- FLOATING WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/60167003569?text=Hi%20XD%20Waterless,%20saya%20nak%20tanya%20servis.">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <a href="#home" class="logo">
-                        <div class="logo-icon">XD</div>
-                        <div class="logo-text">
-                            <div class="logo-main">WATERLESS</div>
-                            <div class="logo-sub">CAR DETAILING</div>
-                        </div>
-                    </a>
-                    <p class="footer-description">
-                        Servis cucian kereta tanpa air professional di Shah Alam. 
-                        Teknologi terkini, harga berpatutan, hasil memuaskan.
-                    </p>
-                    <div class="footer-social">
-                        <a href="https://wa.me/60167003569" aria-label="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="#" aria-label="Facebook">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="#" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" aria-label="TikTok">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Pautan Pantas</h4>
-                    <a href="#home"><i class="fas fa-chevron-right"></i> Home</a>
-                    <a href="#pricing"><i class="fas fa-chevron-right"></i> Harga & Pakej</a>
-                    <a href="#process"><i class="fas fa-chevron-right"></i> Proses Servis</a>
-                    <a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a>
-                    <a href="#contact"><i class="fas fa-chevron-right"></i> Hubungi</a>
-                </div>
-                
-                <div class="footer-contact">
-                    <h4>Hubungi Kami</h4>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:0167003569">016-700 3569</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <a href="https://wa.me/60167003569" target="_blank">WhatsApp Tempah</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Shah Alam, Selangor</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <span>10:00 AM - 10:00 PM (Setiap Hari)</span>
-                    </div>
-                </div>
-                
-                <div class="footer-newsletter">
-                    <h4>Promosi Eksklusif</h4>
-                    <p>Daftar untuk dapatkan promosi dan diskaun istimewa dari XD Waterless.</p>
-                    <div class="newsletter-form">
-                        <input type="email" placeholder="Email anda" id="newsletterEmail">
-                        <button type="button" id="subscribeBtn">
-                            <i class="fas fa-paper-plane"></i> Daftar
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear">2024</span> XD Waterless Car Wash. Hak Cipta Terpelihara.</p>
-                <div class="footer-links-bottom">
-                    <a href="#">Terma & Syarat</a>
-                    <a href="#">Dasar Privasi</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to Top">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
 </body>
 </html>
