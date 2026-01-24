@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XD Waterless | Cucian Kereta Tanpa Air</title>
+    <title>XD Waterless | Cucian Kereta Tanpa Air Professional - Shah Alam</title>
+    <meta name="description" content="XD Waterless Car Wash - Servis cucian kereta tanpa air professional di Shah Alam. Harga dari RM35 untuk kereta kecil.">
+    <meta name="keywords" content="cucian kereta tanpa air shah alam, waterless car wash murah, detailing kereta, nano coating">
+    <meta name="author" content="XD Waterless">
+    
+    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary-blue: #1a365d;
             --secondary-blue: #2b6cb0;
             --accent-teal: #38b2ac;
-            --ai-purple: #8B5CF6;
-            --ai-cyan: #06B6D4;
-            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--ai-purple) 100%);
-            --gradient-secondary: linear-gradient(135deg, var(--accent-teal) 0%, var(--ai-cyan) 100%);
-            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.15);
+            --gradient-primary: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+            --gradient-secondary: linear-gradient(135deg, #38b2ac 0%, #2b6cb0 100%);
         }
 
         * {
@@ -30,564 +32,333 @@
             line-height: 1.6;
             color: #333;
             background: #f8fafc;
-            overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        /* ===== NAVBAR & LOGO ===== */
+        /* ===== NAVBAR ===== */
         .navbar {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
-            top: 0;
             width: 100%;
+            top: 0;
             z-index: 1000;
-            padding: 1rem 0;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 0;
         }
 
-        /* Logo */
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 10px;
             text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: translateY(-2px);
         }
 
         .logo-icon {
-            width: 48px;
-            height: 48px;
+            width: 40px;
+            height: 40px;
             background: var(--gradient-primary);
-            border-radius: 12px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
-        }
-
-        .logo-icon::before {
-            content: '';
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            background: var(--gradient-secondary);
-            opacity: 0.6;
-            animation: rotate 15s linear infinite;
-        }
-
-        .logo-icon i {
-            font-size: 1.6rem;
             color: white;
-            z-index: 2;
-            position: relative;
+            font-weight: bold;
         }
 
-        .logo-text-container {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-main {
-            font-size: 1.8rem;
-            font-weight: 900;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-            letter-spacing: -0.5px;
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
         }
 
         .logo-sub {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--accent-teal);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-top: 3px;
+            font-size: 0.7rem;
+            color: var(--secondary-blue);
+            font-weight: 600;
+            letter-spacing: 1px;
         }
 
         /* ===== HERO SECTION ===== */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding: 6rem 0 4rem;
-            background: linear-gradient(135deg, 
-                rgba(26, 54, 93, 0.95) 0%,
-                rgba(43, 108, 176, 0.9) 50%,
-                rgba(139, 92, 246, 0.85) 100%);
-        }
-
-        /* AI Background Pattern */
-        .hero-bg-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.15;
-            background-image: 
-                radial-gradient(circle at 20% 80%, var(--ai-cyan) 2px, transparent 2px),
-                radial-gradient(circle at 80% 20%, var(--ai-purple) 2px, transparent 2px);
-            background-size: 80px 80px;
-            animation: float 20s linear infinite;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-content {
+            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(43, 108, 176, 0.9)),
+                        url('https://images.unsplash.com/photo-1565689221361-2bd69661fbf4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
             color: white;
+            padding: 120px 0 80px;
+            text-align: center;
         }
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--gradient-secondary);
-            padding: 0.6rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 2rem;
-            animation: pulse 2s infinite;
-            box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3);
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, #fff, #dbeafe);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-            font-weight: 300;
-            max-width: 90%;
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
         .hero-highlight {
-            color: #a5f3fc;
-            font-weight: 600;
+            color: #38b2ac;
+            font-weight: 800;
         }
 
-        /* Hero Features */
-        .hero-features {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 0.95rem;
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
             opacity: 0.9;
         }
 
-        .feature-item i {
-            color: var(--ai-cyan);
-            font-size: 1.1rem;
-        }
-
-        /* CTA Buttons */
-        .hero-cta {
+        .hero-stats {
             display: flex;
-            gap: 1rem;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
             flex-wrap: wrap;
         }
 
-        .btn-whatsapp {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            color: white;
-            padding: 1.2rem 2.5rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            transition: all 0.3s;
-            font-size: 1.1rem;
-            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.3);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-whatsapp:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 18px 35px rgba(37, 211, 102, 0.4);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: 1.2rem 2rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            transition: all 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-3px);
-        }
-
-        /* AI Visual Section */
-        .hero-visual {
-            position: relative;
-        }
-
-        .visual-container {
-            position: relative;
-            perspective: 1000px;
-        }
-
-        .ai-image-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .ai-image-card {
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: var(--shadow-lg);
-            transition: transform 0.3s, box-shadow 0.3s;
-            aspect-ratio: 1/1;
-        }
-
-        .ai-image-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .ai-image-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .ai-image-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .image-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            color: white;
-            padding: 1rem;
-            transform: translateY(100%);
-            transition: transform 0.3s;
-        }
-
-        .ai-image-card:hover .image-overlay {
-            transform: translateY(0);
-        }
-
-        /* ===== PACKAGES SECTION ===== */
-        .packages {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            position: relative;
-        }
-
-        .section-header {
+        .stat-item {
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            padding: 0 1rem;
         }
 
-        .section-badge {
-            display: inline-block;
-            background: var(--gradient-secondary);
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #38b2ac;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
             color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        /* ===== PRICING SECTION ===== */
+        .pricing {
+            padding: 80px 0;
+            background: #f8fafc;
         }
 
         .section-title {
-            font-size: 2.8rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            text-align: center;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
+            color: var(--primary-blue);
         }
 
         .section-subtitle {
-            color: #64748b;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
         }
 
-        /* Packages Grid */
-        .packages-grid {
+        .pricing-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+
+        .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            margin-bottom: 3rem;
         }
 
-        .package-card {
+        .price-card {
             background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
-            border: 2px solid transparent;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
         }
 
-        .package-card:hover {
+        .price-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--accent-teal);
         }
 
-        .package-card.popular {
-            border-color: var(--ai-purple);
-            transform: scale(1.05);
+        .price-card.popular {
+            border: 3px solid var(--accent-teal);
+            position: relative;
         }
 
-        .package-card.popular::before {
-            content: 'POPULAR';
+        .popular-badge {
             position: absolute;
-            top: 1rem;
-            right: -2rem;
-            background: var(--gradient-primary);
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-teal);
             color: white;
-            padding: 0.5rem 3rem;
+            padding: 5px 20px;
+            border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
-            transform: rotate(45deg);
-            letter-spacing: 1px;
         }
 
-        .package-header {
-            padding: 2rem;
-            background: var(--gradient-primary);
-            color: white;
-            text-align: center;
+        .price-header {
+            margin-bottom: 2rem;
         }
 
-        .package-name {
+        .price-name {
             font-size: 1.5rem;
             font-weight: 700;
+            color: var(--primary-blue);
             margin-bottom: 0.5rem;
         }
 
-        .package-price {
-            font-size: 2.5rem;
+        .price-amount {
+            font-size: 3rem;
             font-weight: 800;
-            margin-bottom: 0.5rem;
+            color: var(--secondary-blue);
         }
 
-        .package-price span {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        .package-duration {
-            opacity: 0.9;
+        .price-period {
             font-size: 0.9rem;
+            color: #666;
         }
 
-        .package-body {
-            padding: 2rem;
-        }
-
-        .package-features {
+        .price-features {
             list-style: none;
             margin-bottom: 2rem;
         }
 
-        .package-features li {
+        .price-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            text-align: left;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-            color: #475569;
+            gap: 10px;
         }
 
-        .package-features li i {
+        .price-features li i {
             color: var(--accent-teal);
-            font-size: 0.9rem;
         }
 
-        .package-button {
-            display: block;
-            width: 100%;
+        .savings-badge {
+            background: #f0f9ff;
+            color: var(--secondary-blue);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        /* ===== SERVICE PROCESS ===== */
+        .process {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
             text-align: center;
+            padding: 2rem;
+            background: #f8fafc;
+            border-radius: 15px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
             background: var(--gradient-primary);
             color: white;
-            padding: 1rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
         }
 
-        .package-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
-        }
-
-        /* ===== AI IMAGES GALLERY ===== */
+        /* ===== GALLERY ===== */
         .gallery {
-            padding: 5rem 0;
-            background: white;
+            padding: 80px 0;
+            background: #f8fafc;
         }
 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            gap: 1rem;
+            margin-top: 2rem;
         }
 
         .gallery-item {
-            border-radius: 16px;
+            border-radius: 10px;
             overflow: hidden;
-            position: relative;
-            box-shadow: var(--shadow-lg);
-            transition: transform 0.3s;
-            aspect-ratio: 4/3;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.02);
+            height: 250px;
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s;
         }
 
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            color: white;
-            padding: 1.5rem;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
+        .gallery-item:hover img {
+            transform: scale(1.05);
         }
 
         /* ===== FOOTER ===== */
         .footer {
             background: var(--primary-blue);
             color: white;
-            padding: 4rem 0 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-secondary);
+            padding: 60px 0 20px;
         }
 
         .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
+            margin-bottom: 2rem;
         }
 
-        .footer-logo {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .footer-contact h3 {
+        .footer h3 {
             margin-bottom: 1rem;
             font-size: 1.2rem;
         }
@@ -595,7 +366,7 @@
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 1rem;
         }
 
         .contact-info a {
@@ -603,153 +374,32 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            transition: color 0.3s;
-        }
-
-        .contact-info a:hover {
-            color: var(--ai-cyan);
+            gap: 10px;
         }
 
         .copyright {
             text-align: center;
             padding-top: 2rem;
-            margin-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
         }
 
-        /* ===== ANIMATIONS ===== */
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.8; }
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 992px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                text-align: center;
-            }
-            
-            .hero-title {
-                font-size: 2.8rem;
-            }
-            
-            .hero-features {
-                justify-content: center;
-                max-width: 400px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
-            }
-        }
-
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.2rem;
+            .hero h1 {
+                font-size: 2rem;
             }
             
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .hero-cta {
-                flex-direction: column;
-            }
-            
-            .btn-whatsapp, .btn-secondary {
-                justify-content: center;
-                width: 100%;
-            }
-            
-            .packages-grid {
+            .pricing-grid {
                 grid-template-columns: 1fr;
             }
             
-            .package-card.popular {
-                transform: none;
+            .process-steps {
+                grid-template-columns: 1fr;
             }
             
-            .nav-container {
-                padding: 0 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 1.8rem;
-            }
-            
-            .hero-badge {
-                font-size: 0.8rem;
-                padding: 0.5rem 1rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        @media (max-width: 992px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100vh;
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: left 0.3s ease;
-                z-index: 1000;
-                padding: 2rem;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-link {
-                font-size: 1.2rem;
-                margin: 1rem 0;
+            .gallery-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -757,321 +407,306 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
+        <div class="container nav-container">
             <a href="#" class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-sparkles"></i>
-                </div>
-                <div class="logo-text-container">
-                    <span class="logo-main">XD WATERLESS</span>
-                    <span class="logo-sub">PROFESSIONAL</span>
+                <div class="logo-icon">XD</div>
+                <div>
+                    <div class="logo-text">WATERLESS</div>
+                    <div class="logo-sub">CAR DETAILING</div>
                 </div>
             </a>
-            
-            <div class="nav-links" id="navLinks">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#packages" class="nav-link">Pakej</a>
-                <a href="#gallery" class="nav-link">Gallery</a>
-                <a href="#contact" class="nav-link">Hubungi</a>
-            </div>
-            
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
+            <a href="https://wa.me/60167003569" class="btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-bg-pattern"></div>
-        
-        <div class="hero-container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <span class="hero-badge">
-                        <i class="fas fa-crown"></i> SHAH ALAM'S #1 WATERLESS SERVICE
-                    </span>
-                    
-                    <h1 class="hero-title">
-                        Cucian Kereta <span class="hero-highlight">Tanpa Air</span> Revolusi Baru
-                    </h1>
-                    
-                    <p class="hero-subtitle">
-                        Teknologi nano cleaning terkini yang lebih efisien, mesra alam dan memberikan kilauan seperti baru. Servis di Shah Alam & seluruh Klang Valley.
-                    </p>
-                    
-                    <div class="hero-features">
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>100% Tanpa Air</span>
+    <section class="hero">
+        <div class="container">
+            <h1>Cucian Kereta <span class="hero-highlight">Tanpa Air</span> Professional</h1>
+            <p class="hero-subtitle">Harga dari RM35 untuk kereta kecil | Servis di Shah Alam</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">50L</div>
+                    <div>Air Dijimatkan</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">30m</div>
+                    <div>Masa Siap</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div>Tanpa Air</div>
+                </div>
+            </div>
+            
+            <a href="https://wa.me/60167003569" class="btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp Tempah Sekarang
+            </a>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Harga & Pakej Servis</h2>
+            <p class="section-subtitle">Pilih pakej yang sesuai dengan keperluan anda</p>
+            
+            <div class="pricing-tabs">
+                <button class="tab-btn active" onclick="showTab('ala-carte')">Ala Carte</button>
+                <button class="tab-btn" onclick="showTab('membership')">Membership</button>
+            </div>
+            
+            <!-- Ala Carte Pricing -->
+            <div id="ala-carte" class="pricing-content active">
+                <div class="pricing-grid">
+                    <!-- WE Service -->
+                    <div class="price-card">
+                        <div class="price-header">
+                            <h3 class="price-name">WATERLESS EXTERIOR (WE)</h3>
+                            <p>Cucian luaran tanpa air sahaja</p>
                         </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Produk Mesra Alam</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>30 Minit Siap</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Kalis Air 2 Minggu</span>
-                        </div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check"></i> Myvi/Axia/Bezza: <strong>RM35</strong></li>
+                            <li><i class="fas fa-check"></i> Civic/Altis/HR-V: <strong>RM45</strong></li>
+                            <li><i class="fas fa-check"></i> SUV/MPV/Pickup: <strong>RM55</strong></li>
+                            <li><i class="fas fa-check"></i> Mercedes/BMW: <strong>RM65</strong></li>
+                        </ul>
+                        <a href="https://wa.me/60167003569?text=Saya%20nak%20tempah%20servis%20Waterless%20Exterior" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Tempah Servis
+                        </a>
                     </div>
                     
-                    <div class="hero-cta">
-                        <a href="https://wa.me/60167003569" class="btn-whatsapp">
-                            <i class="fab fa-whatsapp"></i> WhatsApp Tempah Sekarang
+                    <!-- WE+I Service -->
+                    <div class="price-card">
+                        <div class="price-header">
+                            <h3 class="price-name">WATERLESS EXTERIOR + INTERIOR (WE+I)</h3>
+                            <p>Cucian lengkap dalam & luar</p>
+                        </div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check"></i> Myvi/Axia/Bezza: <strong>RM80</strong></li>
+                            <li><i class="fas fa-check"></i> Civic/Altis/HR-V: <strong>RM100</strong></li>
+                            <li><i class="fas fa-check"></i> SUV/MPV/Pickup: <strong>RM130</strong></li>
+                            <li><i class="fas fa-check"></i> Mercedes/BMW: <strong>RM160</strong></li>
+                        </ul>
+                        <a href="https://wa.me/60167003569?text=Saya%20nak%20tempah%20servis%20Waterless%20Exterior%20+%20Interior" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Tempah Servis
                         </a>
-                        <a href="#packages" class="btn-secondary">
-                            <i class="fas fa-tags"></i> Lihat Pakej & Harga
+                    </div>
+                    
+                    <!-- Slick Bana -->
+                    <div class="price-card popular">
+                        <div class="popular-badge">POPULAR</div>
+                        <div class="price-header">
+                            <h3 class="price-name">SLICK BANA TREATMENT</h3>
+                            <p>Treatment perlindungan khas</p>
+                        </div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check"></i> Myvi/Axia/Bezza: <strong>RM100</strong></li>
+                            <li><i class="fas fa-check"></i> Civic/Altis/HR-V: <strong>RM120</strong></li>
+                            <li><i class="fas fa-check"></i> SUV/MPV/Pickup: <strong>RM150</strong></li>
+                            <li><i class="fas fa-check"></i> Mercedes/BMW: <strong>RM180</strong></li>
+                        </ul>
+                        <div class="savings-badge">Termasuk wax protection</div>
+                        <a href="https://wa.me/60167003569?text=Saya%20nak%20tempah%20servis%20Slick%20Bana%20Treatment" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Tempah Servis
                         </a>
                     </div>
                 </div>
-                
-                <div class="hero-visual">
-                    <div class="visual-container">
-                        <div class="ai-image-grid">
-                            <div class="ai-image-card">
-                                <!-- AI Generated Image - Waterless Car Wash Process -->
-                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Waterless Car Wash Process">
-                                <div class="image-overlay">
-                                    <small>AI Generated</small>
-                                    <p>Proses Pencucian Tanpa Air</p>
-                                </div>
-                            </div>
-                            <div class="ai-image-card">
-                                <!-- AI Generated Image - Car Shine Result -->
-                                <img src="https://images.unsplash.com/photo-1565689221359-4d87d79f4b11?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Car Shine Result">
-                                <div class="image-overlay">
-                                    <small>AI Generated</small>
-                                    <p>Hasil Kilauan Seperti Baru</p>
-                                </div>
-                            </div>
+            </div>
+            
+            <!-- Membership Pricing -->
+            <div id="membership" class="pricing-content" style="display: none;">
+                <div class="pricing-grid">
+                    <!-- Foundation -->
+                    <div class="price-card">
+                        <div class="price-header">
+                            <h3 class="price-name">FOUNDATION PACKAGE</h3>
+                            <div class="price-amount">RM279-579</div>
+                            <div class="price-period">/ bulan</div>
                         </div>
-                        <div class="ai-image-grid">
-                            <div class="ai-image-card">
-                                <!-- AI Generated Image - Nano Technology -->
-                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nano Technology">
-                                <div class="image-overlay">
-                                    <small>AI Generated</small>
-                                    <p>Teknologi Nano Cleaning</p>
-                                </div>
-                            </div>
-                            <div class="ai-image-card">
-                                <!-- AI Generated Image - Eco Friendly -->
-                                <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Eco Friendly">
-                                <div class="image-overlay">
-                                    <small>AI Generated</small>
-                                    <p>100% Mesra Alam</p>
-                                </div>
-                            </div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check"></i> 4x WE+I setiap bulan</li>
+                            <li><i class="fas fa-check"></i> Priority booking</li>
+                            <li><i class="fas fa-check"></i> Myvi/Axia: <strong>RM279</strong>/bulan</li>
+                            <li><i class="fas fa-check"></i> Civic/Altis: <strong>RM349</strong>/bulan</li>
+                            <li><i class="fas fa-check"></i> SUV/MPV: <strong>RM459</strong>/bulan</li>
+                            <li><i class="fas fa-check"></i> Premium: <strong>RM579</strong>/bulan</li>
+                        </ul>
+                        <div class="savings-badge">Jimat RM41-RM61 sebulan</div>
+                        <a href="https://wa.me/60167003569?text=Saya%20nak%20daftar%20Foundation%20Package" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Daftar Sekarang
+                        </a>
+                    </div>
+                    
+                    <!-- Protection -->
+                    <div class="price-card popular">
+                        <div class="popular-badge">TERBAIK NILAI</div>
+                        <div class="price-header">
+                            <h3 class="price-name">PROTECTION PACKAGE</h3>
+                            <div class="price-amount">RM499-999</div>
+                            <div class="price-period">/ bulan</div>
                         </div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check"></i> 6x WE+I + 6x Slick Bana</li>
+                            <li><i class="fas fa-check"></i> Extra protection layer</li>
+                            <li><i class="fas fa-check"></i> Myvi/Axia: <strong>RM499</strong>/bulan</li>
+                            <li><i class="fas fa-check"></i> Civic/Altis: <strong>RM599</strong>/bulan</li>
+                            <li><i class="fas fa-check"></i> SUV/MPV: <strong>RM799</strong>/bulan</li>
+                            <li><i class="fas fa-check"></i> Premium: <strong>RM999</strong>/bulan</li>
+                        </ul>
+                        <div class="savings-badge">Jimat RM581-RM1,041 sebulan</div>
+                        <a href="https://wa.me/60167003569?text=Saya%20nak%20daftar%20Protection%20Package" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Daftar Sekarang
+                        </a>
+                    </div>
+                    
+                    <!-- Concierge -->
+                    <div class="price-card">
+                        <div class="price-header">
+                            <h3 class="price-name">CONCIERGE PACKAGE</h3>
+                            <div class="price-amount">RM899-1,599</div>
+                            <div class="price-period">/ bulan</div>
+                        </div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check"></i> 8x WE+I + 5x Slick Bana</li>
+                            <li><i class="fas fa-check"></i> 1x Polish 1 Stage bulanan</li>
+                            <li><i class="fas fa-check"></i> Myvi/Axia: <strong>RM899</strong>/bulan</li>
+                            <li><i class="fas fa-check"></i> Civic/Altis: <strong>RM1,099</strong>/bulan</li>
+                            <li><i class="fas fa-check"></i> SUV/MPV: <strong>RM1,299</strong>/bulan</li>
+                            <li><i class="fas fa-check"></i> Premium: <strong>RM1,599</strong>/bulan</li>
+                        </ul>
+                        <div class="savings-badge">Jimat RM441-RM931 sebulan</div>
+                        <a href="https://wa.me/60167003569?text=Saya%20nak%20daftar%20Concierge%20Package" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Daftar Sekarang
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Packages Section -->
-    <section class="packages" id="packages">
-        <div class="section-header">
-            <span class="section-badge">
-                <i class="fas fa-star"></i> PAKEJ & HARGA
-            </span>
-            <h2 class="section-title">Pakej Servis Terbaik</h2>
-            <p class="section-subtitle">Pilih pakej yang sesuai dengan keperluan kenderaan anda</p>
-        </div>
-        
-        <div class="packages-grid">
-            <!-- Package 1 -->
-            <div class="package-card">
-                <div class="package-header">
-                    <h3 class="package-name">BASIC CLEAN</h3>
-                    <div class="package-price">RM<span>25</span></div>
-                    <p class="package-duration">Untuk kereta kecil</p>
-                </div>
-                <div class="package-body">
-                    <ul class="package-features">
-                        <li><i class="fas fa-check"></i> Pencucian luaran tanpa air</li>
-                        <li><i class="fas fa-check"></i> Pembersihan cermin & lampu</li>
-                        <li><i class="fas fa-check"></i> Lap microfiber premium</li>
-                        <li><i class="fas fa-times"></i> Wax protection</li>
-                        <li><i class="fas fa-times"></i> Pembersihan dalaman</li>
-                    </ul>
-                    <a href="https://wa.me/60167003569?text=Saya%20nak%20tempah%20pakej%20BASIC%20CLEAN%20RM25" class="package-button">
-                        <i class="fab fa-whatsapp"></i> Tempah Sekarang
-                    </a>
-                </div>
-            </div>
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">Proses Waterless Wash Kami</h2>
+            <p class="section-subtitle">Bagaimana kami membersihkan kereta anda tanpa air</p>
             
-            <!-- Package 2 (Popular) -->
-            <div class="package-card popular">
-                <div class="package-header">
-                    <h3 class="package-name">PREMIUM SHINE</h3>
-                    <div class="package-price">RM<span>45</span></div>
-                    <p class="package-duration">Semua jenis kereta</p>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Pre-Cleaning Inspection</h3>
+                    <p>Periksa keadaan kereta dan kenalpasti kawasan yang kotor</p>
                 </div>
-                <div class="package-body">
-                    <ul class="package-features">
-                        <li><i class="fas fa-check"></i> Pencucian luaran tanpa air</li>
-                        <li><i class="fas fa-check"></i> Wax protection 2 minggu</li>
-                        <li><i class="fas fa-check"></i> Pembersihan dalaman asas</li>
-                        <li><i class="fas fa-check"></i> Vacuum ringkas</li>
-                        <li><i class="fas fa-check"></i> Lap dashboard & konsol</li>
-                    </ul>
-                    <a href="https://wa.me/60167003569?text=Saya%20nak%20tempah%20pakej%20PREMIUM%20SHINE%20RM45" class="package-button">
-                        <i class="fab fa-whatsapp"></i> Tempah Sekarang
-                    </a>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Spray Nano Formula</h3>
+                    <p>Spray formula waterless khas untuk mengangkat kotoran</p>
                 </div>
-            </div>
-            
-            <!-- Package 3 -->
-            <div class="package-card">
-                <div class="package-header">
-                    <h3 class="package-name">FULL DETAILING</h3>
-                    <div class="package-price">RM<span>85</span></div>
-                    <p class="package-duration">SUV / MPV / Kereta besar</p>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Microfiber Wiping</h3>
+                    <p>Lap dengan microfiber premium untuk hasil terbaik</p>
                 </div>
-                <div class="package-body">
-                    <ul class="package-features">
-                        <li><i class="fas fa-check"></i> Semua servis Premium Shine</li>
-                        <li><i class="fas fa-check"></i> Vacuum lengkap</li>
-                        <li><i class="fas fa-check"></i> Pembersihan tempat duduk</li>
-                        <li><i class="fas fa-check"></i> Nano coating protection</li>
-                        <li><i class="fas fa-check"></i> Deodorizing treatment</li>
-                    </ul>
-                    <a href="https://wa.me/60167003569?text=Saya%20nak%20tempah%20pakej%20FULL%20DETAILING%20RM85" class="package-button">
-                        <i class="fab fa-whatsapp"></i> Tempah Sekarang
-                    </a>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Protection Layer</h3>
+                    <p>Apply wax atau sealant untuk perlindungan tambahan</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
-        <div class="section-header">
-            <span class="section-badge">
-                <i class="fas fa-images"></i> GALLERY HASIL KERJA
-            </span>
-            <h2 class="section-title">Before & After</h2>
-            <p class="section-subtitle">Lihat perbezaan yang kami hasilkan untuk pelanggan</p>
-        </div>
-        
-        <div class="gallery-grid">
-            <!-- AI Generated Images -->
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Before Cleaning">
-                <div class="gallery-overlay">
-                    <h4>Before Cleaning</h4>
-                    <p>Kereta kotor sebelum servis</p>
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery Hasil Kerja</h2>
+            <p class="section-subtitle">Lihat perbezaan sebelum dan selepas servis kami</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1565689221361-2bd69661fbf4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Car Detailing Process" loading="lazy">
                 </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1565689221354-d87f85d4aee2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="After Cleaning">
-                <div class="gallery-overlay">
-                    <h4>After Cleaning</h4>
-                    <p>Kilauan seperti baru</p>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Interior Cleaning" loading="lazy">
                 </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1565689221361-2bd69661fbf4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Interior Detailing">
-                <div class="gallery-overlay">
-                    <h4>Interior Detailing</h4>
-                    <p>Dalaman bersih & wangi</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Waterless Process">
-                <div class="gallery-overlay">
-                    <h4>Waterless Process</h4>
-                    <p>Teknik pencucian tanpa air</p>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1565689221359-4d87d79f4b11?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Shiny Car Result" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <a href="#" class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-sparkles"></i>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>XD WATERLESS</h3>
+                    <p>Servis cucian kereta tanpa air professional di Shah Alam. Teknologi terkini, harga berpatutan.</p>
+                </div>
+                
+                <div>
+                    <h3>Hubungi Kami</h3>
+                    <div class="contact-info">
+                        <a href="tel:0167003569">
+                            <i class="fas fa-phone"></i> 016-700 3569
+                        </a>
+                        <a href="https://wa.me/60167003569">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Tempah
+                        </a>
+                        <a href="#">
+                            <i class="fas fa-map-marker-alt"></i> Shah Alam, Selangor
+                        </a>
                     </div>
-                    <div class="logo-text-container">
-                        <span class="logo-main">XD WATERLESS</span>
-                        <span class="logo-sub">PROFESSIONAL</span>
-                    </div>
-                </a>
-                <p style="opacity: 0.9; margin-top: 1rem;">Servis cucian kereta tanpa air terbaik di Shah Alam & Klang Valley.</p>
-            </div>
-            
-            <div class="footer-contact">
-                <h3>Hubungi Kami</h3>
-                <div class="contact-info">
-                    <a href="tel:0167003569">
-                        <i class="fas fa-phone"></i>
-                        <span>016-700 3569</span>
-                    </a>
-                    <a href="https://wa.me/60167003569">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>WhatsApp Tempah</span>
-                    </a>
-                    <a href="#">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Shah Alam, Selangor</span>
-                    </a>
-                    <a href="#">
-                        <i class="fas fa-clock"></i>
-                        <span>10:00 AM - 10:00 PM (Setiap Hari)</span>
-                    </a>
+                </div>
+                
+                <div>
+                    <h3>Waktu Operasi</h3>
+                    <p>Setiap Hari</p>
+                    <p>10:00 AM - 10:00 PM</p>
                 </div>
             </div>
             
-            <div class="footer-contact">
-                <h3>Servis Kami</h3>
-                <div class="contact-info">
-                    <a href="#packages">Pakej Basic Clean</a>
-                    <a href="#packages">Pakej Premium Shine</a>
-                    <a href="#packages">Pakej Full Detailing</a>
-                    <a href="#gallery">Lihat Gallery</a>
-                </div>
+            <div class="copyright">
+                <p>&copy; 2024 XD Waterless Car Wash. Hak Cipta Terpelihara.</p>
             </div>
-        </div>
-        
-        <div class="copyright">
-            <p>© 2024 XD Waterless Car Wash. Hak Cipta Terpelihara.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.8rem;">Designed with AI technology for maximum visual impact</p>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const navLinks = document.getElementById('navLinks');
-        
-        mobileMenuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuToggle.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        // Tab Switching Function
+        function showTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.pricing-content').forEach(content => {
+                content.style.display = 'none';
             });
-        });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabId).style.display = 'block';
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
         
-        // Smooth scrolling
+        // WhatsApp Booking with Package Selection
+        function bookService(serviceName, price) {
+            const message = `Saya nak tempah servis ${serviceName} - ${price}`;
+            const whatsappUrl = `https://wa.me/60167003569?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+        
+        // Smooth Scroll for Navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if(targetId === '#') return;
                 
@@ -1085,23 +720,31 @@
             });
         });
         
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'slideIn 0.6s ease forwards';
+        // Animate Stats Counter
+        function animateCounter(element, target, duration) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if(start >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start);
                 }
-            });
-        }, observerOptions);
+            }, 16);
+        }
         
-        // Observe elements
-        document.querySelectorAll('.package-card, .gallery-item').forEach(el => {
-            observer.observe(el);
+        // Initialize counters when page loads
+        window.addEventListener('load', () => {
+            const statElements = document.querySelectorAll('.stat-number');
+            statElements.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count') || stat.textContent);
+                stat.textContent = '0';
+                setTimeout(() => {
+                    animateCounter(stat, target, 1000);
+                }, 500);
+            });
         });
     </script>
 </body>
