@@ -3,155 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XD Waterless | Professional Mobile Detailing</title>
+    <title>XD Waterless | Mobile Detailing Specialist</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #22c55e; --bg: #020617; --card: #0f172a; --text: #ffffff; --dim: #94a3b8; --border: #1e293b; }
+        :root { --primary: #22c55e; --bg: #020617; --card: #0f172a; --text: #ffffff; --dim: #94a3b8; --border: #1e293b; --glass: rgba(15, 23, 42, 0.8); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; scroll-behavior: smooth; }
         .container { max-width: 1100px; margin: auto; padding: 0 20px; }
         
-        nav { background: rgba(2,6,23,0.95); backdrop-filter: blur(10px); padding: 15px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
+        /* NAVIGATION */
+        nav { background: var(--glass); backdrop-filter: blur(15px); padding: 15px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
         .nav-content { display: flex; justify-content: space-between; align-items: center; }
 
-        .hero { padding: 100px 20px; text-align: center; border-bottom: 2px solid var(--primary); }
-        .hero h1 { font-size: clamp(28px, 5vw, 42px); color: var(--primary); margin-bottom: 15px; text-transform: uppercase; }
-        .hero p { color: var(--dim); max-width: 800px; margin: 0 auto 30px; font-size: 15px; }
+        /* HERO SECTION */
+        .hero { 
+            padding: 120px 20px; 
+            text-align: center; 
+            background: linear-gradient(rgba(2,6,23,0.8), rgba(2,6,23,0.9)), url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&q=80&w=1200');
+            background-size: cover; background-position: center;
+            border-bottom: 3px solid var(--primary);
+        }
+        .hero h1 { font-size: clamp(30px, 6vw, 48px); color: var(--primary); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px; }
+        .hero p { color: var(--dim); max-width: 700px; margin: 0 auto 30px; font-weight: 300; }
 
-        .btn { display: inline-block; background: var(--primary); color: #000; padding: 12px 30px; border-radius: 50px; font-weight: 700; text-decoration: none; transition: 0.3s; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(34,197,94,0.3); }
+        .btn { display: inline-block; background: var(--primary); color: #000; padding: 14px 35px; border-radius: 50px; font-weight: 700; text-decoration: none; transition: 0.4s; border: none; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(34,197,94,0.4); }
 
-        section { padding: 60px 0; }
-        .section-title { text-align: center; color: var(--primary); margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1px; }
+        /* SECTION TITLES */
+        section { padding: 80px 0; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 28px; text-transform: uppercase; color: var(--primary); letter-spacing: 2px; }
+        .section-header .line { width: 60px; height: 3px; background: var(--primary); margin: 10px auto; }
 
-        /* TABLE HARGA */
-        .price-table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 15px; overflow: hidden; margin-bottom: 30px; border: 1px solid var(--border); }
-        .price-table th { background: #1e293b; color: var(--primary); padding: 15px; text-align: left; font-size: 14px; }
-        .price-table td { padding: 15px; border-bottom: 1px solid var(--border); font-size: 14px; }
-        .price-table tr:last-child td { border: none; }
-        .size-tag { font-weight: 600; color: var(--dim); display: block; font-size: 11px; }
+        /* GRID SYSTEM */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
 
-        /* GRID */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        
-        .member-card { background: linear-gradient(135deg, #1e293b, #0f172a); padding: 30px; border-radius: 20px; border: 1px solid var(--border); position: relative; }
-        .featured { border-color: var(--primary); }
-        .card-chip { width: 40px; height: 28px; background: linear-gradient(135deg, #f6d365, #fda085); border-radius: 5px; margin-bottom: 10px; }
+        /* SERVICE CARDS (PRO IMAGES) */
+        .card { background: var(--card); border-radius: 20px; overflow: hidden; border: 1px solid var(--border); transition: 0.3s; }
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .card-img { width: 100%; height: 200px; object-fit: cover; filter: brightness(0.8); }
+        .card-body { padding: 25px; }
+        .card-body h3 { font-size: 18px; margin-bottom: 10px; color: var(--primary); }
 
-        /* MAP */
-        .map-box { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; background: #010409; padding: 40px; border-radius: 20px; border: 1px solid var(--border); }
-        .map-info h3 { color: var(--primary); margin-bottom: 15px; }
-        .map-frame { width: 100%; height: 300px; border-radius: 15px; border: none; filter: grayscale(1) invert(1); }
+        /* PRICING TABLE */
+        .price-box { background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid var(--border); overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        th { text-align: left; padding: 15px; color: var(--primary); border-bottom: 2px solid var(--border); font-size: 14px; }
+        td { padding: 15px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .size { font-size: 11px; color: var(--dim); display: block; }
 
-        footer { padding: 40px; text-align: center; color: var(--dim); font-size: 12px; border-top: 1px solid var(--border); }
+        /* REVIEW SECTION */
+        .review-card { background: rgba(255,255,255,0.03); padding: 30px; border-radius: 15px; border-left: 4px solid var(--primary); }
+        .stars { color: #fbbf24; margin-bottom: 10px; }
+        .review-text { font-style: italic; font-size: 14px; color: var(--dim); }
 
-        @media (max-width: 768px) { .map-box { grid-template-columns: 1fr; } }
+        /* MAP BOX */
+        .map-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; background: var(--card); border-radius: 25px; overflow: hidden; border: 1px solid var(--border); }
+        .map-info { padding: 40px; }
+        .map-iframe { width: 100%; height: 400px; border: none; filter: invert(90%) hue-rotate(180deg) brightness(95%); }
+
+        footer { padding: 60px; text-align: center; border-top: 1px solid var(--border); color: var(--dim); font-size: 13px; }
+
+        @media (max-width: 768px) { .map-wrapper { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
 <nav>
     <div class="container nav-content">
-        <strong style="color: var(--primary);">XD WATERLESS</strong>
-        <a class="btn" href="https://wa.me/60167003569" style="padding: 8px 20px; font-size: 12px;">Tempah Slot</a>
+        <strong style="color: var(--primary); font-size: 22px; letter-spacing: 1px;">XD WATERLESS</strong>
+        <a class="btn" href="https://wa.me/60167003569" style="padding: 10px 20px; font-size: 12px;">HUBUNGI KAMI</a>
     </div>
 </nav>
 
 <section class="hero">
     <div class="container">
-        <h1>Professional Mobile Detailing</h1>
-        <p>“XD Waterless ialah servis Mobile Detailing berteknologi cucian tanpa air — kami datang ke lokasi anda untuk hasil bersih, selamat pada cat, dan konsisten tanpa kedai fizikal.”</p>
+        <h1>Premium Mobile Detailing</h1>
+        <p>Expert Surface Care & Waterless Technology terus ke lokasi anda. Kami tidak menggunakan air melimpah, kami menggunakan sains untuk melindungi cat kereta anda.</p>
+        <a href="#harga" class="btn">LIHAT HARGA & SAIZ</a>
     </div>
 </section>
 
-<section id="harga">
+<section>
     <div class="container">
-        <h2 class="section-title">Menu & Saiz Kenderaan</h2>
-        
-        <table class="price-table">
-            <thead>
-                <tr>
-                    <th>Service Treatment</th>
-                    <th>S <span class="size-tag">(Axia/Myvi)</span></th>
-                    <th>M <span class="size-tag">(City/Civic)</span></th>
-                    <th>L <span class="size-tag">(X70/Accord)</span></th>
-                    <th>XL <span class="size-tag">(Vellfire/Hilux)</span></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Exterior Maintenance</strong><br><small style="color:var(--dim)">Waterless Wash + Tyre Shine</small></td>
-                    <td>RM35</td>
-                    <td>RM45</td>
-                    <td>RM55</td>
-                    <td>RM65</td>
-                </tr>
-                <tr>
-                    <td><strong>Interior Restoration</strong><br><small style="color:var(--dim)">Vacuum + Dashboard Restoration</small></td>
-                    <td>RM80</td>
-                    <td>RM100</td>
-                    <td>RM120</td>
-                    <td>RM140</td>
-                </tr>
-                <tr>
-                    <td><strong>Signature Protection</strong><br><small style="color:var(--dim)">Slick Bana Coating Layer</small></td>
-                    <td>RM100</td>
-                    <td>RM120</td>
-                    <td>RM140</td>
-                    <td>RM160</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<section style="background: #010409;">
-    <div class="container">
-        <h2 class="section-title">Membership Programs 💳</h2>
+        <div class="section-header">
+            <h2>The Treatment</h2>
+            <div class="line"></div>
+        </div>
         <div class="grid">
-            <div class="member-card">
-                <div class="card-chip"></div>
-                <small style="color:var(--primary)">ESSENTIAL</small>
-                <h3>4-Cycle Program</h3>
-                <p style="font-size: 12px; color: var(--dim); margin-top: 10px;">Maintainance detailing berkala setiap minggu.</p>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1552933529-e359b2477252?auto=format&fit=crop&q=80&w=500" class="card-img" alt="Exterior">
+                <div class="card-body">
+                    <h3>Waterless Cleansing</h3>
+                    <p style="font-size: 13px; color: var(--dim);">Proses mengangkat kotoran menggunakan agen polimer tanpa mencalarkan permukaan cat kenderaan.</p>
+                </div>
             </div>
-            <div class="member-card featured">
-                <div class="card-chip" style="background:#fff"></div>
-                <small style="color:var(--primary)">SIGNATURE</small>
-                <h3>6-Cycle Program</h3>
-                <p style="font-size: 12px; color: var(--text); margin-top: 10px;">Termasuk Slick Bana Protection setiap sesi.</p>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1599256621730-535171e28e50?auto=format&fit=crop&q=80&w=500" class="card-img" alt="Interior">
+                <div class="card-body">
+                    <h3>Interior Restoration</h3>
+                    <p style="font-size: 13px; color: var(--dim);">Sanitasi ruang dalaman, vacuum teliti, dan UV protection untuk dashboard dan trim.</p>
+                </div>
             </div>
-            <div class="member-card">
-                <div class="card-chip"></div>
-                <small style="color:var(--primary)">ULTIMATE</small>
-                <h3>8-Cycle Program</h3>
-                <p style="font-size: 12px; color: var(--dim); margin-top: 10px;">Full VIP Detailing + Paint Refinement.</p>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1634815465902-763481546590?auto=format&fit=crop&q=80&w=500" class="card-img" alt="Coating">
+                <div class="card-body">
+                    <h3>Signature Protection</h3>
+                    <p style="font-size: 13px; color: var(--dim);">Lapisan Slick Bana yang memberikan kesan hydrophobic (kalis air) dan kilauan ekstra.</p>
+                </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section id="harga" style="background: #010409;">
+    <div class="container">
+        <div class="section-header">
+            <h2>Senarai Harga</h2>
+            <div class="line"></div>
+        </div>
+        <div class="price-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jenis Servis</th>
+                        <th>S <span class="size">(Axia / Myvi)</span></th>
+                        <th>M <span class="size">(City / Civic)</span></th>
+                        <th>L <span class="size">(X70 / Accord)</span></th>
+                        <th>XL <span class="size">(Vellfire / Hilux)</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Exterior Maintenance</td><td>RM35</td><td>RM45</td><td>RM55</td><td>RM65</td></tr>
+                    <tr><td>Interior Restoration</td><td>RM80</td><td>RM100</td><td>RM120</td><td>RM140</td></tr>
+                    <tr><td>Signature Protection</td><td>RM100</td><td>RM120</td><td>RM140</td><td>RM160</td></tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
 
 <section>
     <div class="container">
-        <div class="map-box">
+        <div class="section-header">
+            <h2>Google Reviews</h2>
+            <div class="line"></div>
+        </div>
+        <div class="grid">
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"Sangat pro! Tak sangka cuci tanpa air boleh bersih macam ni. Kereta kilat macam baru keluar kedai."</p>
+                <p style="margin-top:15px; font-weight:700; font-size:12px;">- Syahmi, Shah Alam</p>
+            </div>
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"Paling senang, diorang datang depan rumah. Jimat masa tak perlu beratur kat car wash."</p>
+                <p style="margin-top:15px; font-weight:700; font-size:12px;">- Fazli, Setia Alam</p>
+            </div>
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"Interior restoration diorang memang detail. Bau segar dan nampak kemas betul."</p>
+                <p style="margin-top:15px; font-weight:700; font-size:12px;">- Ariff, Klang</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="kawasan">
+    <div class="container">
+        <div class="map-wrapper">
             <div class="map-info">
-                <h3>Kawasan Operasi</h3>
-                <p style="color: var(--dim); margin-bottom: 20px;">Kami adalah 100% Mobile Detailing. Tiada kedai fizikal. Kami cover area berikut:</p>
-                <ul style="color: var(--primary); font-size: 14px; list-style: none;">
-                    <li>📍 Shah Alam (Semua Seksyen)</li>
+                <h2 style="color: var(--primary); margin-bottom: 10px;">Liputan Servis</h2>
+                <p style="color: var(--dim); margin-bottom: 20px;">Kami adalah 100% Mobile Service berpusat di Shah Alam. Kami cover kawasan berikut tanpa caj tambahan:</p>
+                <ul style="list-style: none; color: var(--primary); font-size: 14px; line-height: 2;">
+                    <li>📍 Seluruh Shah Alam</li>
                     <li>📍 Setia Alam & Bukit Raja</li>
-                    <li>📍 Denai Alam & Puncak Alam</li>
                     <li>📍 Klang & Kota Kemuning</li>
+                    <li>📍 Subang Jaya (Kawasan Terpilih)</li>
                 </ul>
             </div>
-            <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127482.41738739943!2d101.44490895!3d3.06740155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4d3d9ad5da31%3A0x2ff407b3014c5383!2sShah%20Alam%2C%20Selangor!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy" allowfullscreen="" loading="lazy"></iframe>
+            <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127482.44975543662!2d101.44490333464522!3d3.064166297395462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4d3d0bc12039%3A0x6335193982f6e9b4!2sShah%20Alam%2C%20Selangor!5e0!3m2!1sen!2smy!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
 </section>
 
 <footer>
     <p><strong>XD WATERLESS MOBILE DETAILING</strong></p>
-    <p>Professional Surface Specialist • Shah Alam • 2026</p>
+    <p>Professional Surface Restoration • Shah Alam & Klang • 2026</p>
 </footer>
 
 </body>
