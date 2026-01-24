@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XD Waterless | Cucian Kereta Tanpa Air</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-blue: #1a365d;
@@ -15,6 +15,8 @@
             --ai-cyan: #06B6D4;
             --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--ai-purple) 100%);
             --gradient-secondary: linear-gradient(135deg, var(--accent-teal) 0%, var(--ai-cyan) 100%);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
 
         * {
@@ -28,11 +30,17 @@
             line-height: 1.6;
             color: #333;
             background: #f8fafc;
+            overflow-x: hidden;
         }
 
-        /* ===== NAVBAR & LOGO AI-ENHANCED ===== */
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* ===== NAVBAR & LOGO ===== */
         .navbar {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             position: fixed;
@@ -40,7 +48,7 @@
             width: 100%;
             z-index: 1000;
             padding: 1rem 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
 
@@ -53,7 +61,7 @@
             align-items: center;
         }
 
-        /* AI-Enhanced Logo */
+        /* Logo */
         .logo {
             display: flex;
             align-items: center;
@@ -67,8 +75,8 @@
         }
 
         .logo-icon {
-            width: 45px;
-            height: 45px;
+            width: 48px;
+            height: 48px;
             background: var(--gradient-primary);
             border-radius: 12px;
             display: flex;
@@ -76,6 +84,7 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
         }
 
         .logo-icon::before {
@@ -89,7 +98,7 @@
         }
 
         .logo-icon i {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: white;
             z-index: 2;
             position: relative;
@@ -98,7 +107,6 @@
         .logo-text-container {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
         }
 
         .logo-main {
@@ -113,63 +121,15 @@
         }
 
         .logo-sub {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 700;
             color: var(--accent-teal);
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-top: 3px;
-            position: relative;
-            padding-left: 5px;
         }
 
-        .logo-sub::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 3px;
-            height: 70%;
-            background: var(--ai-cyan);
-            border-radius: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--primary-blue);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-link:hover {
-            color: var(--ai-purple);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--ai-purple);
-            transition: width 0.3s;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* ===== HERO SECTION AI-ENHANCED ===== */
+        /* ===== HERO SECTION ===== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -183,7 +143,7 @@
                 rgba(139, 92, 246, 0.85) 100%);
         }
 
-        /* AI-Generated Background Pattern */
+        /* AI Background Pattern */
         .hero-bg-pattern {
             position: absolute;
             top: 0;
@@ -193,9 +153,8 @@
             opacity: 0.15;
             background-image: 
                 radial-gradient(circle at 20% 80%, var(--ai-cyan) 2px, transparent 2px),
-                radial-gradient(circle at 80% 20%, var(--ai-purple) 2px, transparent 2px),
-                radial-gradient(circle at 40% 40%, #ffffff 1px, transparent 1px);
-            background-size: 60px 60px, 60px 60px, 30px 30px;
+                radial-gradient(circle at 80% 20%, var(--ai-purple) 2px, transparent 2px);
+            background-size: 80px 80px;
             animation: float 20s linear infinite;
         }
 
@@ -219,16 +178,18 @@
         }
 
         .hero-badge {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             background: var(--gradient-secondary);
-            padding: 0.5rem 1.25rem;
+            padding: 0.6rem 1.5rem;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 600;
             letter-spacing: 1px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             animation: pulse 2s infinite;
-            box-shadow: 0 5px 15px rgba(6, 182, 212, 0.3);
+            box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3);
         }
 
         .hero-title {
@@ -255,43 +216,25 @@
             font-weight: 600;
         }
 
-        /* AI Stats Grid */
-        .hero-stats {
+        /* Hero Features */
+        .hero-features {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 3rem;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
         }
 
-        .stat-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s, background 0.3s;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-            border-color: var(--ai-cyan);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: var(--gradient-secondary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
             opacity: 0.9;
-            margin-top: 0.5rem;
+        }
+
+        .feature-item i {
+            color: var(--ai-cyan);
+            font-size: 1.1rem;
         }
 
         /* CTA Buttons */
@@ -304,7 +247,7 @@
         .btn-whatsapp {
             background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             color: white;
-            padding: 1.1rem 2.5rem;
+            padding: 1.2rem 2.5rem;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
@@ -313,21 +256,21 @@
             gap: 0.75rem;
             transition: all 0.3s;
             font-size: 1.1rem;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.3);
             border: none;
             cursor: pointer;
         }
 
         .btn-whatsapp:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 18px 35px rgba(37, 211, 102, 0.4);
         }
 
         .btn-secondary {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
             color: white;
-            padding: 1.1rem 2rem;
+            padding: 1.2rem 2rem;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
@@ -343,116 +286,349 @@
             transform: translateY(-3px);
         }
 
-        /* AI Visual Showcase */
+        /* AI Visual Section */
         .hero-visual {
             position: relative;
         }
 
-        .visual-main {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
+        .visual-container {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .ai-image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .ai-image-card {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.3s, box-shadow 0.3s;
+            aspect-ratio: 1/1;
+        }
+
+        .ai-image-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .ai-image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .ai-image-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .ai-image-card:hover .image-overlay {
+            transform: translateY(0);
+        }
+
+        /* ===== PACKAGES SECTION ===== */
+        .packages {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 0 1rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: #64748b;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Packages Grid */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--accent-teal);
+        }
+
+        .package-card.popular {
+            border-color: var(--ai-purple);
+            transform: scale(1.05);
+        }
+
+        .package-card.popular::before {
+            content: 'POPULAR';
+            position: absolute;
+            top: 1rem;
+            right: -2rem;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 3rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transform: rotate(45deg);
+            letter-spacing: 1px;
+        }
+
+        .package-header {
             padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+        }
+
+        .package-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .package-price span {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .package-duration {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .package-body {
+            padding: 2rem;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .package-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: #475569;
+        }
+
+        .package-features li i {
+            color: var(--accent-teal);
+            font-size: 0.9rem;
+        }
+
+        .package-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .package-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+        }
+
+        /* ===== AI IMAGES GALLERY ===== */
+        .gallery {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.3s;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--primary-blue);
+            color: white;
+            padding: 4rem 0 2rem;
             position: relative;
             overflow: hidden;
         }
 
-        .visual-main::before {
+        .footer::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
             background: var(--gradient-secondary);
-            opacity: 0.1;
-            animation: rotate 20s linear infinite;
         }
 
-        .car-illustration {
-            position: relative;
-            z-index: 2;
-            text-align: center;
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
         }
 
-        .car-icon {
-            font-size: 8rem;
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-contact h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .contact-info a {
             color: white;
-            margin-bottom: 1.5rem;
-            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
-        }
-
-        .water-drop {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: var(--ai-cyan);
-            border-radius: 50% 50% 50% 0;
-            opacity: 0.7;
-            animation: drop 3s infinite;
-        }
-
-        .water-drop:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-        .water-drop:nth-child(2) { top: 40%; left: 80%; animation-delay: 0.5s; }
-        .water-drop:nth-child(3) { top: 70%; left: 15%; animation-delay: 1s; }
-        .water-drop:nth-child(4) { top: 60%; left: 70%; animation-delay: 1.5s; }
-
-        .visual-text {
-            color: white;
-            text-align: center;
-            margin-top: 2rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .visual-text h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Floating Elements */
-        .floating-element {
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-decoration: none;
             display: flex;
             align-items: center;
-            justify-content: center;
-            animation: float 6s ease-in-out infinite;
+            gap: 0.75rem;
+            transition: color 0.3s;
         }
 
-        .floating-element:nth-child(1) {
-            top: 10%;
-            right: 5%;
-            animation-delay: 0s;
-        }
-
-        .floating-element:nth-child(2) {
-            bottom: 20%;
-            left: 5%;
-            animation-delay: 2s;
-        }
-
-        .floating-element i {
-            font-size: 2rem;
+        .contact-info a:hover {
             color: var(--ai-cyan);
         }
 
-        /* Animations */
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ===== ANIMATIONS ===== */
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(5deg); }
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
         }
 
         @keyframes rotate {
@@ -460,12 +636,12 @@
             100% { transform: rotate(360deg); }
         }
 
-        @keyframes drop {
-            0% { transform: translateY(0) scale(1); opacity: 0.7; }
-            100% { transform: translateY(100px) scale(0.5); opacity: 0; }
+        @keyframes slideIn {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
-        /* Responsive Design */
+        /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 992px) {
             .hero-grid {
                 grid-template-columns: 1fr;
@@ -477,12 +653,15 @@
                 font-size: 2.8rem;
             }
             
-            .hero-stats {
+            .hero-features {
                 justify-content: center;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
             }
             
-            .nav-links {
-                display: none; /* For mobile, add hamburger menu */
+            .section-title {
+                font-size: 2.2rem;
             }
         }
 
@@ -495,29 +674,25 @@
                 font-size: 1.1rem;
             }
             
-            .hero-stats {
-                grid-template-columns: 1fr;
-            }
-            
             .hero-cta {
                 flex-direction: column;
             }
             
             .btn-whatsapp, .btn-secondary {
                 justify-content: center;
+                width: 100%;
             }
             
-            .car-icon {
-                font-size: 6rem;
+            .packages-grid {
+                grid-template-columns: 1fr;
             }
             
-            .logo-main {
-                font-size: 1.5rem;
+            .package-card.popular {
+                transform: none;
             }
             
-            .logo-sub {
-                font-size: 0.7rem;
-                letter-spacing: 2px;
+            .nav-container {
+                padding: 0 1rem;
             }
         }
 
@@ -526,16 +701,17 @@
                 font-size: 1.8rem;
             }
             
-            .nav-container {
-                padding: 0 1rem;
+            .hero-badge {
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
             }
             
-            .hero-container {
-                padding: 0 1rem;
+            .section-title {
+                font-size: 1.8rem;
             }
         }
 
-        /* Mobile Menu Toggle */
+        /* Mobile Menu */
         .mobile-menu-toggle {
             display: none;
             background: none;
@@ -543,6 +719,7 @@
             font-size: 1.5rem;
             color: var(--primary-blue);
             cursor: pointer;
+            z-index: 1001;
         }
 
         @media (max-width: 992px) {
@@ -552,31 +729,33 @@
             
             .nav-links {
                 position: fixed;
-                top: 70px;
-                left: 0;
+                top: 0;
+                left: -100%;
                 width: 100%;
+                height: 100vh;
                 background: rgba(255, 255, 255, 0.98);
                 backdrop-filter: blur(20px);
                 flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left 0.3s ease;
+                z-index: 1000;
                 padding: 2rem;
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                z-index: 999;
             }
             
             .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
+                left: 0;
+            }
+            
+            .nav-link {
+                font-size: 1.2rem;
+                margin: 1rem 0;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation with AI-Enhanced Logo -->
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
@@ -585,21 +764,20 @@
                 </div>
                 <div class="logo-text-container">
                     <span class="logo-main">XD WATERLESS</span>
-                    <span class="logo-sub">TECHNOLOGY</span>
+                    <span class="logo-sub">PROFESSIONAL</span>
                 </div>
             </a>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#packages" class="nav-link">Pakej</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#contact" class="nav-link">Hubungi</a>
+            </div>
             
             <button class="mobile-menu-toggle" id="mobileMenuToggle">
                 <i class="fas fa-bars"></i>
             </button>
-            
-            <div class="nav-links" id="navLinks">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#services" class="nav-link">Servis</a>
-                <a href="#pricing" class="nav-link">Harga</a>
-                <a href="#about" class="nav-link">Tentang</a>
-                <a href="#contact" class="nav-link">Hubungi</a>
-            </div>
         </div>
     </nav>
 
@@ -607,37 +785,37 @@
     <section class="hero" id="home">
         <div class="hero-bg-pattern"></div>
         
-        <!-- Floating Elements -->
-        <div class="floating-element">
-            <i class="fas fa-leaf"></i>
-        </div>
-        <div class="floating-element">
-            <i class="fas fa-tint-slash"></i>
-        </div>
-        
         <div class="hero-container">
             <div class="hero-grid">
                 <div class="hero-content">
                     <span class="hero-badge">
-                        <i class="fas fa-bolt"></i> AI-OPTIMIZED CLEANING
+                        <i class="fas fa-crown"></i> SHAH ALAM'S #1 WATERLESS SERVICE
                     </span>
                     
                     <h1 class="hero-title">
-                        Cucian Kereta Revolusi <span class="hero-highlight">Tanpa Air</span>
+                        Cucian Kereta <span class="hero-highlight">Tanpa Air</span> Revolusi Baru
                     </h1>
                     
                     <p class="hero-subtitle">
-                        Teknologi nano cleaning terkini yang lebih efisien, mesra alam dan memberikan kilauan seperti baru. Servis di Shah Alam & Klang Valley.
+                        Teknologi nano cleaning terkini yang lebih efisien, mesra alam dan memberikan kilauan seperti baru. Servis di Shah Alam & seluruh Klang Valley.
                     </p>
                     
-                    <div class="hero-stats">
-                        <div class="stat-card">
-                            <div class="stat-number">99<span style="color: var(--ai-cyan);">%</span></div>
-                            <div class="stat-label">Kepuasan Pelanggan</div>
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>100% Tanpa Air</span>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-number">50L<span style="color: var(--ai-cyan);">+</span></div>
-                            <div class="stat-label">Air Dijimatkan</div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Produk Mesra Alam</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>30 Minit Siap</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Kalis Air 2 Minggu</span>
                         </div>
                     </div>
                     
@@ -645,33 +823,229 @@
                         <a href="https://wa.me/60167003569" class="btn-whatsapp">
                             <i class="fab fa-whatsapp"></i> WhatsApp Tempah Sekarang
                         </a>
-                        <a href="#services" class="btn-secondary">
-                            <i class="fas fa-play-circle"></i> Lihat Servis
+                        <a href="#packages" class="btn-secondary">
+                            <i class="fas fa-tags"></i> Lihat Pakej & Harga
                         </a>
                     </div>
                 </div>
                 
                 <div class="hero-visual">
-                    <div class="visual-main">
-                        <div class="car-illustration">
-                            <i class="fas fa-car-side car-icon"></i>
-                            
-                            <!-- Water Drop Effects -->
-                            <div class="water-drop"></div>
-                            <div class="water-drop"></div>
-                            <div class="water-drop"></div>
-                            <div class="water-drop"></div>
+                    <div class="visual-container">
+                        <div class="ai-image-grid">
+                            <div class="ai-image-card">
+                                <!-- AI Generated Image - Waterless Car Wash Process -->
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Waterless Car Wash Process">
+                                <div class="image-overlay">
+                                    <small>AI Generated</small>
+                                    <p>Proses Pencucian Tanpa Air</p>
+                                </div>
+                            </div>
+                            <div class="ai-image-card">
+                                <!-- AI Generated Image - Car Shine Result -->
+                                <img src="https://images.unsplash.com/photo-1565689221359-4d87d79f4b11?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Car Shine Result">
+                                <div class="image-overlay">
+                                    <small>AI Generated</small>
+                                    <p>Hasil Kilauan Seperti Baru</p>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <div class="visual-text">
-                            <h3>AI-Optimized Formula</h3>
-                            <p>Nanotechnology + Eco-Friendly + Quick Dry</p>
+                        <div class="ai-image-grid">
+                            <div class="ai-image-card">
+                                <!-- AI Generated Image - Nano Technology -->
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nano Technology">
+                                <div class="image-overlay">
+                                    <small>AI Generated</small>
+                                    <p>Teknologi Nano Cleaning</p>
+                                </div>
+                            </div>
+                            <div class="ai-image-card">
+                                <!-- AI Generated Image - Eco Friendly -->
+                                <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Eco Friendly">
+                                <div class="image-overlay">
+                                    <small>AI Generated</small>
+                                    <p>100% Mesra Alam</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Packages Section -->
+    <section class="packages" id="packages">
+        <div class="section-header">
+            <span class="section-badge">
+                <i class="fas fa-star"></i> PAKEJ & HARGA
+            </span>
+            <h2 class="section-title">Pakej Servis Terbaik</h2>
+            <p class="section-subtitle">Pilih pakej yang sesuai dengan keperluan kenderaan anda</p>
+        </div>
+        
+        <div class="packages-grid">
+            <!-- Package 1 -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3 class="package-name">BASIC CLEAN</h3>
+                    <div class="package-price">RM<span>25</span></div>
+                    <p class="package-duration">Untuk kereta kecil</p>
+                </div>
+                <div class="package-body">
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Pencucian luaran tanpa air</li>
+                        <li><i class="fas fa-check"></i> Pembersihan cermin & lampu</li>
+                        <li><i class="fas fa-check"></i> Lap microfiber premium</li>
+                        <li><i class="fas fa-times"></i> Wax protection</li>
+                        <li><i class="fas fa-times"></i> Pembersihan dalaman</li>
+                    </ul>
+                    <a href="https://wa.me/60167003569?text=Saya%20nak%20tempah%20pakej%20BASIC%20CLEAN%20RM25" class="package-button">
+                        <i class="fab fa-whatsapp"></i> Tempah Sekarang
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Package 2 (Popular) -->
+            <div class="package-card popular">
+                <div class="package-header">
+                    <h3 class="package-name">PREMIUM SHINE</h3>
+                    <div class="package-price">RM<span>45</span></div>
+                    <p class="package-duration">Semua jenis kereta</p>
+                </div>
+                <div class="package-body">
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Pencucian luaran tanpa air</li>
+                        <li><i class="fas fa-check"></i> Wax protection 2 minggu</li>
+                        <li><i class="fas fa-check"></i> Pembersihan dalaman asas</li>
+                        <li><i class="fas fa-check"></i> Vacuum ringkas</li>
+                        <li><i class="fas fa-check"></i> Lap dashboard & konsol</li>
+                    </ul>
+                    <a href="https://wa.me/60167003569?text=Saya%20nak%20tempah%20pakej%20PREMIUM%20SHINE%20RM45" class="package-button">
+                        <i class="fab fa-whatsapp"></i> Tempah Sekarang
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Package 3 -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3 class="package-name">FULL DETAILING</h3>
+                    <div class="package-price">RM<span>85</span></div>
+                    <p class="package-duration">SUV / MPV / Kereta besar</p>
+                </div>
+                <div class="package-body">
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Semua servis Premium Shine</li>
+                        <li><i class="fas fa-check"></i> Vacuum lengkap</li>
+                        <li><i class="fas fa-check"></i> Pembersihan tempat duduk</li>
+                        <li><i class="fas fa-check"></i> Nano coating protection</li>
+                        <li><i class="fas fa-check"></i> Deodorizing treatment</li>
+                    </ul>
+                    <a href="https://wa.me/60167003569?text=Saya%20nak%20tempah%20pakej%20FULL%20DETAILING%20RM85" class="package-button">
+                        <i class="fab fa-whatsapp"></i> Tempah Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="section-header">
+            <span class="section-badge">
+                <i class="fas fa-images"></i> GALLERY HASIL KERJA
+            </span>
+            <h2 class="section-title">Before & After</h2>
+            <p class="section-subtitle">Lihat perbezaan yang kami hasilkan untuk pelanggan</p>
+        </div>
+        
+        <div class="gallery-grid">
+            <!-- AI Generated Images -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Before Cleaning">
+                <div class="gallery-overlay">
+                    <h4>Before Cleaning</h4>
+                    <p>Kereta kotor sebelum servis</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1565689221354-d87f85d4aee2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="After Cleaning">
+                <div class="gallery-overlay">
+                    <h4>After Cleaning</h4>
+                    <p>Kilauan seperti baru</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1565689221361-2bd69661fbf4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Interior Detailing">
+                <div class="gallery-overlay">
+                    <h4>Interior Detailing</h4>
+                    <p>Dalaman bersih & wangi</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Waterless Process">
+                <div class="gallery-overlay">
+                    <h4>Waterless Process</h4>
+                    <p>Teknik pencucian tanpa air</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-sparkles"></i>
+                    </div>
+                    <div class="logo-text-container">
+                        <span class="logo-main">XD WATERLESS</span>
+                        <span class="logo-sub">PROFESSIONAL</span>
+                    </div>
+                </a>
+                <p style="opacity: 0.9; margin-top: 1rem;">Servis cucian kereta tanpa air terbaik di Shah Alam & Klang Valley.</p>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Hubungi Kami</h3>
+                <div class="contact-info">
+                    <a href="tel:0167003569">
+                        <i class="fas fa-phone"></i>
+                        <span>016-700 3569</span>
+                    </a>
+                    <a href="https://wa.me/60167003569">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp Tempah</span>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Shah Alam, Selangor</span>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-clock"></i>
+                        <span>10:00 AM - 10:00 PM (Setiap Hari)</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Servis Kami</h3>
+                <div class="contact-info">
+                    <a href="#packages">Pakej Basic Clean</a>
+                    <a href="#packages">Pakej Premium Shine</a>
+                    <a href="#packages">Pakej Full Detailing</a>
+                    <a href="#gallery">Lihat Gallery</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2024 XD Waterless Car Wash. Hak Cipta Terpelihara.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem;">Designed with AI technology for maximum visual impact</p>
+        </div>
+    </footer>
 
     <script>
         // Mobile Menu Toggle
@@ -693,7 +1067,7 @@
             });
         });
         
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -709,6 +1083,25 @@
                     });
                 }
             });
+        });
+        
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideIn 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements
+        document.querySelectorAll('.package-card, .gallery-item').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
