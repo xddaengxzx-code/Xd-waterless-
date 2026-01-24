@@ -1,237 +1,265 @@
-// ===== MOBILE MENU TOGGLE =====
-const menuToggle = document.getElementById('menuToggle');
+// DOM Elements
+const loadingScreen = document.getElementById('loadingScreen');
+const navbar = document.getElementById('navbar');
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const navLinks = document.getElementById('navLinks');
+const backToTop = document.getElementById('backToTop');
+const contactForm = document.getElementById('contactForm');
+const newsletterForm = document.getElementById('newsletterEmail');
+const subscribeBtn = document.getElementById('subscribeBtn');
+const filterBtns = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
 
-if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        menuToggle.innerHTML = navLinks.classList.contains('active') 
-            ? '<i class="fas fa-times"></i>' 
-            : '<i class="fas fa-bars"></i>';
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
-            navLinks.classList.remove('active');
-            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        }
-    });
-
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        });
-    });
-}
-
-// ===== SMOOTH SCROLL =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            // Close mobile menu if open
-            if (navLinks && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-            
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
-    });
+// Loading Screen
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        loadingScreen.classList.add('hidden');
+    }, 1000);
 });
 
-// ===== BOOKING FORM HANDLER =====
-const bookingForm = document.getElementById('bookingForm');
-if (bookingForm) {
-    bookingForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form values
-        const name = document.getElementById('name').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const carModel = document.getElementById('carModel').value.trim();
-        const vehicleSize = document.getElementById('vehicleSize').value;
-        const serviceType = document.getElementById('serviceType').value;
-        
-        // Validation
-        if (!name || !phone || !carModel || !vehicleSize || !serviceType) {
-            alert('Sila isi semua maklumat yang diperlukan.');
-            return;
-        }
-        
-        // Phone validation (minimum 9 digits)
-        const phoneDigits = phone.replace(/\D/g, '');
-        if (phoneDigits.length < 9) {
-            alert('Sila masukkan nombor telefon yang sah (minimum 9 digit).');
-            document.getElementById('phone').focus();
-            return;
-        }
-        
-        // Map values to display names
-        const sizeNames = {
-            small: 'Kecil (Myvi, Axia, Iriz)',
-            medium: 'Sedang (X70, Civic, CR-V)',
-            large: 'Besar (X90, Harrier, Alphard)',
-            premium: 'Premium (Mercedes, BMW, Volvo)'
-        };
-        
-        const serviceNames = {
-            exterior: 'Cucian Luar (RM35-RM65)',
-            exteriorInterior: 'Cucian Luar & Dalam (RM80-RM160)',
-            slickBana: 'Slick Bana (RM100-RM180)',
-            polish: 'Polish 1 Stage (RM200-RM350)'
-        };
-        
-        // Create WhatsApp message
-        const message = `Hi XD Waterless,%0A%0A`
-            + `Saya nak tempah servis:%0A`
-            + `📌 Nama: ${name}%0A`
-            + `📞 Telefon: ${phone}%0A`
-            + `🚗 Model Kereta: ${carModel}%0A`
-            + `📏 Saiz Kereta: ${sizeNames[vehicleSize]}%0A`
-            + `🔧 Servis: ${serviceNames[serviceType]}%0A`
-            + `📍 Lokasi: Shah Alam, Selangor%0A`
-            + `⏰ Waktu: 10am-10pm%0A%0A`
-            + `Sila hubungi saya untuk pengesahan tempahan.`;
-        
-        // Open WhatsApp
-        window.open(`https://wa.me/60167003569?text=${message}`, '_blank');
-        
-        // Reset form
-        bookingForm.reset();
-        
-        // Show success message
-        alert('Terima kasih! Anda akan dibawa ke WhatsApp untuk selesaikan tempahan.');
-    });
-}
-
-// ===== MEMBERSHIP PACKAGE BOOKING =====
-function bookPackage(packageType) {
-    const packageNames = {
-        foundation: 'Pakej Foundation (4 kali/bulan)',
-        protection: 'Pakej Protection (6 kali/bulan)',
-        concierge: 'Pakej Concierge (8 kali/bulan)'
-    };
-    
-    const packagePrices = {
-        foundation: 'RM279-RM579',
-        protection: 'RM499-RM999',
-        concierge: 'RM899-RM1,599'
-    };
-    
-    const message = `Hi XD Waterless,%0A%0A`
-        + `Saya berminat dengan ${packageNames[packageType]}.%0A`
-        + `Harga: ${packagePrices[packageType]}/bulan%0A%0A`
-        + `Boleh beri lebih detail tentang pakej ini?%0A`
-        + `Saya nak tahu:%0A`
-        + `1. Proses pendaftaran%0A`
-        + `2. Terma & syarat%0A`
-        + `3. Cara pembayaran%0A%0A`
-        + `Terima kasih.`;
-    
-    window.open(`https://wa.me/60167003569?text=${message}`, '_blank');
-}
-
-// ===== STICKY NAVIGATION ON SCROLL =====
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.backdropFilter = 'blur(10px)';
+// Navbar Scroll Effect
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
-        navbar.style.background = 'var(--bg-light)';
-        navbar.style.backdropFilter = 'none';
+        navbar.classList.remove('scrolled');
     }
 });
 
-// ===== ACTIVE NAV LINK ON SCROLL =====
-window.addEventListener('scroll', function() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
+// Mobile Menu Toggle
+mobileMenuToggle.addEventListener('click', () => {
+    mobileMenuToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+});
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});
+
+// Back to Top Button
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+    } else {
+        backToTop.classList.remove('visible');
+    }
+});
+
+backToTop.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Active Navigation Link on Scroll
+const sections = document.querySelectorAll('section');
+const navItems = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
     let current = '';
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
         
-        if (scrollY >= (sectionTop - 150)) {
+        if (scrollY >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
     });
     
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
+    navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === `#${current}`) {
+            item.classList.add('active');
         }
     });
 });
 
-// ===== LAZY LOADING FOR IMAGES =====
-document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('img[data-src]');
+// Animate Counter Numbers
+const counters = document.querySelectorAll('.stat-number');
+const speed = 200;
+
+const animateCounter = (counter) => {
+    const target = +counter.getAttribute('data-count');
+    const count = +counter.innerText;
+    const increment = target / speed;
     
-    const imageObserver = new IntersectionObserver((entries, observer) => {
+    if (count < target) {
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(() => animateCounter(counter), 1);
+    } else {
+        counter.innerText = target;
+    }
+};
+
+// Intersection Observer for Counters
+const observerOptions = {
+    threshold: 0.5,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const counter = entry.target.querySelector('.stat-number');
+            if (counter && !counter.classList.contains('animated')) {
+                counter.classList.add('animated');
+                animateCounter(counter);
+            }
+        }
+    });
+}, observerOptions);
+
+// Observe hero stats section
+const heroSection = document.querySelector('.hero');
+observer.observe(heroSection);
+
+// Gallery Filter
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        const filter = btn.getAttribute('data-filter');
+        
+        galleryItems.forEach(item => {
+            const category = item.getAttribute('data-category');
+            
+            if (filter === 'all' || category === filter) {
+                item.classList.remove('hidden');
+                setTimeout(() => {
+                    item.style.display = 'block';
+                }, 300);
+            } else {
+                item.classList.add('hidden');
+                setTimeout(() => {
+                    item.style.display = 'none';
+                }, 300);
+            }
+        });
+    });
+});
+
+// Contact Form Submission
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const package = document.getElementById('package').value;
+    const date = document.getElementById('date').value;
+    const message = document.getElementById('message').value;
+    
+    // Format WhatsApp message
+    const formattedDate = new Date(date).toLocaleDateString('ms-MY');
+    const whatsappMessage = `*Tempahan XD Waterless Car Wash*%0A%0A` +
+                           `*Nama:* ${name}%0A` +
+                           `*Telefon:* ${phone}%0A` +
+                           `*Pakej:* ${package}%0A` +
+                           `*Tarikh:* ${formattedDate}%0A` +
+                           `*Mesej:* ${message}%0A%0A` +
+                           `Saya nak buat tempahan untuk servis di atas.`;
+    
+    // Open WhatsApp with pre-filled message
+    window.open(`https://wa.me/60167003569?text=${whatsappMessage}`, '_blank');
+    
+    // Reset form
+    contactForm.reset();
+    
+    // Show success message
+    alert('Terima kasih! Anda akan dihantar ke WhatsApp untuk menyelesaikan tempahan.');
+});
+
+// Newsletter Subscription
+subscribeBtn.addEventListener('click', () => {
+    const email = newsletterForm.value.trim();
+    
+    if (!email) {
+        alert('Sila masukkan email anda');
+        return;
+    }
+    
+    if (!validateEmail(email)) {
+        alert('Sila masukkan email yang sah');
+        return;
+    }
+    
+    // In a real application, you would send this to your server
+    alert(`Terima kasih! Email ${email} telah didaftarkan untuk promosi.`);
+    newsletterForm.value = '';
+});
+
+// Email validation function
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+// Initialize Date Picker
+const today = new Date();
+const tomorrow = new Date(today);
+tomorrow.setDate(tomorrow.getDate() + 1);
+const dateInput = document.getElementById('date');
+dateInput.min = tomorrow.toISOString().split('T')[0];
+
+// Lazy Load Images
+const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                observer.unobserve(img);
+                img.src = img.dataset.src || img.src;
+                imageObserver.unobserve(img);
             }
         });
     });
     
-    images.forEach(img => imageObserver.observe(img));
-});
-
-// ===== FORM INPUT FORMATTING =====
-const phoneInput = document.getElementById('phone');
-if (phoneInput) {
-    phoneInput.addEventListener('input', function(e) {
-        let value = e.target.value.replace(/\D/g, '');
-        
-        // Format: 016-123 4567
-        if (value.length > 3) {
-            value = value.substring(0, 3) + '-' + value.substring(3);
-        }
-        if (value.length > 7) {
-            value = value.substring(0, 7) + ' ' + value.substring(7);
-        }
-        if (value.length > 12) {
-            value = value.substring(0, 12);
-        }
-        
-        e.target.value = value;
-    });
+    lazyImages.forEach(img => imageObserver.observe(img));
 }
 
-// ===== INITIALIZE ON LOAD =====
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('XD Waterless website loaded successfully!');
-    
-    // Add active class to current nav link
-    const currentPath = window.location.hash || '#hero';
-    document.querySelectorAll('.nav-link').forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
-            link.classList.add('active');
-        }
+// Add hover effect to gallery items
+galleryItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        item.style.transform = 'scale(1.02)';
     });
     
-    // Scroll to top on page refresh
-    window.scrollTo(0, 0);
+    item.addEventListener('mouseleave', () => {
+        item.style.transform = 'scale(1)';
+    });
+});
+
+// Parallax Effect on Hero Section
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector('.hero');
+    const heroContent = document.querySelector('.hero-content');
+    
+    if (hero && heroContent) {
+        const rate = scrolled * 0.5;
+        hero.style.transform = `translate3d(0, ${rate}px, 0)`;
+        heroContent.style.transform = `translate3d(0, ${rate * 0.5}px, 0)`;
+    }
+});
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('XD Waterless Car Wash Website Loaded Successfully!');
+    
+    // Add animation to package cards
+    const packageCards = document.querySelectorAll('.package-card');
+    packageCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`;
+        card.classList.add('animate__animated', 'animate__fadeInUp');
+    });
 });
