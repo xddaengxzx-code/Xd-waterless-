@@ -3,232 +3,141 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>XD Waterless Shah Alam | Professional Mobile Car Cleaning</title>
-<meta name="description" content="Professional Mobile Car Cleaning di Shah Alam. Exterior + Interior maintenance. Kami datang ke rumah/pejabat anda. Slot harian terhad.">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<title>XD WATERLESS | Shah Alam Luxury Mobile Maintenance</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --primary:#22c55e;
-  --bg:#020617;
-  --card:#0f172a;
-  --text:#ffffff;
-  --dim:#94a3b8;
-  --border:#1e293b;
+:root {
+  --neon: #22c55e;
+  --bg: #050505;
+  --surface: #0f0f0f;
+  --border: #1a1a1a;
+  --text: #ffffff;
+  --dim: #888888;
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
+* { margin:0; padding:0; box-sizing:border-box; }
 
-body{
-  font-family:'Poppins',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-}
-
-a{text-decoration:none;color:inherit}
-
-.btn{
-  background:var(--primary);
-  color:#000;
-  padding:16px 34px;
-  border-radius:999px;
-  font-weight:700;
-  font-size:15px;
-  display:inline-block;
-  transition: transform 0.2s ease;
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
 }
 
-.btn:hover {
-  transform: scale(1.05);
+/* BACKGROUND DECOR */
+body::before {
+  content: ""; position: fixed; top: -10%; left: -10%; width: 40%; height: 40%;
+  background: radial-gradient(circle, rgba(34,197,94,0.05) 0%, transparent 70%);
+  z-index: -1;
 }
 
-.container{
-  max-width:1000px;
-  margin:auto;
-  padding:60px 20px;
-  text-align:center;
+.container { max-width: 1100px; margin: auto; padding: 0 24px; }
+
+/* HERO */
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+
+.badge {
+  background: rgba(34,197,94,0.1); color: var(--neon);
+  padding: 6px 16px; border-radius: 100px; font-size: 12px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; border: 1px solid rgba(34,197,94,0.2);
+  margin-bottom: 24px;
 }
 
-/* HERO SECTION */
-.hero{
-  min-height:90vh;
-  display:flex;
-  align-items:center;
-  border-bottom: 1px solid var(--border);
-}
-.hero h1{
-  color:var(--primary);
-  font-size:clamp(28px,5vw,44px);
-  margin-bottom:16px;
-  line-height: 1.2;
-}
-.hero p{
-  color:var(--dim);
-  font-size:16px;
-  margin-bottom:28px;
-}
-.features{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:16px;
-  margin-bottom:32px;
-}
-.feature{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:18px;
-  font-size:14px;
-  font-weight: 600;
-}
+h1 { font-size: clamp(40px, 8vw, 80px); line-height: 0.9; letter-spacing: -2px; margin-bottom: 24px; font-weight: 700; }
+h1 span { color: var(--neon); }
 
-/* TRUST SECTION */
-.trust{
-  background:#010409;
-}
-.trust-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:24px;
-  text-align:left;
-}
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:24px;
-  display: flex;
-  flex-direction: column;
-}
-.card h3{
-  color:var(--primary);
-  margin-bottom:10px;
-  font-size: 20px;
-}
-.card p{
-  color:var(--dim);
-  font-size:14px;
-}
-.stars{
-  color:#fbbf24;
-  font-size:20px;
-  margin-bottom:8px;
-}
+p.lead { font-size: clamp(16px, 2vw, 20px); color: var(--dim); max-width: 600px; margin-bottom: 40px; }
 
-.review-item {
-  margin-bottom: 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid var(--border);
+.cta-btn {
+  background: var(--neon); color: #000; padding: 20px 48px; border-radius: 12px;
+  font-weight: 700; font-size: 18px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(34,197,94,0.3); display: inline-block;
 }
-.review-item:last-child {
-  border-bottom: none;
-}
+.cta-btn:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(34,197,94,0.5); }
 
-iframe{
-  width:100%;
-  height:280px;
-  border:0;
-  border-radius:16px;
-  margin-top:16px;
-  filter: invert(90%) hue-rotate(180deg); /* Dark mode map effect */
-}
+/* GRID TRUST */
+.trust-section { padding: 100px 0; border-top: 1px solid var(--border); }
+.trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
 
-footer{
-  border-top:1px solid var(--border);
-  padding:40px 20px;
-  text-align:center;
-  font-size:13px;
-  color:var(--dim);
+.glass-card {
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 40px; border-radius: 24px; position: relative; overflow: hidden;
 }
+.glass-card h3 { font-size: 24px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+.glass-card h3::before { content: ""; width: 8px; height: 8px; background: var(--neon); border-radius: 50%; }
 
-@media (max-width: 600px) {
-  .container { padding: 40px 15px; }
+/* MAPS */
+.map-container { width: 100%; height: 300px; border-radius: 16px; overflow: hidden; margin-top: 20px; border: 1px solid var(--border); }
+iframe { width: 100%; height: 100%; border: 0; filter: grayscale(1) invert(1) contrast(1.2); opacity: 0.6; }
+
+/* REVIEWS */
+.review-box { margin-bottom: 30px; }
+.stars { color: var(--neon); margin-bottom: 12px; font-size: 14px; letter-spacing: 4px; }
+.quote { font-size: 16px; color: #eee; font-style: italic; margin-bottom: 8px; line-height: 1.4; }
+.author { font-size: 13px; color: var(--dim); font-weight: 700; text-transform: uppercase; }
+
+footer { padding: 60px 0; text-align: center; border-top: 1px solid var(--border); color: var(--dim); font-size: 14px; }
+
+@media (max-width: 768px) {
+  h1 { font-size: 50px; }
   .trust-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
-
 <body>
 
-<section class="hero">
-  <div class="container">
-    <h1>Professional Mobile Car Cleaning<br>Shah Alam</h1>
-
-    <p>
-      Exterior + Interior <strong>maintenance</strong> bertaraf premium.<br>
-      Cepat, kemas & konsisten. Kami datang terus ke lokasi anda.
-    </p>
-
-    <div class="features">
-      <div class="feature">✔ Sesuai Apartment & Pejabat</div>
-      <div class="feature">✔ Tanpa Baldi & Air Melimpah</div>
-      <div class="feature">✔ Maintenance Kereta Harian</div>
-      <div class="feature">✔ Slot Harian Terhad</div>
+<div class="container">
+  <section class="hero">
+    <div class="badge">Shah Alam Specialist</div>
+    <h1>WE CLEAN. <span>YOU LEAD.</span></h1>
+    <p class="lead">Mobile Maintenance bertaraf premium untuk pemilik kenderaan yang tidak mahu membuang masa. <strong>Luxury finish, zero water waste.</strong></p>
+    
+    <a href="https://wa.me/60167003569" class="btn cta-btn">TEMPAH SLOT EKSKLUSIF</a>
+    
+    <div style="margin-top: 40px; color: var(--dim); font-size: 13px; letter-spacing: 1px;">
+      TERHAD KEPADA 4 SLOT SEHARI SAHAJA.
     </div>
+  </section>
 
-    <a href="https://wa.me/60167003569" class="btn">
-      WhatsApp Tempah Sekarang
-    </a>
-
-    <p style="margin-top:18px; font-size:13px; color:var(--dim);">
-      Harga mengikut saiz kenderaan • Liputan Seluruh Shah Alam
-    </p>
-  </div>
-</section>
-
-<section class="trust">
-  <div class="container">
+  <section class="trust-section">
     <div class="trust-grid">
-
-      <div class="card">
-        <h3>Zon Perkhidmatan</h3>
-        <p>
-          Kami meliputi kawasan <strong>Shah Alam</strong> termasuk Seksyen 7, 13, Bukit Jelutong, Setia Alam & sekitar.
-        </p>
-
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m3!1d63733.91823907572!2d101.48545806622438!3d3.0751086088825835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4d0922ad0e43%3A0x63777d4c72a4f47!2sShah%20Alam%2C%20Selangor!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy" 
-          allowfullscreen="" loading="lazy">
-        </iframe>
+      
+      <div class="glass-card">
+        <h3>ZON OPERASI</h3>
+        <p style="color: var(--dim); font-size: 15px;">Fokus Shah Alam & kawasan sekitar. Kami datang ke rumah atau pejabat anda.</p>
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127482.41626071569!2d101.4447915234984!3d3.067332463428148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4d3d977cc4dd%3A0x21bd1bb250337209!2sShah%20Alam%2C%20Selangor!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy" 
+            allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Google Reviews</h3>
+      <div class="glass-card">
+        <h3>TRUSTED BY CLIENTS</h3>
         
-        <div class="review-item">
+        <div class="review-box">
           <div class="stars">★★★★★</div>
-          <p style="font-style:italic; color:var(--text);">
-            "Servis sangat memudahkan. Tak perlu tunggu lama kat car wash. Kereta bersih berkilat depan rumah je!"
-          </p>
-          <p style="margin-top:8px; font-size:12px; color:var(--dim);">— Pelanggan Seksyen 7</p>
+          <p class="quote">"Satu-satunya servis yang saya percaya untuk jaga kualiti cat kereta saya tanpa calar. Memang level premium."</p>
+          <p class="author">— Dato' R, Bukit Jelutong</p>
         </div>
 
-        <div class="review-item">
+        <div class="review-box">
           <div class="stars">★★★★★</div>
-          <p style="font-style:italic; color:var(--text);">
-            "Professional dan punctual. Interior kemas, bau pun fresh. Memang berbaloi ambil pakej maintenance."
-          </p>
-          <p style="margin-top:8px; font-size:12px; color:var(--dim);">— Pelanggan Bukit Jelutong</p>
+          <p class="quote">"Sangat punctual. Kerja kemas dan teliti. Jimat masa saya tak perlu beratur panjang."</p>
+          <p class="author">— Sarah, Setia Alam</p>
         </div>
 
-        <div style="margin-top:auto; padding-top: 10px;">
-          <a href="https://g.page/r/CRpxeCiy8EMWEBM/review" target="_blank" class="btn" style="width: 100%; text-align: center; padding: 12px 0; font-size: 14px;">
-            Lihat Review Di Google
-          </a>
-        </div>
+        <a href="https://g.page/r/CRpxeCiy8EMWEBM/review" style="color: var(--neon); font-size: 14px; font-weight: 700; text-decoration: underline;">LIHAT SEMUA REVIEW GOOGLE →</a>
       </div>
 
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
 <footer>
-  <p style="color: var(--primary); font-weight: 700; font-size: 16px; margin-bottom: 5px;">XD WATERLESS</p>
-  <p>Mobile Car Cleaning Specialist • Shah Alam • 2026</p>
-  <p style="margin-top: 10px; font-size: 11px;">Powered by XD Strategy System</p>
+  <p>&copy; 2026 XD WATERLESS. ALL RIGHTS RESERVED.</p>
 </footer>
 
 </body>
