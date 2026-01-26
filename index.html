@@ -1,144 +1,69 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XD WATERLESS | Shah Alam Luxury Mobile Maintenance</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --neon: #22c55e;
-  --bg: #050505;
-  --surface: #0f0f0f;
-  --border: #1a1a1a;
-  --text: #ffffff;
-  --dim: #888888;
-}
-
-* { margin:0; padding:0; box-sizing:border-box; }
-
-body {
-  font-family: 'Space Grotesk', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
-}
-
-/* BACKGROUND DECOR */
-body::before {
-  content: ""; position: fixed; top: -10%; left: -10%; width: 40%; height: 40%;
-  background: radial-gradient(circle, rgba(34,197,94,0.05) 0%, transparent 70%);
-  z-index: -1;
-}
-
-.container { max-width: 1100px; margin: auto; padding: 0 24px; }
-
-/* HERO */
-.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-
-.badge {
-  background: rgba(34,197,94,0.1); color: var(--neon);
-  padding: 6px 16px; border-radius: 100px; font-size: 12px; font-weight: 700;
-  letter-spacing: 2px; text-transform: uppercase; border: 1px solid rgba(34,197,94,0.2);
-  margin-bottom: 24px;
-}
-
-h1 { font-size: clamp(40px, 8vw, 80px); line-height: 0.9; letter-spacing: -2px; margin-bottom: 24px; font-weight: 700; }
-h1 span { color: var(--neon); }
-
-p.lead { font-size: clamp(16px, 2vw, 20px); color: var(--dim); max-width: 600px; margin-bottom: 40px; }
-
-.cta-btn {
-  background: var(--neon); color: #000; padding: 20px 48px; border-radius: 12px;
-  font-weight: 700; font-size: 18px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 10px 30px rgba(34,197,94,0.3); display: inline-block;
-}
-.cta-btn:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(34,197,94,0.5); }
-
-/* GRID TRUST */
-.trust-section { padding: 100px 0; border-top: 1px solid var(--border); }
-.trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
-
-.glass-card {
-  background: var(--surface); border: 1px solid var(--border);
-  padding: 40px; border-radius: 24px; position: relative; overflow: hidden;
-}
-.glass-card h3 { font-size: 24px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
-.glass-card h3::before { content: ""; width: 8px; height: 8px; background: var(--neon); border-radius: 50%; }
-
-/* MAPS */
-.map-container { width: 100%; height: 300px; border-radius: 16px; overflow: hidden; margin-top: 20px; border: 1px solid var(--border); }
-iframe { width: 100%; height: 100%; border: 0; filter: grayscale(1) invert(1) contrast(1.2); opacity: 0.6; }
-
-/* REVIEWS */
-.review-box { margin-bottom: 30px; }
-.stars { color: var(--neon); margin-bottom: 12px; font-size: 14px; letter-spacing: 4px; }
-.quote { font-size: 16px; color: #eee; font-style: italic; margin-bottom: 8px; line-height: 1.4; }
-.author { font-size: 13px; color: var(--dim); font-weight: 700; text-transform: uppercase; }
-
-footer { padding: 60px 0; text-align: center; border-top: 1px solid var(--border); color: var(--dim); font-size: 14px; }
-
-@media (max-width: 768px) {
-  h1 { font-size: 50px; }
-  .trust-grid { grid-template-columns: 1fr; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XD WATERLESS | Shah Alam Luxury Mobile Maintenance</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<div class="container">
-  <section class="hero">
-    <div class="badge">Shah Alam Specialist</div>
-    <h1>WE CLEAN. <span>YOU LEAD.</span></h1>
-    <p class="lead">Mobile Maintenance bertaraf premium untuk pemilik kenderaan yang tidak mahu membuang masa. <strong>Luxury finish, zero water waste.</strong></p>
-    
-    <a href="https://wa.me/60167003569" class="btn cta-btn">TEMPAH SLOT EKSKLUSIF</a>
-    
-    <div style="margin-top: 40px; color: var(--dim); font-size: 13px; letter-spacing: 1px;">
-      TERHAD KEPADA 4 SLOT SEHARI SAHAJA.
+    <div class="container">
+        <section class="hero">
+            <div class="badge">Shah Alam Specialist</div>
+            <h1>WE CLEAN. <span>YOU LEAD.</span></h1>
+            <p class="lead">Mobile Maintenance bertaraf premium untuk pemilik kenderaan yang menghargai masa. <strong>Luxury finish, zero water waste.</strong></p>
+            
+            <a href="https://wa.me/60167003569" class="cta-btn" id="whatsapp-btn">TEMPAH SLOT EKSKLUSIF</a>
+            
+            <div class="availability-tag">
+                TERHAD KEPADA 4 SLOT SEHARI SAHAJA.
+            </div>
+        </section>
+
+        <section class="trust-section">
+            <div class="trust-grid">
+                
+                <div class="glass-card">
+                    <h3>ZON OPERASI</h3>
+                    <p class="card-desc">Fokus Shah Alam & kawasan sekitar. Kami datang ke lokasi anda.</p>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127482.433288307!2d101.44498528994514!3d3.064166249764511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4d3d2a304727%3A0x673c9c6499882269!2sShah%20Alam%2C%20Selangor!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy" 
+                            allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="glass-card">
+                    <h3>TRUSTED BY CLIENTS</h3>
+                    
+                    <div class="review-box">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"Satu-satunya servis yang saya percaya untuk jaga kualiti cat kereta saya. Memang level premium."</p>
+                        <p class="author">— Dato' R, Bukit Jelutong</p>
+                    </div>
+
+                    <div class="review-box">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"Sangat punctual. Kerja kemas dan teliti. Jimat masa saya tak perlu beratur panjang."</p>
+                        <p class="author">— Sarah, Setia Alam</p>
+                    </div>
+
+                    <a href="https://g.page/r/CRpxeCiy8EMWEBM/review" class="review-link">LIHAT SEMUA REVIEW GOOGLE →</a>
+                </div>
+
+            </div>
+        </section>
     </div>
-  </section>
 
-  <section class="trust-section">
-    <div class="trust-grid">
-      
-      <div class="glass-card">
-        <h3>ZON OPERASI</h3>
-        <p style="color: var(--dim); font-size: 15px;">Fokus Shah Alam & kawasan sekitar. Kami datang ke rumah atau pejabat anda.</p>
-        <div class="map-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127482.41626071569!2d101.4447915234984!3d3.067332463428148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4d3d977cc4dd%3A0x21bd1bb250337209!2sShah%20Alam%2C%20Selangor!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy" 
-            allowfullscreen="" loading="lazy">
-          </iframe>
-        </div>
-      </div>
+    <footer>
+        <p>© 2026 XD WATERLESS. ALL RIGHTS RESERVED.</p>
+    </footer>
 
-      <div class="glass-card">
-        <h3>TRUSTED BY CLIENTS</h3>
-        
-        <div class="review-box">
-          <div class="stars">★★★★★</div>
-          <p class="quote">"Satu-satunya servis yang saya percaya untuk jaga kualiti cat kereta saya tanpa calar. Memang level premium."</p>
-          <p class="author">— Dato' R, Bukit Jelutong</p>
-        </div>
-
-        <div class="review-box">
-          <div class="stars">★★★★★</div>
-          <p class="quote">"Sangat punctual. Kerja kemas dan teliti. Jimat masa saya tak perlu beratur panjang."</p>
-          <p class="author">— Sarah, Setia Alam</p>
-        </div>
-
-        <a href="https://g.page/r/CRpxeCiy8EMWEBM/review" style="color: var(--neon); font-size: 14px; font-weight: 700; text-decoration: underline;">LIHAT SEMUA REVIEW GOOGLE →</a>
-      </div>
-
-    </div>
-  </section>
-</div>
-
-<footer>
-  <p>&copy; 2026 XD WATERLESS. ALL RIGHTS RESERVED.</p>
-</footer>
-
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
