@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>XD Waterless Shah Alam | Mobile Car Cleaning</title>
-<meta name="description" content="Professional Mobile Car Cleaning di Shah Alam. Exterior + Interior maintenance. Datang ke lokasi anda. Harga ikut saiz. Slot harian terhad.">
+<title>XD Waterless Shah Alam | Professional Mobile Car Cleaning</title>
+<meta name="description" content="Professional Mobile Car Cleaning di Shah Alam. Exterior + Interior maintenance. Kami datang ke rumah/pejabat anda. Slot harian terhad.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -38,6 +38,11 @@ a{text-decoration:none;color:inherit}
   font-weight:700;
   font-size:15px;
   display:inline-block;
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
 }
 
 .container{
@@ -47,20 +52,22 @@ a{text-decoration:none;color:inherit}
   text-align:center;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero{
-  min-height:100vh;
+  min-height:90vh;
   display:flex;
   align-items:center;
+  border-bottom: 1px solid var(--border);
 }
 .hero h1{
   color:var(--primary);
   font-size:clamp(28px,5vw,44px);
   margin-bottom:16px;
+  line-height: 1.2;
 }
 .hero p{
   color:var(--dim);
-  font-size:15px;
+  font-size:16px;
   margin-bottom:28px;
 }
 .features{
@@ -75,15 +82,16 @@ a{text-decoration:none;color:inherit}
   border-radius:18px;
   padding:18px;
   font-size:14px;
+  font-weight: 600;
 }
 
-/* TRUST */
+/* TRUST SECTION */
 .trust{
   background:#010409;
 }
 .trust-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
   gap:24px;
   text-align:left;
 }
@@ -92,10 +100,13 @@ a{text-decoration:none;color:inherit}
   border:1px solid var(--border);
   border-radius:20px;
   padding:24px;
+  display: flex;
+  flex-direction: column;
 }
 .card h3{
   color:var(--primary);
   margin-bottom:10px;
+  font-size: 20px;
 }
 .card p{
   color:var(--dim);
@@ -103,98 +114,109 @@ a{text-decoration:none;color:inherit}
 }
 .stars{
   color:#fbbf24;
-  font-size:22px;
-  margin-bottom:10px;
+  font-size:20px;
+  margin-bottom:8px;
+}
+
+.review-item {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border);
+}
+.review-item:last-child {
+  border-bottom: none;
 }
 
 iframe{
   width:100%;
-  height:260px;
+  height:280px;
   border:0;
   border-radius:16px;
-  margin-top:12px;
-  background:#000;
+  margin-top:16px;
+  filter: invert(90%) hue-rotate(180deg); /* Dark mode map effect */
 }
 
 footer{
   border-top:1px solid var(--border);
-  padding:30px 20px;
+  padding:40px 20px;
   text-align:center;
-  font-size:12px;
+  font-size:13px;
   color:var(--dim);
+}
+
+@media (max-width: 600px) {
+  .container { padding: 40px 15px; }
+  .trust-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO / CONVERT -->
 <section class="hero">
   <div class="container">
     <h1>Professional Mobile Car Cleaning<br>Shah Alam</h1>
 
     <p>
-      Exterior + Interior <strong>maintenance</strong><br>
-      Cepat, kemas & konsisten<br>
-      Kami datang ke lokasi anda
+      Exterior + Interior <strong>maintenance</strong> bertaraf premium.<br>
+      Cepat, kemas & konsisten. Kami datang terus ke lokasi anda.
     </p>
 
     <div class="features">
-      <div class="feature">✔ Sesuai apartment & pejabat</div>
-      <div class="feature">✔ Tak basah • Tak tunggu lama</div>
-      <div class="feature">✔ Maintenance kereta harian</div>
-      <div class="feature">✔ Slot harian terhad</div>
+      <div class="feature">✔ Sesuai Apartment & Pejabat</div>
+      <div class="feature">✔ Tanpa Baldi & Air Melimpah</div>
+      <div class="feature">✔ Maintenance Kereta Harian</div>
+      <div class="feature">✔ Slot Harian Terhad</div>
     </div>
 
     <a href="https://wa.me/60167003569" class="btn">
       WhatsApp Tempah Sekarang
     </a>
 
-    <p style="margin-top:18px;font-size:12px;color:var(--dim);">
-      Harga ikut saiz kenderaan • Shah Alam sahaja
+    <p style="margin-top:18px; font-size:13px; color:var(--dim);">
+      Harga mengikut saiz kenderaan • Liputan Seluruh Shah Alam
     </p>
   </div>
 </section>
 
-<!-- TRUST: MAP + REVIEW -->
 <section class="trust">
   <div class="container">
     <div class="trust-grid">
 
-      <!-- MAP -->
       <div class="card">
-        <h3>Service Area — Shah Alam</h3>
+        <h3>Zon Perkhidmatan</h3>
         <p>
-          Kami adalah <strong>Mobile Service</strong>.<br>
-          Datang ke rumah, apartment & pejabat.
+          Kami meliputi kawasan <strong>Shah Alam</strong> termasuk Seksyen 7, 13, Bukit Jelutong, Setia Alam & sekitar.
         </p>
 
-        <iframe
-          src="https://maps.google.com/maps?q=Shah%20Alam&t=&z=13&ie=UTF8&iwloc=&output=embed"
-          loading="lazy">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m3!1d63733.91823907572!2d101.48545806622438!3d3.0751086088825835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4d0922ad0e43%3A0x63777d4c72a4f47!2sShah%20Alam%2C%20Selangor!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy" 
+          allowfullscreen="" loading="lazy">
         </iframe>
       </div>
 
-      <!-- REVIEW -->
       <div class="card">
-        <h3>Google Review</h3>
-        <div class="stars">★★★★★</div>
+        <h3>Google Reviews</h3>
+        
+        <div class="review-item">
+          <div class="stars">★★★★★</div>
+          <p style="font-style:italic; color:var(--text);">
+            "Servis sangat memudahkan. Tak perlu tunggu lama kat car wash. Kereta bersih berkilat depan rumah je!"
+          </p>
+          <p style="margin-top:8px; font-size:12px; color:var(--dim);">— Pelanggan Seksyen 7</p>
+        </div>
 
-        <p style="font-style:italic;">
-          “Servis kemas, jimat masa. Tak perlu keluar rumah,
-          kereta siap bersih.”
-        </p>
+        <div class="review-item">
+          <div class="stars">★★★★★</div>
+          <p style="font-style:italic; color:var(--text);">
+            "Professional dan punctual. Interior kemas, bau pun fresh. Memang berbaloi ambil pakej maintenance."
+          </p>
+          <p style="margin-top:8px; font-size:12px; color:var(--dim);">— Pelanggan Bukit Jelutong</p>
+        </div>
 
-        <p style="margin-top:10px;font-size:13px;color:var(--dim);">
-          — Pelanggan Shah Alam
-        </p>
-
-        <div style="margin-top:18px;">
-          <a
-            href="https://g.page/r/CRpxeCiy8EMWEBM/review"
-            target="_blank"
-            class="btn">
-            Lihat / Tulis Review Google
+        <div style="margin-top:auto; padding-top: 10px;">
+          <a href="https://g.page/r/CRpxeCiy8EMWEBM/review" target="_blank" class="btn" style="width: 100%; text-align: center; padding: 12px 0; font-size: 14px;">
+            Lihat Review Di Google
           </a>
         </div>
       </div>
@@ -204,8 +226,9 @@ footer{
 </section>
 
 <footer>
-  <p><strong>XD WATERLESS</strong></p>
-  <p>Mobile Car Cleaning • Shah Alam • 2026</p>
+  <p style="color: var(--primary); font-weight: 700; font-size: 16px; margin-bottom: 5px;">XD WATERLESS</p>
+  <p>Mobile Car Cleaning Specialist • Shah Alam • 2026</p>
+  <p style="margin-top: 10px; font-size: 11px;">Powered by XD Strategy System</p>
 </footer>
 
 </body>
