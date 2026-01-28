@@ -1,170 +1,171 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Poppins:wght@300;400;600&display=swap');
+/* XD Waterless Neon Theme
+    Colors: Neon Green (#39FF14), Silver (#E2E8F0), Black (#050505)
+*/
 
-* {
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  margin: 0;
-  background: radial-gradient(circle at top, #111, #000);
-  color: #e6e6e6;
-  font-family: 'Poppins', sans-serif;
+    background-color: #050505;
+    color: #C0C0C0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding-bottom: 120px;
+    line-height: 1.6;
 }
 
-.container {
-  max-width: 420px;
-  margin: auto;
-  padding: 22px;
+/* Neon & Silver Accents */
+.neon-text { color: #39FF14; text-shadow: 0 0 10px rgba(57, 255, 20, 0.4); }
+.silver-text { color: #FFFFFF; font-style: italic; }
+
+/* Navbar */
+.navbar {
+    background: rgba(0,0,0,0.95);
+    padding: 15px 20px;
+    position: fixed;
+    top: 0; width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #1a1a1a;
+    backdrop-filter: blur(10px);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo { font-weight: 900; font-size: 1.4rem; letter-spacing: -1px; }
+.logo span { color: #39FF14; }
+
+.btn-nav {
+    background: #39FF14;
+    color: #000;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    transition: transform 0.2s;
 }
 
-/* HEADER */
-.header {
-  text-align: center;
-  border-bottom: 1px solid #1aff00;
-  padding-bottom: 16px;
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 140px 20px 60px;
+    position: relative;
+}
+.glow-effect {
+    position: absolute;
+    top: 50px; left: 50%;
+    transform: translateX(-50%);
+    width: 200px; height: 200px;
+    background: #39FF14;
+    filter: blur(120px);
+    opacity: 0.15;
+    z-index: -1;
+}
+.hero h1 { font-size: 3.5rem; font-weight: 900; letter-spacing: -2px; line-height: 0.9; margin-bottom: 15px; }
+.hero p { color: #666; font-size: 1rem; max-width: 400px; margin: 0 auto; }
+
+/* Tabs Navigation */
+.tab-container { display: flex; justify-content: center; margin-bottom: 40px; }
+.tab-box { background: #111; padding: 6px; border-radius: 18px; display: flex; border: 1px solid #222; }
+.tab-btn {
+    background: none; border: none; color: #555;
+    padding: 14px 35px; cursor: pointer; font-weight: 800;
+    border-radius: 14px; transition: 0.3s; font-size: 0.8rem;
+}
+.tab-btn.active {
+    background: #39FF14; color: #000;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
 }
 
-.logo {
-  width: 170px;
-  margin-bottom: 10px;
+/* Main Content & Grid */
+.content { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
-.header h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 26px;
-  letter-spacing: 2px;
-  color: #1aff00;
-  margin: 0;
+/* Cards */
+.card {
+    background: linear-gradient(145deg, #0d0d0d 0%, #050505 100%);
+    padding: 30px;
+    border-radius: 28px;
+    border: 1px solid #1a1a1a;
+    transition: transform 0.3s, border-color 0.3s;
 }
+.card:hover { transform: translateY(-5px); border-color: #39FF14; }
+.card h3 { margin-bottom: 5px; font-weight: 800; color: #fff; letter-spacing: 1px; }
+.card-desc { font-size: 0.7rem; color: #555; text-transform: uppercase; margin-bottom: 20px; font-weight: bold; }
 
-.tagline {
-  font-size: 13px;
-  color: #cfcfcf;
-  margin-top: 6px;
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid #111;
 }
+.price-row span:first-child { color: #777; font-weight: 600; }
+.price { color: #39FF14; font-weight: 900; font-size: 1.1rem; }
 
-/* POSITIONING */
-.positioning {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin: 22px 0;
+/* Promo Card */
+.combo-card {
+    background: #fff;
+    color: #000;
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
+.badge { background: #000; color: #39FF14; padding: 4px 12px; border-radius: 50px; font-size: 0.6rem; font-weight: 900; }
+.combo-info h2 { font-weight: 900; font-size: 2rem; letter-spacing: -1px; }
+.combo-prices { display: flex; gap: 15px; }
+.c-price { font-size: 0.8rem; background: #f0f0f0; padding: 8px 12px; border-radius: 12px; }
 
-.box {
-  border: 1px solid #2a2a2a;
-  padding: 12px;
+/* Membership Styles */
+.neon-border { border: 2px solid #39FF14 !important; }
+.sub-h { color: #39FF14; font-size: 0.75rem; font-weight: 800; margin-bottom: 20px; letter-spacing: 1px; }
+.benefit-list { list-style: none; margin-bottom: 25px; }
+.benefit-list li { color: #aaa; font-size: 0.85rem; margin-bottom: 8px; font-weight: 600; }
+
+/* Utils */
+.hide { display: none; }
+
+/* Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFFFFF;
+    color: #000;
+    padding: 22px 40px;
+    border-radius: 24px;
+    text-decoration: none;
+    font-weight: 900;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    z-index: 1000;
+    width: 90%;
+    max-width: 360px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    transition: transform 0.2s;
 }
+.whatsapp-float:active { transform: translateX(-50%) scale(0.95); }
+.ws-icon { width: 24px; height: 24px; color: #25D366; }
 
-.box h3 {
-  font-size: 13px;
-  margin-bottom: 6px;
-  letter-spacing: 1px;
-}
-
-.box ul {
-  padding-left: 16px;
-  margin: 0;
-}
-
-.box li {
-  font-size: 12px;
-  margin-bottom: 6px;
-}
-
-.good h3 {
-  color: #1aff00;
-}
-
-.bad h3 {
-  color: #ff4d4d;
-}
-
-/* SERVICES */
-.service {
-  border: 1px solid #222;
-  padding: 14px;
-  margin-bottom: 14px;
-}
-
-.service h2 {
-  font-size: 14px;
-  letter-spacing: 1px;
-  color: #d0d0d0;
-  margin-bottom: 6px;
-}
-
-.service p {
-  font-weight: 600;
-  color: #ffffff;
-}
-
-.note {
-  font-size: 11px;
-  color: #aaaaaa;
-}
-
-/* HIGHLIGHT */
-.highlight {
-  margin: 26px 0;
-  padding: 18px;
-  border: 2px solid #1aff00;
-  background: linear-gradient(145deg, #050505, #0c120c);
-  text-align: center;
-}
-
-.highlight h2 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 18px;
-  color: #1aff00;
-}
-
-.highlight .desc {
-  font-size: 12px;
-  margin-bottom: 10px;
-}
-
-.price-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  font-weight: bold;
-}
-
-.price-grid span {
-  border: 1px solid #333;
-  padding: 6px;
-}
-
-.badge {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 4px 12px;
-  font-size: 11px;
-  background: #1aff00;
-  color: #000;
-  border-radius: 20px;
-}
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  font-size: 11px;
-  color: #bbbbbb;
-}
-
-.footer .strong {
-  color: #ffffff;
-  font-weight: 600;
-}
-
-.cta {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 10px 18px;
-  background: linear-gradient(90deg, #1aff00, #7cff6b);
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 30px;
+/* Mobile Optimizations */
+@media (max-width: 600px) {
+    .hero h1 { font-size: 2.8rem; }
+    .combo-prices { flex-direction: column; width: 100%; gap: 10px; }
+    .c-price { width: 100%; text-align: center; }
 }
