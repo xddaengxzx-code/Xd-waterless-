@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XD WATERLESS | MAINTENANCE CATALOG</title>
+    <title>XD WATERLESS | CATALOG</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800;900&display=swap" rel="stylesheet">
 </head>
@@ -12,119 +12,121 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">XD <span>WATERLESS</span></div>
-            <div class="unit-id">UNIT: MNT_KL01</div>
+            <div class="tag">MNT_UNIT_01</div>
         </div>
     </nav>
 
-    <header class="hero-block">
-        <div class="visual-container">
-            <!-- Close-up dry finish rim/body image -->
+    <header class="hero">
+        <div class="hero-frame">
             <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070&auto=format&fit=crop" alt="Premium Finish" class="hero-img">
-            <div class="frame-corners"></div>
+            <div class="hero-overlay"></div>
         </div>
         <div class="hero-text">
-            <div class="log-label">SYSTEM_PROTOCOL // 2.0</div>
-            <h1 class="main-title">PREMIUM<br>MAINTENANCE</h1>
-            <p class="hero-desc">EFFICIENCY. CONTROL. PRECISION.</p>
+            <div class="meta">SYSTEM_PROTOCOL // 2.0</div>
+            <h1 class="title">PREMIUM<br>MAINTENANCE</h1>
         </div>
     </header>
 
-    <section class="tab-system">
-        <button id="btn-ala" class="tab-btn active" onclick="showTab('ala')">MAINTENANCE</button>
-        <button id="btn-mem" class="tab-btn" onclick="showTab('mem')">SUBSCRIPTION</button>
-    </section>
+    <div class="tab-system">
+        <button id="btn-ala" class="tab-btn active" onclick="showTab('ala')">01_SINGLE_SERVICE</button>
+        <button id="btn-mem" class="tab-btn" onclick="showTab('mem')">02_MEMBERSHIP</button>
+    </div>
 
-    <main class="content-wrapper">
-        <!-- MAINTENANCE SECTION -->
+    <main class="container">
+        <!-- BAHAGIAN 1: MAINTENANCE (SINGLE SERVICE) -->
         <div id="section-ala" class="tab-content">
-            <div class="service-grid">
-                
-                <article class="card">
+            <div class="grid">
+                <div class="card">
                     <div class="card-head">
                         <h3>EXTERIOR MAINTENANCE</h3>
-                        <span class="ref">#EXT-01</span>
+                        <span class="id">#EXT</span>
                     </div>
                     <div class="price-list">
-                        <div class="price-row"><span>SIZE S</span><span class="neon">RM50</span></div>
-                        <div class="price-row"><span>SIZE M</span><span class="neon">RM60</span></div>
-                        <div class="price-row"><span>SIZE L</span><span class="neon">RM70</span></div>
-                        <div class="price-row"><span>SIZE XL</span><span class="neon">RM80</span></div>
+                        <div class="row"><span>SIZE S</span><span class="neon">RM50</span></div>
+                        <div class="row"><span>SIZE M</span><span class="neon">RM60</span></div>
+                        <div class="row"><span>SIZE L</span><span class="neon">RM70</span></div>
+                        <div class="row"><span>SIZE XL</span><span class="neon">RM80</span></div>
                     </div>
-                </article>
+                </div>
 
-                <article class="card">
+                <div class="card">
                     <div class="card-head">
                         <h3>INTERIOR LIGHT</h3>
-                        <span class="ref">#INT-02</span>
+                        <span class="id">#INT</span>
                     </div>
                     <div class="price-list">
-                        <div class="price-row"><span>SIZE S</span><span class="neon">RM30</span></div>
-                        <div class="price-row"><span>SIZE M</span><span class="neon">RM40</span></div>
-                        <div class="price-row"><span>SIZE L</span><span class="neon">RM50</span></div>
-                        <div class="price-row"><span>SIZE XL</span><span class="neon">RM60</span></div>
+                        <div class="row"><span>SIZE S</span><span class="neon">RM30</span></div>
+                        <div class="row"><span>SIZE M</span><span class="neon">RM40</span></div>
+                        <div class="row"><span>SIZE L</span><span class="neon">RM50</span></div>
+                        <div class="row"><span>SIZE XL</span><span class="neon">RM60</span></div>
                     </div>
-                    <div class="notice">VACUUM + PANEL WIPE ONLY. NO DEEP CLEAN.</div>
-                </article>
+                    <div class="sop">SOP: VACUUM + PANEL WIPE. BUKAN DEEP CLEAN.</div>
+                </div>
 
-                <article class="card">
+                <div class="card">
                     <div class="card-head">
                         <h3>SLICK BANA</h3>
-                        <span class="ref">#OPT-03</span>
+                        <span class="id">#OPT</span>
                     </div>
                     <div class="price-list">
-                        <div class="price-row"><span>SIZE S</span><span class="neon">RM25</span></div>
-                        <div class="price-row"><span>SIZE M</span><span class="neon">RM30</span></div>
-                        <div class="price-row"><span>SIZE L</span><span class="neon">RM35</span></div>
-                        <div class="price-row"><span>SIZE XL</span><span class="neon">RM40</span></div>
+                        <div class="row"><span>SIZE S</span><span class="neon">RM25</span></div>
+                        <div class="row"><span>SIZE M</span><span class="neon">RM30</span></div>
+                        <div class="row"><span>SIZE L</span><span class="neon">RM35</span></div>
+                        <div class="row"><span>SIZE XL</span><span class="neon">RM40</span></div>
                     </div>
-                </article>
-
+                </div>
             </div>
 
-            <!-- SIGNATURE COMBO -->
-            <section class="combo-section">
+            <div class="combo-box">
                 <div class="combo-meta">HIGHLY RECOMMENDED</div>
-                <div class="combo-info">
-                    <h2 class="neon">SIGNATURE COMBO</h2>
-                    <p>WE + INT + SLICK BANA</p>
-                </div>
+                <h2 class="neon">SIGNATURE COMBO</h2>
+                <p class="combo-sub">WE + INT + SLICK BANA</p>
                 <div class="combo-grid">
-                    <div class="cb-item">S: RM95</div>
-                    <div class="cb-item">M: RM115</div>
-                    <div class="cb-item">L: RM135</div>
-                    <div class="cb-item">XL: RM155</div>
+                    <div class="c-price">S: RM95</div>
+                    <div class="c-price">M: RM115</div>
+                    <div class="c-price">L: RM135</div>
+                    <div class="c-price">XL: RM155</div>
                 </div>
-                <div class="combo-indicator"></div>
-            </section>
+            </div>
         </div>
 
-        <!-- SUBSCRIPTION SECTION -->
+        <!-- BAHAGIAN 2: MEMBERSHIP (SUBSCRIPTION) -->
         <div id="section-mem" class="tab-content hide">
-            <article class="card subscription-card">
-                <div class="card-head">
-                    <h3 class="neon">SIGNATURE PLAN</h3>
-                    <span class="ref">#MEM-S</span>
+            <div class="membership-container">
+                <div class="card mem-card">
+                    <div class="card-head">
+                        <h3 class="neon">SIGNATURE MEMBERSHIP</h3>
+                        <span class="id">VIP_SUB</span>
+                    </div>
+                    <div class="plan-info">KONTRAK: 2 SESI SEBULAN</div>
+                    
+                    <div class="benefits">
+                        <div class="b-item">EXTERIOR MAINTENANCE</div>
+                        <div class="b-item">INTERIOR LIGHT CLEAN</div>
+                        <div class="b-item">SLICK BANA COAT</div>
+                    </div>
+
+                    <div class="price-list">
+                        <div class="row"><span>SIZE S</span><span class="neon">RM180</span></div>
+                        <div class="row"><span>SIZE M</span><span class="neon">RM220</span></div>
+                        <div class="row"><span>SIZE L</span><span class="neon">RM260</span></div>
+                        <div class="row"><span>SIZE XL</span><span class="neon">RM300</span></div>
+                    </div>
+                    
+                    <div class="mem-footer">
+                        Pengecasan automatik setiap bulan. Slot diutamakan.
+                    </div>
                 </div>
-                <div class="plan-subtitle">2 SESSIONS / MONTH</div>
-                <ul class="specs">
-                    <li>EXTERIOR MAINTENANCE</li>
-                    <li>INTERIOR LIGHT CLEAN</li>
-                    <li>SLICK BANA COAT</li>
-                </ul>
-                <div class="price-list">
-                    <div class="price-row"><span>S: RM180</span><span class="neon">M: RM220</span></div>
-                    <div class="price-row"><span>L: RM260</span><span class="neon">XL: RM300</span></div>
-                </div>
-            </article>
+            </div>
         </div>
     </main>
 
     <footer class="footer">
-        <p>XD WATERLESS // MOBILE MAINTENANCE UNIT</p>
-        <p class="small">Efficiency. Control. Precision.</p>
+        <p>XD WATERLESS // MOBILE UNIT</p>
+        <p class="fine">EFFICIENCY • CONTROL • PRECISION</p>
     </footer>
 
-    <a href="https://wa.me/60167003569" class="cta-button">INITIALIZE APPOINTMENT</a>
+    <a href="https://wa.me/60167003569" class="cta">INITIALIZE APPOINTMENT</a>
 
     <script src="assets/js/script.js"></script>
 </body>
