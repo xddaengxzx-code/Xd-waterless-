@@ -3,156 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XD Waterless | Katalog Digital</title>
+    <title>XD WATERLESS | MAINTENANCE CATALOG</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">XD <span>WATERLESS</span></div>
-            <a href="https://wa.me/60167003569" class="btn-nav">BOOK SLOT</a>
+            <div class="unit-id">UNIT: MNT_KL01</div>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="glow-effect"></div>
-        <h1 class="silver-text">XD WATERLESS<br><span class="neon-text">MAINTENANCE</span></h1>
-        <p>Premium Mobile Service • Tanpa Air • Di Lokasi Anda</p>
+    <header class="hero-block">
+        <div class="visual-container">
+            <!-- Close-up dry finish rim/body image -->
+            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070&auto=format&fit=crop" alt="Premium Finish" class="hero-img">
+            <div class="frame-corners"></div>
+        </div>
+        <div class="hero-text">
+            <div class="log-label">SYSTEM_PROTOCOL // 2.0</div>
+            <h1 class="main-title">PREMIUM<br>MAINTENANCE</h1>
+            <p class="hero-desc">EFFICIENCY. CONTROL. PRECISION.</p>
+        </div>
     </header>
 
-    <section class="content">
-        <div class="checklist-grid">
-            <div class="check-box pos">
-                <div class="check-item">✨ Kereta nampak kemas harian</div>
-                <div class="check-item">⚡ Cuci pantas di lokasi anda</div>
-                <div class="check-item">🌿 Tiada air • Tiada mesin besar</div>
-            </div>
-            <div class="check-box neg">
-                <div class="check-item">🛑 Bukan deep clean</div>
-                <div class="check-item">🛑 Bukan shampoo seat/carpet</div>
-                <div class="check-item">🛑 Bukan detailing showroom</div>
-            </div>
-        </div>
+    <section class="tab-system">
+        <button id="btn-ala" class="tab-btn active" onclick="showTab('ala')">MAINTENANCE</button>
+        <button id="btn-mem" class="tab-btn" onclick="showTab('mem')">SUBSCRIPTION</button>
     </section>
 
-    <div class="tab-container">
-        <div class="tab-box">
-            <button id="btn-ala" class="tab-btn active" onclick="showTab('ala')">SERVICE & PRICE</button>
-            <button id="btn-mem" class="tab-btn" onclick="showTab('mem')">MEMBERSHIP</button>
-        </div>
-    </div>
-
-    <main class="content">
+    <main class="content-wrapper">
+        <!-- MAINTENANCE SECTION -->
         <div id="section-ala" class="tab-content">
-            <div class="grid">
-                <!-- Waterless Exterior -->
-                <div class="card">
-                    <h3>✨ EXTERIOR MAINTENANCE</h3>
-                    <p class="card-desc">WATERLESS CLEAN (WE)</p>
-                    <div class="price-row"><span>S</span><span class="price">RM50</span></div>
-                    <div class="price-row"><span>M</span><span class="price">RM60</span></div>
-                    <div class="price-row"><span>L</span><span class="price">RM70</span></div>
-                    <div class="price-row"><span>XL</span><span class="price">RM80</span></div>
-                </div>
+            <div class="service-grid">
                 
-                <!-- Interior -->
-                <div class="card">
-                    <h3>🧹 INTERIOR MAINTENANCE</h3>
-                    <p class="card-desc">LIGHT CLEANING</p>
-                    <div class="price-row"><span>S</span><span class="price">RM30</span></div>
-                    <div class="price-row"><span>M</span><span class="price">RM40</span></div>
-                    <div class="price-row"><span>L</span><span class="price">RM50</span></div>
-                    <div class="price-row"><span>XL</span><span class="price">RM60</span></div>
-                    <p class="card-note">✔ Vacuum ringan • Lap dashboard</p>
-                    <p class="card-note alert">❌ Tiada extractor / stain berat</p>
-                </div>
+                <article class="card">
+                    <div class="card-head">
+                        <h3>EXTERIOR MAINTENANCE</h3>
+                        <span class="ref">#EXT-01</span>
+                    </div>
+                    <div class="price-list">
+                        <div class="price-row"><span>SIZE S</span><span class="neon">RM50</span></div>
+                        <div class="price-row"><span>SIZE M</span><span class="neon">RM60</span></div>
+                        <div class="price-row"><span>SIZE L</span><span class="neon">RM70</span></div>
+                        <div class="price-row"><span>SIZE XL</span><span class="neon">RM80</span></div>
+                    </div>
+                </article>
 
-                <!-- Slick Bana -->
-                <div class="card">
-                    <h3>🍌 SLICK BANA</h3>
-                    <p class="card-desc">ADD-ON VISUAL GLOSS</p>
-                    <div class="price-row"><span>S</span><span class="price">RM25</span></div>
-                    <div class="price-row"><span>M</span><span class="price">RM30</span></div>
-                    <div class="price-row"><span>L</span><span class="price">RM35</span></div>
-                    <div class="price-row"><span>XL</span><span class="price">RM40</span></div>
-                    <p class="card-note alert">❌ Bukan coating / protection berat</p>
-                </div>
+                <article class="card">
+                    <div class="card-head">
+                        <h3>INTERIOR LIGHT</h3>
+                        <span class="ref">#INT-02</span>
+                    </div>
+                    <div class="price-list">
+                        <div class="price-row"><span>SIZE S</span><span class="neon">RM30</span></div>
+                        <div class="price-row"><span>SIZE M</span><span class="neon">RM40</span></div>
+                        <div class="price-row"><span>SIZE L</span><span class="neon">RM50</span></div>
+                        <div class="price-row"><span>SIZE XL</span><span class="neon">RM60</span></div>
+                    </div>
+                    <div class="notice">VACUUM + PANEL WIPE ONLY. NO DEEP CLEAN.</div>
+                </article>
+
+                <article class="card">
+                    <div class="card-head">
+                        <h3>SLICK BANA</h3>
+                        <span class="ref">#OPT-03</span>
+                    </div>
+                    <div class="price-list">
+                        <div class="price-row"><span>SIZE S</span><span class="neon">RM25</span></div>
+                        <div class="price-row"><span>SIZE M</span><span class="neon">RM30</span></div>
+                        <div class="price-row"><span>SIZE L</span><span class="neon">RM35</span></div>
+                        <div class="price-row"><span>SIZE XL</span><span class="neon">RM40</span></div>
+                    </div>
+                </article>
+
             </div>
-            
-            <div class="combo-card">
-                <div class="badge-pop">PALING POPULAR</div>
-                <div class="combo-header">
-                    <h2>🔥 COMBO <span class="neon-text">SIGNATURE XD</span></h2>
-                    <p>Exterior + Interior + Slick Bana</p>
+
+            <!-- SIGNATURE COMBO -->
+            <section class="combo-section">
+                <div class="combo-meta">HIGHLY RECOMMENDED</div>
+                <div class="combo-info">
+                    <h2 class="neon">SIGNATURE COMBO</h2>
+                    <p>WE + INT + SLICK BANA</p>
                 </div>
                 <div class="combo-grid">
-                    <div class="c-item">S: <b>RM95</b></div>
-                    <div class="c-item">M: <b>RM115</b></div>
-                    <div class="c-item">L: <b>RM135</b></div>
-                    <div class="c-item">XL: <b>RM155</b></div>
+                    <div class="cb-item">S: RM95</div>
+                    <div class="cb-item">M: RM115</div>
+                    <div class="cb-item">L: RM135</div>
+                    <div class="cb-item">XL: RM155</div>
                 </div>
-                <p class="best-value">👉 NILAI TERBAIK</p>
-            </div>
-
-            <div class="terms-card">
-                <p>⚠️ <b>TERMA RINGKAS:</b> Waterless maintenance sahaja. ❌ Tiada shampoo seat/polish. 💳 Bayar dulu untuk lock slot.</p>
-            </div>
+                <div class="combo-indicator"></div>
+            </section>
         </div>
 
+        <!-- SUBSCRIPTION SECTION -->
         <div id="section-mem" class="tab-content hide">
-            <div class="mem-header">
-                <p>Untuk 1 kereta sahaja • Appointment sahaja</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <h3 class="silver-text">🟢 FOUNDATION</h3>
-                    <p class="sub-h">2 SESI / BULAN</p>
-                    <ul class="list">
-                        <li>✓ Waterless Exterior</li>
-                        <li>✓ Interior Maintenance</li>
-                    </ul>
-                    <div class="price-row"><span>S: RM140</span><span>M: RM180</span></div>
-                    <div class="price-row"><span>L: RM220</span><span>XL: RM260</span></div>
+            <article class="card subscription-card">
+                <div class="card-head">
+                    <h3 class="neon">SIGNATURE PLAN</h3>
+                    <span class="ref">#MEM-S</span>
                 </div>
-
-                <div class="card neon-border">
-                    <div class="badge-best">PALING RAMAI AMBIL</div>
-                    <h3 class="neon-text">⭐ SIGNATURE</h3>
-                    <p class="sub-h">2 SESI / BULAN</p>
-                    <ul class="list">
-                        <li>✓ Exterior + Interior</li>
-                        <li>✓ Slick Bana Gloss</li>
-                    </ul>
-                    <div class="price-row"><span>S: RM180</span><span>M: RM220</span></div>
-                    <div class="price-row"><span>L: RM260</span><span>XL: RM300</span></div>
+                <div class="plan-subtitle">2 SESSIONS / MONTH</div>
+                <ul class="specs">
+                    <li>EXTERIOR MAINTENANCE</li>
+                    <li>INTERIOR LIGHT CLEAN</li>
+                    <li>SLICK BANA COAT</li>
+                </ul>
+                <div class="price-list">
+                    <div class="price-row"><span>S: RM180</span><span class="neon">M: RM220</span></div>
+                    <div class="price-row"><span>L: RM260</span><span class="neon">XL: RM300</span></div>
                 </div>
-
-                <div class="card">
-                    <h3 style="color:#a855f7">🟣 PRIORITY</h3>
-                    <p class="sub-h" style="color:#a855f7">4 SESI / BULAN</p>
-                    <ul class="list">
-                        <li>✓ 4× WE + Interior</li>
-                        <li>✓ 2× Termasuk Slick Bana</li>
-                        <li>✓ Priority Booking</li>
-                    </ul>
-                    <div class="price-row"><span>S: RM340</span><span>M: RM420</span></div>
-                    <div class="price-row"><span>L: RM500</span><span>XL: RM580</span></div>
-                </div>
-            </div>
-            <div class="terms-card" style="margin-top:20px">
-                <p>⚠️ <b>TERMA:</b> Sesi tidak boleh bawa ke bulan depan. Reschedule perlu maklum 24 jam awal.</p>
-            </div>
+            </article>
         </div>
     </main>
 
     <footer class="footer">
-        <p>WhatsApp: 016-700 3569</p>
-        <p>Mobile – Datang ke Lokasi Anda</p>
+        <p>XD WATERLESS // MOBILE MAINTENANCE UNIT</p>
+        <p class="small">Efficiency. Control. Precision.</p>
     </footer>
 
-    <a href="https://wa.me/60167003569" class="btn-float">BOOK SLOT SEKARANG</a>
+    <a href="https://wa.me/60167003569" class="cta-button">INITIALIZE APPOINTMENT</a>
 
     <script src="assets/js/script.js"></script>
 </body>
