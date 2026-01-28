@@ -1,5 +1,5 @@
 /**
- * XD WATERLESS - BRANDED CATALOG SYSTEM
+ * XD WATERLESS - TAB CONTROLLER
  */
 function showTab(tabId) {
     const sectionAla = document.getElementById('section-ala');
@@ -19,10 +19,10 @@ function showTab(tabId) {
         btnAla.classList.remove('active');
     }
 
-    // Industrial scroll feel
-    const target = document.querySelector('.tab-system').offsetTop - 60;
+    // Scroll back to top of content for consistency
+    const scrollPos = document.querySelector('.tab-system').offsetTop - 60;
     window.scrollTo({
-        top: target,
+        top: scrollPos,
         behavior: 'smooth'
     });
 }
