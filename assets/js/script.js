@@ -1,34 +1,26 @@
 /**
- * XD Waterless - Tab Navigation Logic
+ * Logik Penukaran Tab XD Waterless
  */
-
 function showTab(tabName) {
-    // 1. Dapatkan elemen content
+    // Ambil elemen
     const sectionAla = document.getElementById('section-ala');
     const sectionMem = document.getElementById('section-mem');
-    
-    // 2. Dapatkan elemen button
     const btnAla = document.getElementById('btn-ala');
     const btnMem = document.getElementById('btn-mem');
 
     if (tabName === 'ala') {
-        // Paparkan Ala Carte
+        // Paparkan Price List
         sectionAla.classList.remove('hide');
         sectionMem.classList.add('hide');
-        
-        // Aktifkan gaya butang Ala Carte
+        // Aktifkan Button
         btnAla.classList.add('active');
         btnMem.classList.remove('active');
-    } else if (tabName === 'mem') {
+    } else {
         // Paparkan Membership
         sectionMem.classList.remove('hide');
         sectionAla.classList.add('hide');
-        
-        // Aktifkan gaya butang Membership
+        // Aktifkan Button
         btnMem.classList.add('active');
         btnAla.classList.remove('active');
     }
 }
-
-// Log untuk memastikan skrip dimuatkan dengan betul
-console.log("XD Waterless Script Loaded via assets/js/script.js");
