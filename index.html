@@ -1,84 +1,113 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>XD Waterless | Premium Catalogue</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XD Waterless | Katalog Premium Neon</title>
+    
+    <!-- Pautan ke fail CSS dalam folder assets/css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="container">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">XD <span>WATERLESS</span></div>
+            <a href="https://wa.me/60167003569" class="btn-nav">TEMPAH SEKARANG</a>
+        </div>
+    </nav>
 
-  <!-- HEADER -->
-  <header class="header">
-    <img src="logo.png" alt="XD Waterless Logo" class="logo">
-    <h1>XD WATERLESS</h1>
-    <p class="tagline">Mobile Car Wash • Maintenance • Tanpa Air</p>
-  </header>
+    <header class="hero">
+        <div class="glow-effect"></div>
+        <h1 class="silver-text">MAINTENANCE <span class="neon-text">PREMIUM</span></h1>
+        <p>Servis mobile waterless terus ke pintu rumah anda.</p>
+    </header>
 
-  <!-- POSITIONING -->
-  <section class="positioning">
-    <div class="box good">
-      <h3>KAMI BUAT</h3>
-      <ul>
-        <li>Kemasan harian premium</li>
-        <li>Servis pantas di lokasi anda</li>
-        <li>Tiada mesin besar & kekacauan</li>
-      </ul>
+    <div class="tab-container">
+        <div class="tab-box">
+            <button id="btn-ala" class="tab-btn active" onclick="showTab('ala')">ALA CARTE</button>
+            <button id="btn-mem" class="tab-btn" onclick="showTab('mem')">MEMBERSHIP</button>
+        </div>
     </div>
 
-    <div class="box bad">
-      <h3>KAMI TIDAK BUAT</h3>
-      <ul>
-        <li>Deep clean</li>
-        <li>Shampoo seat / carpet</li>
-        <li>Detailing pameran</li>
-      </ul>
-    </div>
-  </section>
+    <main class="content">
+        <!-- Bahagian Ala Carte -->
+        <div id="section-ala" class="tab-content">
+            <div class="grid">
+                <div class="card">
+                    <h3>EXTERIOR</h3>
+                    <p class="card-desc">Cucian Luaran Polimer</p>
+                    <div class="price-row"><span>Saiz S</span><span class="price">RM50</span></div>
+                    <div class="price-row"><span>Saiz M</span><span class="price">RM60</span></div>
+                    <div class="price-row"><span>Saiz L</span><span class="price">RM70</span></div>
+                    <div class="price-row"><span>Saiz XL</span><span class="price">RM80</span></div>
+                </div>
+                
+                <div class="card">
+                    <h3>INTERIOR</h3>
+                    <p class="card-desc">Kekemasan Dalaman</p>
+                    <div class="price-row"><span>Saiz S</span><span class="price">RM30</span></div>
+                    <div class="price-row"><span>Saiz M</span><span class="price">RM40</span></div>
+                    <div class="price-row"><span>Saiz L</span><span class="price">RM50</span></div>
+                    <div class="price-row"><span>Saiz XL</span><span class="price">RM60</span></div>
+                </div>
 
-  <!-- SERVICES -->
-  <section class="service">
-    <h2>WATERLESS EXTERIOR</h2>
-    <p>S RM50 | M RM60 | L RM70 | XL RM80</p>
-  </section>
+                <div class="card">
+                    <h3>SLICK BANA</h3>
+                    <p class="card-desc">Perlindungan Extra</p>
+                    <div class="price-row"><span>Saiz S</span><span class="price">RM25</span></div>
+                    <div class="price-row"><span>Saiz M</span><span class="price">RM30</span></div>
+                    <div class="price-row"><span>Saiz L</span><span class="price">RM35</span></div>
+                    <div class="price-row"><span>Saiz XL</span><span class="price">RM40</span></div>
+                </div>
+            </div>
+            
+            <!-- Combo Promo -->
+            <div class="combo-card">
+                <div class="combo-info">
+                    <span class="badge">PROMO</span>
+                    <h2>SIGNATURE <span class="neon-text">COMBO</span></h2>
+                    <p>Exterior + Interior + Slick Bana</p>
+                </div>
+                <div class="combo-prices">
+                    <div class="c-price">S: <b>RM95</b></div>
+                    <div class="c-price">M: <b>RM115</b></div>
+                    <div class="c-price">L: <b>RM135</b></div>
+                    <div class="c-price">XL: <b>RM155</b></div>
+                </div>
+            </div>
+        </div>
 
-  <section class="service">
-    <h2>INTERIOR MAINTENANCE</h2>
-    <p>S RM30 | M RM40 | L RM50 | XL RM60</p>
-    <span class="note">Vacuum ringan & lap panel • Tiada shampoo / extractor</span>
-  </section>
+        <!-- Bahagian Membership -->
+        <div id="section-mem" class="tab-content hide">
+            <div class="grid">
+                <div class="card neon-border">
+                    <h3 class="neon-text italic">SIGNATURE PLAN</h3>
+                    <p class="sub-h">2 SESI SETIAP BULAN</p>
+                    <ul class="benefit-list">
+                        <li>✓ 2x Waterless Exterior</li>
+                        <li>✓ 2x Interior Maintenance</li>
+                        <li>✓ 2x Slick Bana Protection</li>
+                    </ul>
+                    <div class="price-row"><span>Saiz S</span><span class="price">RM180</span></div>
+                    <div class="price-row"><span>Saiz M</span><span class="price">RM220</span></div>
+                    <div class="price-row"><span>Saiz L</span><span class="price">RM260</span></div>
+                    <div class="price-row"><span>Saiz XL</span><span class="price">RM300</span></div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-  <section class="service">
-    <h2>SLICK BANA (VISUAL UPGRADE)</h2>
-    <p>S RM25 | M RM30 | L RM35 | XL RM40</p>
-    <span class="note">Upgrade visual sahaja • Bukan coating</span>
-  </section>
+    <a href="https://wa.me/60167003569" class="whatsapp-float">
+        <svg class="ws-icon" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.284l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.768-5.764-5.768zm3.393 8.254c-.144.406-.837.784-1.172.844-.334.06-1.144.251-2.51-.303-1.366-.555-2.226-1.927-2.295-2.017-.069-.091-.567-.751-.567-1.434 0-.683.359-1.018.487-1.154.128-.137.283-.171.376-.171.094 0 .188 0 .271.004.091.004.214-.034.335.258.12.292.412 1.003.447 1.071.034.069.057.149.011.239-.046.091-.069.149-.137.228-.069.079-.144.177-.206.239-.069.069-.14.144-.06.284.08.14.354.584.759.945.52.463.959.607 1.096.676.137.069.217.057.297-.034.08-.091.343-.399.434-.536.091-.137.183-.114.309-.069.126.046.799.376.937.445.137.069.228.103.263.16.034.057.034.331-.11.737z" fill="currentColor"/></svg>
+        BOOK SLOT SEKARANG
+    </a>
 
-  <!-- HIGHLIGHT -->
-  <section class="highlight">
-    <h2>COMBO SIGNATURE XD</h2>
-    <p class="desc">Exterior + Interior + Slick Bana</p>
-    <div class="price-grid">
-      <span>S RM95</span>
-      <span>M RM115</span>
-      <span>L RM135</span>
-      <span>XL RM155</span>
-    </div>
-    <div class="badge">PALING POPULAR</div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>Servis waterless maintenance sahaja</p>
-    <p>Tiada shampoo / extractor / polish</p>
-    <p class="strong">Bayaran diperlukan untuk lock slot</p>
-    <a href="https://wa.me/60167003569" class="cta">WhatsApp 016-700 3569</a>
-  </footer>
-
-</div>
-
-<script src="script.js"></script>
+    <!-- Pautan ke fail JS dalam folder assets/js -->
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
+
