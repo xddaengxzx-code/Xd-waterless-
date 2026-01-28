@@ -1,127 +1,84 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XD Waterless Shah Alam | Mobile Car Cleaning</title>
-<meta name="description" content="Mobile Car Cleaning Shah Alam. Exterior & Interior tanpa air. Harga jelas, slot terhad. Kami datang ke lokasi anda.">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XD Waterless | Neon Catalogue</title>
+    <!-- Hubungkan CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container center">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">XD <span>WATERLESS</span></div>
+            <a href="https://wa.me/60167003569" class="btn-nav">BOOK NOW</a>
+        </div>
+    </nav>
 
-    <img src="file_00000000cdb872308dd42370e43cefaa.png" alt="XD Waterless Logo" class="logo">
+    <header class="hero">
+        <h1 class="silver-text">PREMIUM <span class="neon-text">NEON</span> WASH</h1>
+        <p>Mobile Waterless Maintenance di lokasi anda.</p>
+    </header>
 
-    <h1>Professional Mobile Car Cleaning<br>Shah Alam</h1>
-
-    <p class="lead">
-      Exterior & Interior <strong>maintenance</strong><br>
-      Cepat • Kemas • Konsisten<br>
-      Kami datang ke lokasi anda
-    </p>
-
-    <div class="features">
-      <div class="feature">✔ Sesuai Apartment & Pejabat</div>
-      <div class="feature">✔ Tanpa Baldi & Air Melimpah</div>
-      <div class="feature">✔ Maintenance Kereta Harian</div>
-      <div class="feature">✔ Slot Harian Terhad</div>
+    <div class="tab-container">
+        <div class="tab-box">
+            <button id="btn-ala" class="tab-btn active" onclick="showTab('ala')">ALA CARTE</button>
+            <button id="btn-mem" class="tab-btn" onclick="showTab('mem')">MEMBERSHIP</button>
+        </div>
     </div>
 
-    <a href="https://wa.me/60167003569" class="btn">WhatsApp Tempah Sekarang</a>
+    <main class="content">
+        <!-- Section Ala Carte -->
+        <div id="section-ala" class="tab-content">
+            <div class="grid">
+                <div class="card">
+                    <h3>EXTERIOR</h3>
+                    <div class="price-row"><span>Size S</span><span class="price">RM50</span></div>
+                    <div class="price-row"><span>Size M</span><span class="price">RM60</span></div>
+                    <div class="price-row"><span>Size L</span><span class="price">RM70</span></div>
+                    <div class="price-row"><span>Size XL</span><span class="price">RM80</span></div>
+                </div>
+                <div class="card">
+                    <h3>INTERIOR</h3>
+                    <div class="price-row"><span>Size S</span><span class="price">RM30</span></div>
+                    <div class="price-row"><span>Size M</span><span class="price">RM40</span></div>
+                    <div class="price-row"><span>Size L</span><span class="price">RM50</span></div>
+                    <div class="price-row"><span>Size XL</span><span class="price">RM60</span></div>
+                </div>
+                <div class="card">
+                    <h3>SLICK BANA</h3>
+                    <div class="price-row"><span>Size S</span><span class="price">RM25</span></div>
+                    <div class="price-row"><span>Size M</span><span class="price">RM30</span></div>
+                    <div class="price-row"><span>Size L</span><span class="price">RM35</span></div>
+                    <div class="price-row"><span>Size XL</span><span class="price">RM40</span></div>
+                </div>
+            </div>
+        </div>
 
-    <p class="note">Harga ikut saiz kenderaan • Liputan Shah Alam sahaja</p>
+        <!-- Section Membership -->
+        <div id="section-mem" class="tab-content hide">
+            <div class="grid">
+                <div class="card neon-border">
+                    <h3 class="neon-text">SIGNATURE</h3>
+                    <p class="sub-h">2 SESI / BULAN</p>
+                    <div class="price-row"><span>Size S</span><span class="price">RM180</span></div>
+                    <div class="price-row"><span>Size M</span><span class="price">RM220</span></div>
+                    <div class="price-row"><span>Size L</span><span class="price">RM260</span></div>
+                    <div class="price-row"><span>Size XL</span><span class="price">RM300</span></div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-  </div>
-</section>
+    <a href="https://wa.me/60167003569" class="whatsapp-float">
+        WHATSAPP SEKARANG
+    </a>
 
-<!-- PRICING -->
-<section class="pricing">
-  <div class="container">
-
-    <h2 class="section-title">Harga & Package</h2>
-    <p class="section-sub">Harga jelas. Servis mobile. Kami datang ke lokasi anda.</p>
-
-    <div class="price-grid">
-
-      <div class="price-card">
-        <h3>Exterior + Interior</h3>
-        <ul>
-          <li>Kecil (Axia / Myvi) <strong>RM80</strong></li>
-          <li>Sedan (City / Vios) <strong>RM100</strong></li>
-          <li>SUV / MPV <strong>RM130</strong></li>
-        </ul>
-        <p class="hint">Slot hari ini terhad</p>
-        <a href="https://wa.me/60167003569" class="btn small">Tempah</a>
-      </div>
-
-      <div class="price-card highlight">
-        <h3>Slick Bana Protection</h3>
-        <ul>
-          <li>Kecil <strong>RM100</strong></li>
-          <li>Sedan <strong>RM120</strong></li>
-          <li>SUV / MPV <strong>RM150</strong></li>
-        </ul>
-        <p class="tag">Add-on paling laku</p>
-        <p class="hint">Tambah masa siap</p>
-        <a href="https://wa.me/60167003569" class="btn small">Tambah</a>
-      </div>
-
-      <div class="price-card">
-        <h3>Maintenance Bulanan</h3>
-        <ul>
-          <li>4x Sebulan <strong>RM279+</strong></li>
-          <li>Priority Slot</li>
-          <li>Jimat & Konsisten</li>
-        </ul>
-        <p class="hint">Sesuai kereta harian</p>
-        <a href="https://wa.me/60167003569" class="btn small">Tanya Package</a>
-      </div>
-
-    </div>
-
-    <p class="note">✔ Tiada baldi • ✔ Tiada air melimpah • ✔ Sesuai apartment & pejabat</p>
-
-  </div>
-</section>
-
-<!-- TRUST -->
-<section class="trust">
-  <div class="container trust-grid">
-
-    <div class="card">
-      <h3>Zon Perkhidmatan — Shah Alam</h3>
-      <p>Servis bergerak 100%. Rumah, apartment & pejabat.</p>
-
-      <iframe
-        src="https://www.google.com/maps?q=Shah+Alam+Selangor&z=13&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-
-    <div class="card">
-      <h3>Google Reviews</h3>
-      <div class="stars">★★★★★</div>
-      <p class="review">“Tak perlu tunggu lama. Kereta bersih depan rumah.”</p>
-      <p class="reviewer">— Pelanggan Shah Alam</p>
-      <a href="https://g.page/r/CRpxeCiy8EMWEBM/review" target="_blank" class="btn small">
-        Lihat / Tulis Review
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<footer>
-  <p><strong>XD WATERLESS</strong></p>
-  <p>Mobile Car Cleaning • Shah Alam • 2026</p>
-</footer>
-
-<script src="assets/js/script.js"></script>
+    <!-- Hubungkan Script -->
+    <script src="script.js"></script>
 </body>
 </html>
+
