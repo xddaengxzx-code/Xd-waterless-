@@ -1,6 +1,7 @@
 /**
- * XD WATERLESS - TAB CONTROLLER
+ * XD WATERLESS - DYNAMIC CATALOG ENGINE
  */
+
 function showTab(tabId) {
     const sectionAla = document.getElementById('section-ala');
     const sectionMem = document.getElementById('section-mem');
@@ -19,10 +20,15 @@ function showTab(tabId) {
         btnAla.classList.remove('active');
     }
 
-    // Scroll back to top of content for consistency
-    const scrollPos = document.querySelector('.tab-system').offsetTop - 60;
+    // Smooth scroll to top of tab container
+    const tabTop = document.querySelector('.tab-system').offsetTop - 70;
     window.scrollTo({
-        top: scrollPos,
+        top: tabTop,
         behavior: 'smooth'
     });
 }
+
+// Initial state check
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('XD_SYSTEM_ONLINE');
+});
