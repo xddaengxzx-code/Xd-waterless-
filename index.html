@@ -1,84 +1,84 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XD Waterless | Neon Catalogue</title>
-    <!-- Hubungkan CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>XD Waterless | Premium Catalogue</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">XD <span>WATERLESS</span></div>
-            <a href="https://wa.me/60167003569" class="btn-nav">BOOK NOW</a>
-        </div>
-    </nav>
+<div class="container">
 
-    <header class="hero">
-        <h1 class="silver-text">PREMIUM <span class="neon-text">NEON</span> WASH</h1>
-        <p>Mobile Waterless Maintenance di lokasi anda.</p>
-    </header>
+  <!-- HEADER -->
+  <header class="header">
+    <img src="logo.png" alt="XD Waterless Logo" class="logo">
+    <h1>XD WATERLESS</h1>
+    <p class="tagline">Mobile Car Wash • Maintenance • Tanpa Air</p>
+  </header>
 
-    <div class="tab-container">
-        <div class="tab-box">
-            <button id="btn-ala" class="tab-btn active" onclick="showTab('ala')">ALA CARTE</button>
-            <button id="btn-mem" class="tab-btn" onclick="showTab('mem')">MEMBERSHIP</button>
-        </div>
+  <!-- POSITIONING -->
+  <section class="positioning">
+    <div class="box good">
+      <h3>KAMI BUAT</h3>
+      <ul>
+        <li>Kemasan harian premium</li>
+        <li>Servis pantas di lokasi anda</li>
+        <li>Tiada mesin besar & kekacauan</li>
+      </ul>
     </div>
 
-    <main class="content">
-        <!-- Section Ala Carte -->
-        <div id="section-ala" class="tab-content">
-            <div class="grid">
-                <div class="card">
-                    <h3>EXTERIOR</h3>
-                    <div class="price-row"><span>Size S</span><span class="price">RM50</span></div>
-                    <div class="price-row"><span>Size M</span><span class="price">RM60</span></div>
-                    <div class="price-row"><span>Size L</span><span class="price">RM70</span></div>
-                    <div class="price-row"><span>Size XL</span><span class="price">RM80</span></div>
-                </div>
-                <div class="card">
-                    <h3>INTERIOR</h3>
-                    <div class="price-row"><span>Size S</span><span class="price">RM30</span></div>
-                    <div class="price-row"><span>Size M</span><span class="price">RM40</span></div>
-                    <div class="price-row"><span>Size L</span><span class="price">RM50</span></div>
-                    <div class="price-row"><span>Size XL</span><span class="price">RM60</span></div>
-                </div>
-                <div class="card">
-                    <h3>SLICK BANA</h3>
-                    <div class="price-row"><span>Size S</span><span class="price">RM25</span></div>
-                    <div class="price-row"><span>Size M</span><span class="price">RM30</span></div>
-                    <div class="price-row"><span>Size L</span><span class="price">RM35</span></div>
-                    <div class="price-row"><span>Size XL</span><span class="price">RM40</span></div>
-                </div>
-            </div>
-        </div>
+    <div class="box bad">
+      <h3>KAMI TIDAK BUAT</h3>
+      <ul>
+        <li>Deep clean</li>
+        <li>Shampoo seat / carpet</li>
+        <li>Detailing pameran</li>
+      </ul>
+    </div>
+  </section>
 
-        <!-- Section Membership -->
-        <div id="section-mem" class="tab-content hide">
-            <div class="grid">
-                <div class="card neon-border">
-                    <h3 class="neon-text">SIGNATURE</h3>
-                    <p class="sub-h">2 SESI / BULAN</p>
-                    <div class="price-row"><span>Size S</span><span class="price">RM180</span></div>
-                    <div class="price-row"><span>Size M</span><span class="price">RM220</span></div>
-                    <div class="price-row"><span>Size L</span><span class="price">RM260</span></div>
-                    <div class="price-row"><span>Size XL</span><span class="price">RM300</span></div>
-                </div>
-            </div>
-        </div>
-    </main>
+  <!-- SERVICES -->
+  <section class="service">
+    <h2>WATERLESS EXTERIOR</h2>
+    <p>S RM50 | M RM60 | L RM70 | XL RM80</p>
+  </section>
 
-    <a href="https://wa.me/60167003569" class="whatsapp-float">
-        WHATSAPP SEKARANG
-    </a>
+  <section class="service">
+    <h2>INTERIOR MAINTENANCE</h2>
+    <p>S RM30 | M RM40 | L RM50 | XL RM60</p>
+    <span class="note">Vacuum ringan & lap panel • Tiada shampoo / extractor</span>
+  </section>
 
-    <!-- Hubungkan Script -->
-    <script src="script.js"></script>
+  <section class="service">
+    <h2>SLICK BANA (VISUAL UPGRADE)</h2>
+    <p>S RM25 | M RM30 | L RM35 | XL RM40</p>
+    <span class="note">Upgrade visual sahaja • Bukan coating</span>
+  </section>
+
+  <!-- HIGHLIGHT -->
+  <section class="highlight">
+    <h2>COMBO SIGNATURE XD</h2>
+    <p class="desc">Exterior + Interior + Slick Bana</p>
+    <div class="price-grid">
+      <span>S RM95</span>
+      <span>M RM115</span>
+      <span>L RM135</span>
+      <span>XL RM155</span>
+    </div>
+    <div class="badge">PALING POPULAR</div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Servis waterless maintenance sahaja</p>
+    <p>Tiada shampoo / extractor / polish</p>
+    <p class="strong">Bayaran diperlukan untuk lock slot</p>
+    <a href="https://wa.me/60167003569" class="cta">WhatsApp 016-700 3569</a>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
-
