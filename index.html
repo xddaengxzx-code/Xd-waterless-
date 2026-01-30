@@ -3,33 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cuci kereta tanpa air di Shah Alam. Harga dari RM60 (Kompak) hingga RM100 (MPV). Tiada caj tersembunyi.">
-    <title>XD Waterless — Confirm Harga untuk Kereta Anda</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="description" content="XD Waterless — Cuci kereta tanpa air di Shah Alam. Servis mobile datang ke lokasi anda. Harga from RM30.">
+    <title>XD Waterless — Premium Mobile Car Detailing Shah Alam</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Sticky CTA -->
     <div class="sticky-cta" id="stickyCta" style="display: none;">
         <a href="#" class="sticky-btn" onclick="bookCurrentSelection(); return false;">
             Book SIGNATURE — <span id="stickyPrice">RM60</span>
         </a>
     </div>
 
+    <!-- Header with Logo -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo-container">
+                <!-- ⬇️ TUKAR: Ganti 'logo.png' dengan nama file logo kau -->
+                <img src="logo.png" alt="XD WATERLESS" class="logo-img" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';">
+                <div class="logo-text" style="display: none;">XD WATERLESS</div>
+            </div>
+            <div class="header-info">
+                <span class="hours">🕙 10AM — 6PM</span>
+                <span class="location">📍 Shah Alam</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
     <section class="confirm-header">
         <div class="container">
-            <div class="brand">XD WATERLESS</div>
             <h1>Sahkan Harga untuk Kereta Anda</h1>
             <p class="sub">Pilih saiz kereta di bawah. Harga yang dipaparkan adalah <strong>harga final</strong> — tiada caj tambahan.</p>
             
             <div class="trust-pill">
                 <span>✓ Tiada caj tersembunyi</span>
-                <span>✓ Bayar selepas siap</span>
+                <span>✓ 50% deposit lock slot</span>
                 <span>✓ Boleh reschedule</span>
+            </div>
+            
+            <div class="notice-box">
+                <p>⚠️ <strong>Perhatian:</strong> Kami datang ke lokasi parking anda. Kami <u>tidak drive</u> atau gerakkan kereta anda.</p>
             </div>
         </div>
     </section>
 
-    <!-- SIZE SELECTOR (Decision 1) -->
+    <!-- SIZE SELECTOR -->
     <section class="size-section">
         <div class="container">
             <p class="section-label">Langkah 1: Pilih saiz kereta</p>
@@ -64,7 +84,7 @@
         </div>
     </section>
 
-    <!-- SIGNATURE (The Only Focus) -->
+    <!-- SIGNATURE (Hero) -->
     <section class="signature-section">
         <div class="container">
             <div class="signature-card" onclick="bookSize('signature')">
@@ -107,15 +127,16 @@
 
                 <button class="btn-main">Book SIGNATURE Sekarang</button>
                 
-                <p class="guarantee">✓ Boleh reschedule 4 jam sebelum slot · ✓ Bayar cash/transfer selepas siap</p>
+                <p class="guarantee">✓ 50% deposit untuk lock slot · ✓ Boleh reschedule 4 jam sebelum</p>
+                <p class="payment-note">💳 Bank Transfer / DuitNow sahaja (Tiada Cash)</p>
             </div>
         </div>
     </section>
 
-    <!-- QUICK (Secondary Option) -->
+    <!-- QUICK (Secondary) -->
     <section class="alternative-section">
         <div class="container">
-            <p class="alt-label">Atau pakej ringkas (jimat RM30):</p>
+            <p class="alt-label">Atau pakej ringkas (jimat separuh):</p>
             
             <div class="quick-option" onclick="bookSize('quick')">
                 <div class="quick-info">
@@ -134,7 +155,7 @@
         </div>
     </section>
 
-    <!-- ELITE (For Regulars Only) -->
+    <!-- ELITE (For Regulars) -->
     <section class="elite-section">
         <div class="container">
             <div class="elite-banner" onclick="bookSize('elite')">
@@ -158,6 +179,7 @@
                     <li>✓ Boleh guna bila-bila (tiada expiry)</li>
                     <li>✓ VIP slot (keutamaan booking)</li>
                     <li>✓ Sesuai untuk kereta office/fleet</li>
+                    <li>✓ Boleh transfer ke kereta lain</li>
                 </ul>
                 
                 <button class="btn-elite">Sertai ELITE</button>
@@ -166,14 +188,89 @@
         </div>
     </section>
 
+    <!-- TERMS & CONDITIONS -->
+    <section class="terms-section">
+        <div class="container">
+            <h3>Terma & Syarat</h3>
+            
+            <div class="terms-grid">
+                <div class="term-item">
+                    <h4>💳 Pembayaran</h4>
+                    <ul>
+                        <li>50% deposit wajib untuk lock slot</li>
+                        <li>50% baki selepas cuci siap</li>
+                        <li>Kaedah: Bank transfer / DuitNow <strong>sahaja</strong></li>
+                        <li><strong>Tiada pembayaran tunai diterima</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="term-item">
+                    <h4>🚗 Perkhidmatan Onsite</h4>
+                    <ul>
+                        <li>Kami datang ke lokasi parking <strong>anda</strong></li>
+                        <li>Kami <strong>TIDAK</strong> drive/gerakkan kereta anda</li>
+                        <li>Kereta mesti dipark di lokasi yang selamat</li>
+                        <li>Customer wajib ada untuk unlock kereta</li>
+                    </ul>
+                </div>
+                
+                <div class="term-item">
+                    <h4>⏰ Reschedule & Cancel</h4>
+                    <ul>
+                        <li>Boleh reschedule >4 jam sebelum slot (deposit selamat)</li>
+                        <li>
+<4 jam: Deposit burn 50%</li>
+                        <li>No-show: Deposit hangus 100%</li>
+                        <li>Hujan lebat: Boleh reschedule tanpa penalty</li>
+                    </ul>
+                </div>
+                
+                <div class="term-item">
+                    <h4>📍 Kawasan & Akses</h4>
+                    <ul>
+                        <li>Shah Alam & sekitar (tiada caj tambahan)</li>
+                        <li>Luar kawasan: Caj RM10-20 (bergantung jarak)</li>
+                        <li>Condo: Customer uruskan parking access/IKAD</li>
+                        <li>Tiada bumbung? Boleh reschedule ke hari cerah</li>
+                    </ul>
+                </div>
+                
+                <div class="term-item">
+                    <h4>✨ Skop Kerja</h4>
+                    <ul>
+                        <li>Maintenance wash — <strong>bukan</strong> deep detailing</li>
+                        <li>Tiada shampoo seat/carpet basah</li>
+                        <li>Cat yang rosak/oxidized: Hasil terhad</li>
+                        <li>Bahan keras (tar/bird poop kering): Extra RM10-20</li>
+                    </ul>
+                </div>
+                
+                <div class="term-item">
+                    <h4>💎 ELITE CLUB</h4>
+                    <ul>
+                        <li>Syarat: Pernah guna SIGNATURE sekali</li>
+                        <li>6 credit — tiada expiry date</li>
+                        <li>Boleh transfer ke kereta lain/family</li>
+                        <li>Deposit 50% untuk lock first session</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p class="terms-footer">Dengan menempah servis, anda bersetuju dengan terma di atas. Hubungi kami jika ada persoalan.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
             <strong>XD WATERLESS</strong>
-            <p>Shah Alam · Subang · PJ</p>
-            <a href="https://wa.me/60167003569" class="footer-wa">+60 16-700 3569</a>
+            <p>📍 Shah Alam · Subang · PJ</p>
+            <p>🕙 Operasi: 10AM — 6PM</p>
+            <a href="mailto:Xddaengxzx@gmail.com" class="footer-email">✉️ Xddaengxzx@gmail.com</a>
+            <a href="https://wa.me/60167003569" class="footer-wa">📱 +60 16-700 3569</a>
         </div>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
