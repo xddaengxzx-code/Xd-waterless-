@@ -3,268 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cuci kereta tanpa air di Shah Alam & nearby. Kami datang ke lokasi anda, siap dalam 60 minit. Dari RM30 sahaja. Appointment only.">
-    <meta name="keywords" content="cuci kereta tanpa air, mobile car wash, shah alam, waterless car wash, detailing">
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="XD Waterless — Kereta Bersih dalam 60 Minit">
-    <meta property="og:description" content="Tanpa pergi car wash. Tanpa tunggu. Kami datang ke lokasi anda di Shah Alam.">
-    <meta property="og:image" content="assets/img/og-image.jpg">
-    
-    <title>XD Waterless — Kereta Bersih dalam 60 Minit | Shah Alam</title>
+    <meta name="description" content="Cuci kereta tanpa air di Shah Alam. Harga dari RM60 (Kompak) hingga RM100 (MPV). Tiada caj tersembunyi.">
+    <title>XD Waterless — Confirm Harga untuk Kereta Anda</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <!-- Sticky CTA -->
     <div class="sticky-cta" id="stickyCta" style="display: none;">
-        <a href="https://wa.me/60167003569?text=Hai%20XD%20Waterless%2C%0Asaya%20nak%20book%20slot." class="sticky-btn">
-            📱 BOOK NOW — WhatsApp
+        <a href="#" class="sticky-btn" onclick="bookCurrentSelection(); return false;">
+            Book SIGNATURE — <span id="stickyPrice">RM60</span>
         </a>
     </div>
 
-    <section class="hero">
+    <section class="confirm-header">
         <div class="container">
             <div class="brand">XD WATERLESS</div>
-            <h1>Kereta Bersih dalam 60 Minit</h1>
-            <p class="sub">Tanpa pergi car wash. Tanpa tunggu. Kami datang ke lokasi anda.</p>
+            <h1>Sahkan Harga untuk Kereta Anda</h1>
+            <p class="sub">Pilih saiz kereta di bawah. Harga yang dipaparkan adalah <strong>harga final</strong> — tiada caj tambahan.</p>
             
-            <!-- Trust Badge -->
-            <div class="trust-badge">
-                <span>⭐ 4.9/5 (200+ reviews)</span>
-                <span>🚗 1,000+ kereta dicuci</span>
-            </div>
-
-            <div class="package-card" onclick="bookNow('signature')">
-                <span class="badge">PALING POPULAR</span>
-                <h2>SIGNATURE</h2>
-                <p class="price">Dari RM60</p>
-                <p class="desc">Exterior + Interior + Shine & Bau Segar</p>
-                <button class="cta">BOOK NOW — 60 MINIT</button>
-                <small class="guarantee">✓ Slot confirm dalam 2 jam</small>
-            </div>
-
-            <a href="#options" class="secondary-link" onclick="smoothScroll('options')">Lihat pilihan lain →</a>
-        </div>
-    </section>
-
-    <section class="benefits">
-        <div class="container grid">
-            <div class="benefit-item">
-                <span class="icon">💧</span>
-                <span>Cuci tanpa air</span>
-            </div>
-            <div class="benefit-item">
-                <span class="icon">🚗</span>
-                <span>Datang ke lokasi</span>
-            </div>
-            <div class="benefit-item">
-                <span class="icon">✨</span>
-                <span>Vacuum & lap kemas</span>
-            </div>
-            <div class="benefit-item">
-                <span class="icon">⚡</span>
-                <span>Siap ±60 minit</span>
-            </div>
-            <div class="benefit-item">
-                <span class="icon">🌿</span>
-                <span>Bau segar</span>
-            </div>
-            <div class="benefit-item">
-                <span class="icon">📅</span>
-                <span>Appointment sahaja</span>
+            <div class="trust-pill">
+                <span>✓ Tiada caj tersembunyi</span>
+                <span>✓ Bayar selepas siap</span>
+                <span>✓ Boleh reschedule</span>
             </div>
         </div>
     </section>
 
-    <section class="social-proof">
+    <!-- SIZE SELECTOR (Decision 1) -->
+    <section class="size-section">
         <div class="container">
-            <div class="stats">
-                <div class="stat">
-                    <strong>60</strong>
-                    <span>Minit</span>
-                </div>
-                <div class="stat">
-                    <strong>0</strong>
-                    <span>Air terbazir</span>
-                </div>
-                <div class="stat">
-                    <strong>100%</strong>
-                    <span>Satisfaction</span>
-                </div>
+            <p class="section-label">Langkah 1: Pilih saiz kereta</p>
+            <div class="size-tabs">
+                <button class="size-tab active" onclick="setSize('kompak')" data-size="kompak">
+                    <span class="size-icon">🚗</span>
+                    <span class="size-name">Kompak</span>
+                    <span class="size-price">RM60</span>
+                    <span class="size-ex">Myvi, Axia, Bezza, Saga</span>
+                </button>
+                <button class="size-tab" onclick="setSize('sedan')" data-size="sedan">
+                    <span class="size-icon">🚙</span>
+                    <span class="size-name">Sedan/SUV Kecil</span>
+                    <span class="size-price">RM70</span>
+                    <span class="size-ex">City, Vios, HR-V, X50, Aruz</span>
+                </button>
+                <button class="size-tab" onclick="setSize('suv')" data-size="suv">
+                    <span class="size-icon">🚐</span>
+                    <span class="size-name">SUV Besar</span>
+                    <span class="size-price">RM85</span>
+                    <span class="size-ex">CR-V, CX-5, X70, Fortuner</span>
+                </button>
+                <button class="size-tab" onclick="setSize('mpv')" data-size="mpv">
+                    <span class="size-icon">🚌</span>
+                    <span class="size-name">MPV</span>
+                    <span class="size-price">RM100</span>
+                    <span class="size-ex">Alphard, Vellfire, Alza, Exora</span>
+                </button>
             </div>
+            
+            <p class="size-helper">Tak pasti? WhatsApp plate number: <a href="https://wa.me/60167003569?text=Hai%20XD%20saya%20tak%20pasti%20saiz%20kereta%20saya%20[plate%20number]">+60 16-700 3569</a></p>
         </div>
     </section>
 
-    <section id="options" class="options">
+    <!-- SIGNATURE (The Only Focus) -->
+    <section class="signature-section">
         <div class="container">
-            <h3>Pilihan Servis</h3>
-            <p class="section-sub">Pakej sesuai untuk keperluan anda</p>
-
-            <div class="option" onclick="selectOption('quick')" data-package="quick">
-                <div class="opt-header">
-                    <div class="opt-title">
-                        <strong>QUICK</strong>
-                        <span class="opt-tag">Maintenance</span>
+            <div class="signature-card" onclick="bookSize('signature')">
+                <div class="recommended-badge">PALING POPULAR · 90% PILIH INI</div>
+                
+                <div class="sig-header">
+                    <div>
+                        <h2>SIGNATURE</h2>
+                        <p class="sig-sub">Exterior + Interior Lengkap</p>
                     </div>
-                    <span class="opt-price">RM30</span>
-                </div>
-                <p class="opt-desc">Exterior sahaja — cuci pantas untuk hari-hari sibuk</p>
-                <ul class="opt-features">
-                    <li>✓ Exterior waterless wash</li>
-                    <li>✓ Tayar & rim cleaning</li>
-                    <li>✓ Cermin polish</li>
-                </ul>
-                <button class="opt-btn">Pilih QUICK</button>
-            </div>
-
-            <div class="option highlight" onclick="selectOption('signature')" data-package="signature">
-                <div class="opt-header">
-                    <div class="opt-title">
-                        <strong>SIGNATURE ⭐</strong>
-                        <span class="opt-tag hot">Best Value</span>
+                    <div class="sig-price-block">
+                        <span class="price-final">RM<span id="sig-price">60</span></span>
+                        <span class="price-note">Harga final</span>
                     </div>
-                    <span class="opt-price neon">RM60</span>
                 </div>
-                <p class="opt-desc">Lengkap, kemas & wangi — pilihan 90% pelanggan kami</p>
-                <ul class="opt-features">
-                    <li>✓ Semua dalam QUICK</li>
-                    <li>✓ Interior vacuum & wipe</li>
-                    <li>✓ Dashboard & trim dressing</li>
-                    <li>✓ Bau segar (freshener)</li>
-                </ul>
-                <button class="opt-btn primary">Pilih SIGNATURE</button>
-            </div>
 
-            <div class="option" onclick="selectOption('elite')" data-package="elite">
-                <div class="opt-header">
-                    <div class="opt-title">
-                        <strong>ELITE CLUB</strong>
-                        <span class="opt-tag">Membership</span>
+                <div class="sig-value">
+                    <div class="value-item">
+                        <strong>60 Minit</strong>
+                        <span>Siap cuci</span>
                     </div>
-                    <span class="opt-price">RM180</span>
+                    <div class="value-item">
+                        <strong>Full Vacuum</strong>
+                        <span>Interior bersih</span>
+                    </div>
+                    <div class="value-item">
+                        <strong>Bau Segar</strong>
+                        <span>Freshener included</span>
+                    </div>
                 </div>
-                <p class="opt-desc">6 sesi SIGNATURE — jimat RM180 & priority slot</p>
-                <ul class="opt-features">
-                    <li>✓ 6x Signature wash</li>
-                    <li>✓ Jimat 50% (RM30/sesi)</li>
-                    <li>✓ Priority booking</li>
-                    <li>✓ Free touch-up sesi ke-3</li>
+
+                <ul class="checklist">
+                    <li>✓ Cuci exterior tanpa air (kilat & licin)</li>
+                    <li>✓ Vacuum habuk & sampah interior</li>
+                    <li>✓ Lap dashboard, trim & konsol</li>
+                    <li>✓ Cermin & tingkap dalam/luar</li>
+                    <li>✓ Kilatkan tayar & rim</li>
+                    <li>✓ Spray bau segar (freshener)</li>
                 </ul>
-                <div class="savings">Jimat RM180</div>
-                <button class="opt-btn">Sertai ELITE</button>
+
+                <button class="btn-main">Book SIGNATURE Sekarang</button>
+                
+                <p class="guarantee">✓ Boleh reschedule 4 jam sebelum slot · ✓ Bayar cash/transfer selepas siap</p>
             </div>
         </div>
     </section>
 
-    <section class="how-it-works">
+    <!-- QUICK (Secondary Option) -->
+    <section class="alternative-section">
         <div class="container">
-            <h3>Cara Booking</h3>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-num">1</div>
-                    <strong>WhatsApp</strong>
-                    <p>Hantar lokasi & jenis kereta</p>
+            <p class="alt-label">Atau pakej ringkas (jimat RM30):</p>
+            
+            <div class="quick-option" onclick="bookSize('quick')">
+                <div class="quick-info">
+                    <h4>QUICK <span class="quick-tag">Basic</span></h4>
+                    <p>Exterior sahaja — sesuai untuk maintenance pantas</p>
+                    <ul>
+                        <li>Cuci exterior</li>
+                        <li>Cermin & tayar</li>
+                    </ul>
                 </div>
-                <div class="step">
-                    <div class="step-num">2</div>
-                    <strong>Confirm</strong>
-                    <p>Kami sahkan slot & masa</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">3</div>
-                    <strong>Siap</strong>
-                    <p>Bayar selepas kereta bersih</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="coverage">
-        <div class="container">
-            <h3>Area Servis</h3>
-            <div class="areas">
-                <span class="area">Shah Alam</span>
-                <span class="area">Subang Jaya</span>
-                <span class="area">Petaling Jaya</span>
-                <span class="area">Bangi</span>
-                <span class="area">Puchong</span>
-                <span class="area">Klang</span>
-            </div>
-            <p class="area-note">Luar kawasan? WhatsApp tanya — mungkin kami boleh arrange.</p>
-        </div>
-    </section>
-
-    <section class="faq">
-        <div class="container">
-            <h3>Soalan Lazim</h3>
-
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-q">
-                    <strong>Ini coating ke apa?</strong>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-a">
-                    <p>Bukan coating. Ini <strong>maintenance waterless wash</strong> — kita bersihkan & polish ringan untuk kilat segera. Kalau nak coating protection 6-12 bulan, kita ada partner detailing boleh recommend.</p>
-                </div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-q">
-                    <strong>Boleh buang stain/sticker mark?</strong>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-a">
-                    <p>Stain ringan (air hujan, habuk) — <strong>yes, included</strong>. Stain berat (tar, bird dropping lama, sticker gum) — perlukan detailing khas, ada caj tambahan RM20-50 bergantung severity.</p>
-                </div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-q">
-                    <strong>Cuci tepi jalan/jambatan boleh?</strong>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-a">
-                    <p>Prefer lokasi berbumbung (parking bertingkat, car porch) untuk elak hujan & matahari terik. Tapi kalau cuaca baik, tepi jalan pun boleh — pastikan parking selamat & tidak halang lalu lintas.</p>
-                </div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-q">
-                    <strong>Macam mana bayaran?</strong>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-a">
-                    <p>Bayar <strong>selepas servis siap</strong>. Kami terima cash, online transfer (Maybank, CIMB), atau QR Pay. Tak perlu deposit untuk booking.</p>
+                <div class="quick-action">
+                    <span class="quick-price">RM<span id="quick-price">30</span></span>
+                    <button class="btn-secondary">Pilih</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="final-cta">
+    <!-- ELITE (For Regulars Only) -->
+    <section class="elite-section">
         <div class="container">
-            <h3>Sedia untuk kereta bersih?</h3>
-            <p>Slot hari ini tinggal <strong id="slotsLeft">3</strong> lagi</p>
-            <a href="https://wa.me/60167003569?text=Hai%20XD%20Waterless%2C%0A%0ASaya%20nak%20book%20slot%20hari%20ini.%0A%0ANama%3A%20%0AKereta%3A%20%0ALokasi%3A%20" class="cta-large" onclick="trackConversion()">
-                <span class="whatsapp-icon">WhatsApp</span>
-                <span>+60 16-700 3569</span>
-                <small>Reply dalam 10 minit</small>
-            </a>
-            <p class="urgency">⏰ Operasi: 9AM - 7PM (Isnin-Ahad)</p>
+            <div class="elite-banner" onclick="bookSize('elite')">
+                <div class="elite-badge">UNTUK PELANGGAN TETAP</div>
+                <h3>ELITE CLUB</h3>
+                <p class="elite-desc">6 sesi SIGNATURE + Priority Booking</p>
+                
+                <div class="elite-math">
+                    <div class="math-line">
+                        <span>6 × RM<span class="elite-single">60</span></span>
+                        <span>RM<span class="elite-total">360</span></span>
+                    </div>
+                    <div class="math-line final">
+                        <span>Harga Ahli</span>
+                        <strong>RM<span id="elite-price">180</span></strong>
+                    </div>
+                    <div class="savings">Jimat RM<span id="elite-save">180</span></div>
+                </div>
+                
+                <ul class="elite-perks">
+                    <li>✓ Boleh guna bila-bila (tiada expiry)</li>
+                    <li>✓ VIP slot (keutamaan booking)</li>
+                    <li>✓ Sesuai untuk kereta office/fleet</li>
+                </ul>
+                
+                <button class="btn-elite">Sertai ELITE</button>
+                <p class="elite-note">*Syarat: Pernah guna servis kami sekali sebelum ini</p>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-main">
+        <div class="container">
             <strong>XD WATERLESS</strong>
-            <p>Mobile Car Care Professionals</p>
-            <div class="contact-footer">
-                <a href="https://wa.me/60167003569">📱 +60 16-700 3569</a>
-                <span>📍 Shah Alam, Selangor</span>
-            </div>
+            <p>Shah Alam · Subang · PJ</p>
+            <a href="https://wa.me/60167003569" class="footer-wa">+60 16-700 3569</a>
         </div>
-        <div class="footer-sub">© 2026 XD Waterless · Appointment Only · Waterless Technology</div>
     </footer>
 
     <script src="assets/js/script.js"></script>
