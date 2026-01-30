@@ -3,135 +3,341 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XD WATERLESS | CATALOG 2.0</title>
+    <meta name="description" content="XD Waterless — Premium Mobile Car Maintenance. Cyberpunk efficiency for your daily drive.">
+    <title>XD WATERLESS | CYBERPUNK MAINTENANCE SYSTEM</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">XD <span>WATERLESS</span></div>
-            <div class="tag">MNT_UNIT_01</div>
-        </div>
-    </nav>
+    <!-- GLITCH OVERLAY -->
+    <div class="scanlines"></div>
+    <div class="vignette"></div>
 
-    <header class="hero">
-        <div class="hero-frame">
-            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070&auto=format&fit=crop" alt="Premium Finish" class="hero-img">
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-text">
-            <div class="meta">SYSTEM_PROTOCOL // 2.0</div>
-            <h1 class="title">MAINTENANCE<br>SYSTEM</h1>
-            <p class="subtitle">MOBILE • WATERLESS • APPOINTMENT ONLY</p>
+    <!-- HEADER -->
+    <header class="cyber-header">
+        <div class="header-grid">
+            <div class="logo-section">
+                <div class="logo-glitch" data-text="XD">XD</div>
+                <div class="logo-sub">WATERLESS</div>
+                <div class="unit-id">MNT_UNIT_01 // SHAH_ALAM</div>
+            </div>
+            <div class="status-section">
+                <div class="status-item">
+                    <span class="status-dot active"></span>
+                    <span class="status-text">SYSTEM ONLINE</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-text dim">10:00-18:00</span>
+                </div>
+            </div>
         </div>
     </header>
 
-    <div class="tab-system">
-        <button id="btn-ala" class="tab-btn active" onclick="showTab('ala')">01_ALA_CARTE</button>
-        <button id="btn-mem" class="tab-btn" onclick="showTab('mem')">02_MEMBERSHIP</button>
-    </div>
-
-    <main class="container">
-        <!-- SECTION 1: ALA CARTE -->
-        <div id="section-ala" class="tab-content">
-            <div class="grid">
-                <article class="card">
-                    <div class="card-head"><h3>WATERLESS EXTERIOR</h3><span class="id">#WE</span></div>
-                    <div class="price-list">
-                        <div class="row"><span>SIZE S</span><span class="neon">RM50</span></div>
-                        <div class="row"><span>SIZE M</span><span class="neon">RM60</span></div>
-                        <div class="row"><span>SIZE L</span><span class="neon">RM70</span></div>
-                        <div class="row"><span>SIZE XL</span><span class="neon">RM80</span></div>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-head"><h3>INTERIOR (LIGHT)</h3><span class="id">#INT</span></div>
-                    <div class="price-list">
-                        <div class="row"><span>SIZE S</span><span class="neon">RM30</span></div>
-                        <div class="row"><span>SIZE M</span><span class="neon">RM40</span></div>
-                        <div class="row"><span>SIZE L</span><span class="neon">RM50</span></div>
-                        <div class="row"><span>SIZE XL</span><span class="neon">RM60</span></div>
-                    </div>
-                    <div class="sop-warning">❌ NO SHAMPOO / STAIN BERAT</div>
-                </article>
-
-                <article class="card">
-                    <div class="card-head"><h3>SLICK BANA</h3><span class="id">#OPT</span></div>
-                    <div class="price-list">
-                        <div class="row"><span>SIZE S</span><span class="neon">RM25</span></div>
-                        <div class="row"><span>SIZE M</span><span class="neon">RM30</span></div>
-                        <div class="row"><span>SIZE L</span><span class="neon">RM35</span></div>
-                        <div class="row"><span>SIZE XL</span><span class="neon">RM40</span></div>
-                    </div>
-                    <div class="sop-warning">❌ BUKAN COATING</div>
-                </article>
-            </div>
-
-            <div class="section-divider">REKOMENDASI COMBO</div>
-
-            <div class="combo-grid">
-                <div class="combo-box">
-                    <div class="c-tag">STANDARD (WE+INT)</div>
-                    <div class="c-prices">S:75 | M:95 | L:115 | XL:135</div>
-                </div>
-                <div class="combo-box signature">
-                    <div class="c-tag neon">SIGNATURE XD (WE+INT+SB)</div>
-                    <div class="c-prices">S:95 | M:115 | L:135 | XL:155</div>
-                </div>
-            </div>
+    <!-- HERO SECTION -->
+    <section class="cyber-hero">
+        <div class="hero-visual">
+            <div class="hex-grid"></div>
+            <div class="glow-orb"></div>
         </div>
+        <div class="hero-content">
+            <div class="eyebrow">/// PREMIUM_MAINTENANCE_PROTOCOL</div>
+            <h1 class="hero-title">
+                <span class="glitch-text" data-text="EFFICIENCY">EFFICIENCY</span>
+                <span class="title-divider">//</span>
+                <span class="neon-accent">CONTROL</span>
+                <span class="title-divider">//</span>
+                <span class="glitch-text" data-text="PRECISION">PRECISION</span>
+            </h1>
+            <p class="hero-sub">MOBILE • WATERLESS • APPOINTMENT ONLY</p>
+            <p class="hero-tagline">Untuk kereta harian & pelanggan yang faham maintenance</p>
+        </div>
+    </section>
 
-        <!-- SECTION 2: MEMBERSHIP -->
-        <div id="section-mem" class="tab-content hide">
-            <div class="mem-alert">❗ UNTUK 1 KERETA SAHAJA. SESI TIDAK BOLEH CARRY FORWARD.</div>
+    <!-- WARNING SYSTEM -->
+    <section class="warning-system">
+        <div class="warning-panel">
+            <div class="warning-icon">⚠</div>
+            <div class="warning-content">
+                <div class="warning-header">SYSTEM ALERT // MAINTENANCE ONLY</div>
+                <div class="warning-body">
+                    ❌ Tidak termasuk: stain makanan, muntah, najis haiwan, lumpur tebal, 
+                    kesan cat rosak, atau kereta terlalu kotor.
+                </div>
+            </div>
+            <div class="warning-code">ERR_001</div>
+        </div>
+    </section>
+
+    <!-- NAVIGATION TABS -->
+    <nav class="cyber-tabs">
+        <button class="tab-btn active" onclick="switchTab('alacarte', this)">
+            <span class="tab-num">01</span>
+            <span class="tab-label">ALA_CARTE</span>
+            <span class="tab-line"></span>
+        </button>
+        <button class="tab-btn" onclick="switchTab('membership', this)">
+            <span class="tab-num">02</span>
+            <span class="tab-label">MEMBERSHIP</span>
+            <span class="tab-line"></span>
+        </button>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="cyber-main">
+
+        <!-- ALA CARTE SECTION -->
+        <section id="alacarte" class="content-section active">
             
-            <div class="grid">
-                <div class="card mem-card">
-                    <div class="card-head"><h3>FOUNDATION</h3><span class="id">2 SESI</span></div>
-                    <p class="mem-desc">WE + Interior Maintenance</p>
-                    <div class="price-list">
-                        <div class="row"><span>SIZE S</span><span class="neon">RM140</span></div>
-                        <div class="row"><span>SIZE M</span><span class="neon">RM180</span></div>
-                        <div class="row"><span>SIZE L</span><span class="neon">RM220</span></div>
-                        <div class="row"><span>SIZE XL</span><span class="neon">RM260</span></div>
+            <!-- SERVICE GRID -->
+            <div class="service-grid">
+                
+                <!-- EXTERIOR -->
+                <article class="service-card">
+                    <div class="card-frame">
+                        <div class="corner tl"></div>
+                        <div class="corner tr"></div>
+                        <div class="corner bl"></div>
+                        <div class="corner br"></div>
                     </div>
+                    <div class="card-header">
+                        <div class="service-icon">◈</div>
+                        <h3 class="service-name">WATERLESS EXTERIOR</h3>
+                        <span class="service-code">#WE_001</span>
+                    </div>
+                    <div class="price-matrix">
+                        <div class="price-row">
+                            <span class="size">SIZE_S</span>
+                            <span class="divider">............</span>
+                            <span class="price neon">RM25</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="size">SIZE_M</span>
+                            <span class="divider">............</span>
+                            <span class="price neon">RM30</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="size">SIZE_L</span>
+                            <span class="divider">............</span>
+                            <span class="price neon">RM35</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="size">SIZE_XL</span>
+                            <span class="divider">............</span>
+                            <span class="price neon">RM40</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="footer-text">Maintenance clean • Zero water</span>
+                    </div>
+                </article>
+
+                <!-- INTERIOR -->
+                <article class="service-card warning">
+                    <div class="card-frame">
+                        <div class="corner tl"></div>
+                        <div class="corner tr"></div>
+                        <div class="corner bl"></div>
+                        <div class="corner br"></div>
+                    </div>
+                    <div class="card-header">
+                        <div class="service-icon">◉</div>
+                        <h3 class="service-name">INTERIOR_LIGHT</h3>
+                        <span class="service-code">#INT_002</span>
+                    </div>
+                    <div class="price-matrix">
+                        <div class="price-row">
+                            <span class="size">SIZE_S</span>
+                            <span class="divider">............</span>
+                            <span class="price neon">RM25</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="size">SIZE_M</span>
+                            <span class="divider">............</span>
+                            <span class="price neon">RM30</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="size">SIZE_L</span>
+                            <span class="divider">............</span>
+                            <span class="price neon">RM35</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="size">SIZE_XL</span>
+                            <span class="divider">............</span>
+                            <span class="price neon">RM40</span>
+                        </div>
+                    </div>
+                    <div class="card-footer alert">
+                        <span class="footer-text">❌ NO_SHAMPOO // STAIN_BERAT</span>
+                    </div>
+                </article>
+
+                <!-- SLICK BANA -->
+                <article class="service-card premium">
+                    <div class="card-frame">
+                        <div class="corner tl"></div>
+                        <div class="corner tr"></div>
+                        <div class="corner bl"></div>
+                        <div class="corner br"></div>
+                    </div>
+                    <div class="card-header">
+                        <div class="service-icon">✦</div>
+                        <h3 class="service-name">SLICK_BANA</h3>
+                        <span class="service-code">#OPT_003</span>
+                    </div>
+                    <div class="price-matrix">
+                        <div class="price-row">
+                            <span class="size">SIZE_S</span>
+                            <span class="divider">............</span>
+                            <span class="price neon">RM20</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="size">SIZE_M</span>
+                            <span class="divider">............</span>
+                            <span class="price neon">RM25</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="size">SIZE_L</span>
+                            <span class="divider">............</span>
+                            <span class="price neon">RM30</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="size">SIZE_XL</span>
+                            <span class="divider">............</span>
+                            <span class="price neon">RM35</span>
+                        </div>
+                    </div>
+                    <div class="card-footer premium">
+                        <span class="footer-text">⚠ BUKAN_COATING // VISUAL_ONLY</span>
+                    </div>
+                </article>
+            </div>
+
+            <!-- COMBO SECTION -->
+            <div class="combo-section">
+                <div class="section-header">
+                    <span class="section-line"></span>
+                    <h2 class="section-title">REKOMENDASI_COMBO</h2>
+                    <span class="section-line"></span>
                 </div>
 
-                <div class="card mem-card highlighted">
-                    <div class="card-head"><h3 class="neon">SIGNATURE</h3><span class="id">2 SESI</span></div>
-                    <p class="mem-desc">WE + Interior + Slick Bana</p>
-                    <div class="price-list">
-                        <div class="row"><span>SIZE S</span><span class="neon">RM180</span></div>
-                        <div class="row"><span>SIZE M</span><span class="neon">RM220</span></div>
-                        <div class="row"><span>SIZE L</span><span class="neon">RM260</span></div>
-                        <div class="row"><span>SIZE XL</span><span class="neon">RM300</span></div>
+                <div class="combo-grid">
+                    <div class="combo-card standard">
+                        <div class="combo-rank">STANDARD</div>
+                        <div class="combo-formula">WE + INT</div>
+                        <div class="combo-prices">
+                            <span class="price-tag">S:45</span>
+                            <span class="price-tag">M:55</span>
+                            <span class="price-tag">L:65</span>
+                            <span class="price-tag">XL:75</span>
+                        </div>
+                        <div class="combo-save">▼ JIMAT RM5-15</div>
                     </div>
-                </div>
 
-                <div class="card mem-card">
-                    <div class="card-head"><h3>PRIORITY</h3><span class="id">4 SESI</span></div>
-                    <p class="mem-desc">4x WE+INT | 2x SB | Priority Slot</p>
-                    <div class="price-list">
-                        <div class="row"><span>SIZE S</span><span class="neon">RM340</span></div>
-                        <div class="row"><span>SIZE M</span><span class="neon">RM420</span></div>
-                        <div class="row"><span>SIZE L</span><span class="neon">RM500</span></div>
-                        <div class="row"><span>SIZE XL</span><span class="neon">RM580</span></div>
+                    <div class="combo-card signature">
+                        <div class="combo-rank neon">SIGNATURE_XD</div>
+                        <div class="combo-formula">WE + INT + SB</div>
+                        <div class="combo-prices">
+                            <span class="price-tag neon">S:60</span>
+                            <span class="price-tag neon">M:75</span>
+                            <span class="price-tag neon">L:90</span>
+                            <span class="price-tag neon">XL:105</span>
+                        </div>
+                        <div class="combo-save bright">▼ JIMAT RM10-20</div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- MEMBERSHIP SECTION -->
+        <section id="membership" class="content-section">
+            
+            <div class="membership-alert">
+                <div class="alert-icon">!</div>
+                <div class="alert-content">
+                    <div class="alert-title">RESTRICTION_PROTOCOL_ACTIVE</div>
+                    <div class="alert-details">
+                        UNTUK 1 KERETA SAHAJA • SESI TIDAK BOLEH CARRY FORWARD<br>
+                        TEMPOH SAH: 30 HARI DARI TARIKH SERVIS PERTAMA
+                    </div>
+                </div>
+            </div>
+
+            <div class="membership-grid">
+                
+                <!-- FOUNDATION -->
+                <div class="membership-card">
+                    <div class="mem-tier">FOUNDATION</div>
+                    <div class="mem-sessions">4 SESI</div>
+                    <div class="mem-spec">WE + Interior Maintenance</div>
+                    <div class="mem-prices">
+                        <div class="mem-row"><span>S</span><span class="neon">RM160</span></div>
+                        <div class="mem-row"><span>M</span><span class="neon">RM200</span></div>
+                        <div class="mem-row"><span>L</span><span class="neon">RM240</span></div>
+                        <div class="mem-row"><span>XL</span><span class="neon">RM280</span></div>
+                    </div>
+                    <div class="mem-per">RM40-70/sesi</div>
+                </div>
+
+                <!-- SIGNATURE -->
+                <div class="membership-card featured">
+                    <div class="featured-badge">★ RECOMMENDED</div>
+                    <div class="mem-tier neon">SIGNATURE</div>
+                    <div class="mem-sessions">4 SESI</div>
+                    <div class="mem-spec">WE + Interior + Slick Bana</div>
+                    <div class="mem-prices">
+                        <div class="mem-row"><span>S</span><span class="neon">RM220</span></div>
+                        <div class="mem-row"><span>M</span><span class="neon">RM280</span></div>
+                        <div class="mem-row"><span>L</span><span class="neon">RM340</span></div>
+                        <div class="mem-row"><span>XL</span><span class="neon">RM400</span></div>
+                    </div>
+                    <div class="mem-per">RM55-100/sesi</div>
+                </div>
+
+                <!-- PRIORITY -->
+                <div class="membership-card elite">
+                    <div class="mem-tier">PRIORITY</div>
+                    <div class="mem-sessions">4 SESI</div>
+                    <div class="mem-spec">4x WE+INT | 2x SB | Priority Slot</div>
+                    <div class="mem-prices">
+                        <div class="mem-row"><span>S</span><span class="neon">RM340</span></div>
+                        <div class="mem-row"><span>M</span><span class="neon">RM420</span></div>
+                        <div class="mem-row"><span>L</span><span class="neon">RM500</span></div>
+                        <div class="mem-row"><span>XL</span><span class="neon">RM580</span></div>
+                    </div>
+                    <div class="mem-per">RM85-145/sesi</div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="footer">
-        <p>XD WATERLESS // EFFICIENCY • CONTROL • PRECISION</p>
+    <!-- LOGISTIC FOOTER -->
+    <div class="logistic-bar">
+        <div class="log-icon">◈</div>
+        <div class="log-text">
+            LOGISTIK: Parking / tol / akses khas dikenakan caj berasingan jika berkenaan
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="cyber-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">XD WATERLESS</div>
+            <div class="footer-divider">//</div>
+            <div class="footer-tagline">EFFICIENCY • CONTROL • PRECISION</div>
+        </div>
+        <div class="footer-copyright">© 2025 MNT_UNIT_01 // SHAH_ALAM_SECTOR</div>
     </footer>
 
-    <a href="https://wa.me/60167003569" class="cta-fixed">INITIALIZE BOOKING</a>
+    <!-- CTA BUTTON -->
+    <a href="https://wa.me/60167003569?text=Hai%20XD%20Waterless%2C%0A%0A3%20langkah%20ringkas%20untuk%20booking%3A%0A%0A1%EF%B8%8F%E2%83%A3%20Kereta%20apa%20%26%20tahun%3A%20%0A2%EF%B8%8F%E2%83%A3%20Lokasi%20%28apartment%2Foffice%29%3A%20%0A3%EF%B8%8F%E2%83%A3%20Keadaan%20kereta%20%28maintenance%2Fagak%20kotor%2Fsangat%20kotor%29%3A%20%0A%0A%E2%9A%A0%EF%B8%8F%20Saya%20faham%20ini%20adalah%20MAINTENANCE%20sahaja." 
+       class="cyber-cta" target="_blank">
+        <span class="cta-text">INITIALIZE_BOOKING</span>
+        <span class="cta-arrow">→</span>
+        <div class="cta-glow"></div>
+    </a>
 
     <script src="assets/js/script.js"></script>
 </body>
 </html>
-
