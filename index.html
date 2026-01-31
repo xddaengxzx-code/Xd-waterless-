@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="XD Waterless — Cuci kereta tanpa air di Shah Alam. Servis mobile datang ke lokasi anda. Harga from RM30.">
+    <meta name="description" content="XD Waterless — Cuci kereta tanpa air di Shah Alam. Servis mobile datang ke lokasi anda. Harga ikut saiz dari RM30.">
     <title>XD Waterless — Premium Mobile Car Detailing Shah Alam</title>
-    <!-- ⬇️ PATH BETUL: assets/css/style.css -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -21,13 +20,12 @@
     <header class="main-header">
         <div class="container">
             <div class="logo-container">
-                <!-- ⬇️ LOGO NAMA SEBENAR DARI GITHUB -->
-                <img src="file_00000000cdb872308dd42370e43cefaa.png" alt="XD WATERLESS" class="logo-img" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';">
+                <img src="assets/images/logo.png" alt="XD WATERLESS" class="logo-img" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';">
                 <div class="logo-text" style="display: none;">XD WATERLESS</div>
             </div>
             <div class="header-info">
-                <span class="hours">🕙 10AM — 6PM</span>
-                <span class="location">📍 Shah Alam</span>
+                <span class="hours">10AM — 6PM</span>
+                <span class="location">Shah Alam</span>
             </div>
         </div>
     </header>
@@ -39,13 +37,13 @@
             <p class="sub">Pilih saiz kereta di bawah. Harga yang dipaparkan adalah <strong>harga final</strong> — tiada caj tambahan.</p>
             
             <div class="trust-pill">
-                <span>✓ Tiada caj tersembunyi</span>
-                <span>✓ 50% deposit lock slot</span>
-                <span>✓ Boleh reschedule</span>
+                <span>Tiada caj tersembunyi</span>
+                <span>50% deposit lock slot</span>
+                <span>Boleh reschedule</span>
             </div>
             
             <div class="notice-box">
-                <p>⚠️ <strong>Perhatian:</strong> Kami datang ke lokasi parking anda. Kami <u>tidak drive</u> atau gerakkan kereta anda.</p>
+                <p><strong>Perhatian:</strong> Kami datang ke lokasi parking anda. Kami <u>tidak drive</u> atau gerakkan kereta anda.</p>
             </div>
         </div>
     </section>
@@ -56,32 +54,59 @@
             <p class="section-label">Langkah 1: Pilih saiz kereta</p>
             <div class="size-tabs">
                 <button class="size-tab active" onclick="setSize('kompak')" data-size="kompak">
-                    <span class="size-icon">🚗</span>
+                    <span class="size-icon">K</span>
                     <span class="size-name">Kompak</span>
-                    <span class="size-price">RM60</span>
                     <span class="size-ex">Myvi, Axia, Bezza, Saga</span>
                 </button>
                 <button class="size-tab" onclick="setSize('sedan')" data-size="sedan">
-                    <span class="size-icon">🚙</span>
+                    <span class="size-icon">S</span>
                     <span class="size-name">Sedan/SUV Kecil</span>
-                    <span class="size-price">RM70</span>
                     <span class="size-ex">City, Vios, HR-V, X50, Aruz</span>
                 </button>
                 <button class="size-tab" onclick="setSize('suv')" data-size="suv">
-                    <span class="size-icon">🚐</span>
+                    <span class="size-icon">B</span>
                     <span class="size-name">SUV Besar</span>
-                    <span class="size-price">RM85</span>
                     <span class="size-ex">CR-V, CX-5, X70, Fortuner</span>
                 </button>
                 <button class="size-tab" onclick="setSize('mpv')" data-size="mpv">
-                    <span class="size-icon">🚌</span>
+                    <span class="size-icon">M</span>
                     <span class="size-name">MPV</span>
-                    <span class="size-price">RM100</span>
                     <span class="size-ex">Alphard, Vellfire, Alza, Exora</span>
                 </button>
             </div>
             
-            <p class="size-helper">Tak pasti? WhatsApp plate number: <a href="https://wa.me/60167003569?text=Hai%20XD%20saya%20tak%20pasti%20saiz%20kereta%20saya%20[plate%20number]">+60 16-700 3569</a></p>
+            <p class="size-helper">Tak pasti? WhatsApp plate number: <a href="https://wa.me/60167003569?text=Hai%20XD%20saya%20tak%20pasti%20saiz%20kereta%20saya%20[plate%20number]">016-700-3569</a></p>
+        </div>
+    </section>
+
+    <!-- QUICK -->
+    <section class="quick-section">
+        <div class="container">
+            <div class="quick-card" onclick="bookSize('quick')">
+                <div class="package-header">
+                    <div>
+                        <h2>QUICK</h2>
+                        <p class="package-sub">Exterior Sahaja</p>
+                    </div>
+                    <div class="price-block">
+                        <span class="price-final">RM<span id="quick-price">30</span></span>
+                        <span class="price-note">Harga final</span>
+                    </div>
+                </div>
+                
+                <ul class="checklist">
+                    <li>Cuci exterior tanpa air</li>
+                    <li>Lap cermin & tingkap</li>
+                    <li>Kilatkan tayar & rim</li>
+                    <li>Interior tidak disentuh</li>
+                </ul>
+                
+                <div class="package-meta">
+                    <span class="duration">30-40 minit</span>
+                </div>
+                
+                <button class="btn-secondary">Book QUICK</button>
+            </div>
         </div>
     </section>
 
@@ -89,69 +114,34 @@
     <section class="signature-section">
         <div class="container">
             <div class="signature-card" onclick="bookSize('signature')">
-                <div class="recommended-badge">PALING POPULAR · 90% PILIH INI</div>
+                <div class="recommended-badge">PALING POPULAR</div>
                 
-                <div class="sig-header">
+                <div class="package-header">
                     <div>
                         <h2>SIGNATURE</h2>
-                        <p class="sig-sub">Exterior + Interior Lengkap</p>
+                        <p class="package-sub">Exterior + Interior Lengkap</p>
                     </div>
-                    <div class="sig-price-block">
+                    <div class="price-block">
                         <span class="price-final">RM<span id="sig-price">60</span></span>
                         <span class="price-note">Harga final</span>
                     </div>
                 </div>
 
-                <div class="sig-value">
-                    <div class="value-item">
-                        <strong>60 Minit</strong>
-                        <span>Siap cuci</span>
-                    </div>
-                    <div class="value-item">
-                        <strong>Full Vacuum</strong>
-                        <span>Interior bersih</span>
-                    </div>
-                    <div class="value-item">
-                        <strong>Bau Segar</strong>
-                        <span>Freshener included</span>
-                    </div>
-                </div>
-
                 <ul class="checklist">
-                    <li>✓ Cuci exterior tanpa air (kilat & licin)</li>
-                    <li>✓ Vacuum habuk & sampah interior</li>
-                    <li>✓ Lap dashboard, trim & konsol</li>
-                    <li>✓ Cermin & tingkap dalam/luar</li>
-                    <li>✓ Kilatkan tayar & rim</li>
-                    <li>✓ Spray bau segar (freshener)</li>
+                    <li>Semua servis QUICK</li>
+                    <li>Vacuum interior</li>
+                    <li>Lap dashboard & trim</li>
+                    <li>Bau segar (freshener)</li>
                 </ul>
-
-                <button class="btn-main">Book SIGNATURE Sekarang</button>
                 
-                <p class="guarantee">✓ 50% deposit untuk lock slot · ✓ Boleh reschedule 4 jam sebelum</p>
-                <p class="payment-note">💳 Bank Transfer / DuitNow sahaja (Tiada Cash)</p>
-            </div>
-        </div>
-    </section>
+                <div class="package-meta">
+                    <span class="duration">60-75 minit</span>
+                </div>
 
-    <!-- QUICK -->
-    <section class="alternative-section">
-        <div class="container">
-            <p class="alt-label">Atau pakej ringkas (jimat separuh):</p>
-            
-            <div class="quick-option" onclick="bookSize('quick')">
-                <div class="quick-info">
-                    <h4>QUICK <span class="quick-tag">Basic</span></h4>
-                    <p>Exterior sahaja — sesuai untuk maintenance pantas</p>
-                    <ul>
-                        <li>Cuci exterior</li>
-                        <li>Cermin & tayar</li>
-                    </ul>
-                </div>
-                <div class="quick-action">
-                    <span class="quick-price">RM<span id="quick-price">30</span></span>
-                    <button class="btn-secondary">Pilih</button>
-                </div>
+                <button class="btn-main">Book SIGNATURE</button>
+                
+                <p class="guarantee">50% deposit untuk lock slot · Boleh reschedule 4 jam sebelum</p>
+                <p class="payment-note">Bank Transfer / DuitNow sahaja (Tiada Cash)</p>
             </div>
         </div>
     </section>
@@ -166,7 +156,7 @@
                 
                 <div class="elite-math">
                     <div class="math-line">
-                        <span>6 × RM<span class="elite-single">60</span></span>
+                        <span>6 x RM<span class="elite-single">60</span></span>
                         <span>RM<span class="elite-total">360</span></span>
                     </div>
                     <div class="math-line final">
@@ -177,14 +167,14 @@
                 </div>
                 
                 <ul class="elite-perks">
-                    <li>✓ Boleh guna bila-bila (tiada expiry)</li>
-                    <li>✓ VIP slot (keutamaan booking)</li>
-                    <li>✓ Sesuai untuk kereta office/fleet</li>
-                    <li>✓ Boleh transfer ke kereta lain</li>
+                    <li>Boleh guna bila-bila (tiada expiry)</li>
+                    <li>VIP slot (keutamaan booking)</li>
+                    <li>Sesuai untuk kereta office/fleet</li>
+                    <li>Boleh transfer ke kereta lain</li>
                 </ul>
                 
                 <button class="btn-elite">Sertai ELITE</button>
-                <p class="elite-note">*Syarat: Pernah guna servis kami sekali sebelum ini</p>
+                <p class="elite-note">Syarat: Pernah guna servis kami sekali sebelum ini</p>
             </div>
         </div>
     </section>
@@ -196,7 +186,7 @@
             
             <div class="terms-grid">
                 <div class="term-item">
-                    <h4>💳 Pembayaran</h4>
+                    <h4>Pembayaran</h4>
                     <ul>
                         <li>50% deposit wajib untuk lock slot</li>
                         <li>50% baki selepas cuci siap</li>
@@ -206,7 +196,7 @@
                 </div>
                 
                 <div class="term-item">
-                    <h4>🚗 Perkhidmatan Onsite</h4>
+                    <h4>Perkhidmatan Onsite</h4>
                     <ul>
                         <li>Kami datang ke lokasi parking <strong>anda</strong></li>
                         <li>Kami <strong>TIDAK</strong> drive/gerakkan kereta anda</li>
@@ -216,18 +206,17 @@
                 </div>
                 
                 <div class="term-item">
-                    <h4>⏰ Reschedule & Cancel</h4>
+                    <h4>Reschedule & Cancel</h4>
                     <ul>
                         <li>Boleh reschedule >4 jam sebelum slot</li>
-                        <li>
-<4 jam: Deposit burn 50%</li>
+                        <li>Kurang 4 jam: Deposit burn 50%</li>
                         <li>No-show: Deposit hangus 100%</li>
                         <li>Hujan lebat: Boleh reschedule tanpa penalty</li>
                     </ul>
                 </div>
                 
                 <div class="term-item">
-                    <h4>📍 Kawasan & Akses</h4>
+                    <h4>Kawasan & Akses</h4>
                     <ul>
                         <li>Shah Alam & sekitar (tiada caj tambahan)</li>
                         <li>Luar kawasan: Caj RM10-20</li>
@@ -236,7 +225,7 @@
                 </div>
                 
                 <div class="term-item">
-                    <h4>✨ Skop Kerja</h4>
+                    <h4>Skop Kerja</h4>
                     <ul>
                         <li>Maintenance wash — <strong>bukan</strong> deep detailing</li>
                         <li>Tiada shampoo seat/carpet basah</li>
@@ -245,7 +234,7 @@
                 </div>
                 
                 <div class="term-item">
-                    <h4>💎 ELITE CLUB</h4>
+                    <h4>ELITE CLUB</h4>
                     <ul>
                         <li>Syarat: Pernah guna SIGNATURE sekali</li>
                         <li>6 credit — tiada expiry</li>
@@ -262,14 +251,13 @@
     <footer>
         <div class="container">
             <strong>XD WATERLESS</strong>
-            <p>📍 Shah Alam · Subang · PJ</p>
-            <p>🕙 Operasi: 10AM — 6PM</p>
-            <a href="mailto:Xddaengxzx@gmail.com" class="footer-email">✉️ Xddaengxzx@gmail.com</a>
-            <a href="https://wa.me/60167003569" class="footer-wa">📱 +60 16-700 3569</a>
+            <p>Shah Alam · Subang · PJ</p>
+            <p>Operasi: 10AM — 6PM</p>
+            <a href="mailto:Xddaengxzx@gmail.com" class="footer-email">Xddaengxzx@gmail.com</a>
+            <a href="https://wa.me/60167003569" class="footer-wa">016-700-3569</a>
         </div>
     </footer>
 
-    <!-- ⬇️ PATH BETUL: assets/js/script.js -->
     <script src="assets/js/script.js"></script>
 </body>
 </html>
