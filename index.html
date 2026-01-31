@@ -1,282 +1,300 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ms">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XD Waterless - Book Now | Shah Alam</title>
+    <title>XD Waterless | Premium Mobile Car Care Shah Alam</title>
+    <meta name="description" content="XD Waterless - Premium mobile waterless car wash services in Shah Alam & surrounding areas.">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="header">
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
-            <div class="logo">XD WATERLESS</div>
-            <div class="header-contact">
-                <a href="tel:0167003569" class="phone-btn">📞 016-700-3569</a>
+            <div class="nav-brand">
+                <span class="logo-xd">XD</span>
+                <span class="logo-text">WATERLESS</span>
             </div>
+            <button class="mobile-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#services">Servis</a></li>
+                <li><a href="#pricing">Harga</a></li>
+                <li><a href="#elite">Elite Club</a></li>
+                <li><a href="#coverage">Kawasan</a></li>
+                <li><a href="https://wa.me/60167003569" class="btn-nav" target="_blank">WhatsApp</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <header class="hero">
         <div class="container">
-            <h1>Cuci Kereta Tanpa Air<br><span class="highlight">Datang ke Lokasi Anda</span></h1>
-            <p class="subtitle">Shah Alam • Subang • PJ • Puchong • Klang</p>
-            <div class="trust-badges">
-                <span>✓ SSM Berdaftar</span>
-                <span>✓ Eco-Friendly</span>
-                <span>✓ 30-90 Minit Siap</span>
+            <div class="hero-content">
+                <div class="badge">SSM Registered: JM1021889-K</div>
+                <h1>PREMIUM MOBILE CAR CARE</h1>
+                <p class="subtitle">Shah Alam & Sekitar</p>
+                <p class="description">Servis cuci kereta tanpa air profesional datang ke lokasi anda. Save water, save time, stay clean.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#booking" class="btn-primary">Book Now</a>
+                    <a href="#services" class="btn-secondary">Lihat Servis</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">30-90</span>
+                        <span class="stat-label">Minit</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Air Terbuang</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Mobile</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg"></div>
+    </header>
+
+    <!-- Vehicle Size Selector (Sticky) -->
+    <section class="vehicle-selector" id="booking">
+        <div class="container">
+            <p class="selector-label">Pilih Saiz Kenderaan:</p>
+            <div class="vehicle-tabs">
+                <button class="vehicle-tab active" data-size="kompak" data-vehicle="Myvi, Axia, Bezza, Saga">
+                    <span class="vehicle-icon">🚗</span>
+                    <span class="vehicle-name">Kompak</span>
+                    <small>Myvi, Axia, etc</small>
+                </button>
+                <button class="vehicle-tab" data-size="sedan" data-vehicle="City, Vios, HR-V, X50">
+                    <span class="vehicle-icon">🚙</span>
+                    <span class="vehicle-name">Sedan/SUV Kecil</span>
+                    <small>City, HR-V, etc</small>
+                </button>
+                <button class="vehicle-tab" data-size="suv" data-vehicle="CR-V, CX-5, Fortuner">
+                    <span class="vehicle-icon">🚐</span>
+                    <span class="vehicle-name">SUV Besar</span>
+                    <small>CR-V, CX-5, etc</small>
+                </button>
+                <button class="vehicle-tab" data-size="mpv" data-vehicle="Alphard, Vellfire, Estima">
+                    <span class="vehicle-icon">🚎</span>
+                    <span class="vehicle-name">MPV/Van</span>
+                    <small>Alphard, etc</small>
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Booking App -->
-    <section class="booking-section" id="booking">
+    <!-- Services Section -->
+    <section class="services" id="services">
         <div class="container">
-            <h2>🚗 Book Your Wash</h2>
+            <div class="section-header">
+                <h2>Pakek Servis</h2>
+                <p>Pilih servis yang sesuai dengan keperluan anda</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Quick Wash -->
+                <div class="service-card" data-service="quick">
+                    <div class="service-badge exterior">EXTERIOR</div>
+                    <h3>Quick Wash</h3>
+                    <p class="service-desc">Cuci pantas exterior sahaja untuk maintenance harian</p>
+                    
+                    <div class="price-display">
+                        <span class="currency">RM</span>
+                        <span class="price" data-base="35">35</span>
+                    </div>
+                    <span class="duration">⏱️ <span data-time="30">30</span> minit</span>
+
+                    <ul class="features">
+                        <li>✓ Cuci & wax exterior</li>
+                        <li>✓ Lap cermin & tingkap</li>
+                        <li>✓ Kilat tayar & rim</li>
+                    </ul>
+
+                    <button class="btn-book" data-service="Quick Wash" data-code="QW">Book via WhatsApp</button>
+                </div>
+
+                <!-- Signature Detail -->
+                <div class="service-card popular" data-service="signature">
+                    <div class="service-badge popular-badge">POPULAR</div>
+                    <h3>Signature Detail</h3>
+                    <p class="service-desc">Full detail interior & exterior lengkap</p>
+                    
+                    <div class="price-display">
+                        <span class="currency">RM</span>
+                        <span class="price" data-base="60">60</span>
+                    </div>
+                    <span class="duration">⏱️ <span data-time="60">60</span> minit</span>
+
+                    <ul class="features">
+                        <li>✓ Semua Quick Wash +</li>
+                        <li>✓ Vacuum & lap dashboard</li>
+                        <li>✓ Seat wipe-down & bau segar</li>
+                        <li class="highlight">✓ Priority booking</li>
+                    </ul>
+
+                    <button class="btn-book primary" data-service="Signature Detail" data-code="SIG">Book via WhatsApp</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elite Club Section -->
+    <section class="elite-section" id="elite">
+        <div class="container">
+            <div class="elite-header">
+                <span class="elite-icon">💎</span>
+                <h2>ELITE CLUB</h2>
+                <p>4 Sesi + Official Merchandise</p>
+            </div>
+
+            <div class="elite-card">
+                <div class="elite-content">
+                    <div class="elite-price-box">
+                        <div class="elite-price">
+                            <span class="currency">RM</span>
+                            <span class="price" data-base="220">220</span>
+                        </div>
+                        <span class="savings">Jimat RM20</span>
+                    </div>
+
+                    <div class="elite-details">
+                        <h3>Membership Pakej <span id="elite-vehicle">Kompak</span></h3>
+                        <ul>
+                            <li>✅ 4x Sesi Signature Detail</li>
+                            <li>✅ Official XD Merchandise</li>
+                            <li>✅ Tiada expiry date</li>
+                            <li>✅ Boleh transfer ke kenderaan lain</li>
+                            <li>✅ Full payment upfront</li>
+                        </ul>
+                        <button class="btn-elite" data-service="Elite Club" data-code="ELITE">Daftar Elite Club</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add-ons Section -->
+    <section class="addons-section" id="addons">
+        <div class="container">
+            <h2>Servis Tambahan</h2>
+            <div class="addons-grid">
+                <div class="addon-item">
+                    <span class="addon-name">Engine Bay Clean</span>
+                    <span class="addon-price">+RM25</span>
+                </div>
+                <div class="addon-item">
+                    <span class="addon-name">Seat Shampoo (per seat)</span>
+                    <span class="addon-price">+RM20</span>
+                </div>
+                <div class="addon-item">
+                    <span class="addon-name">Headlight Restoration</span>
+                    <span class="addon-price">+RM40</span>
+                </div>
+                <div class="addon-item">
+                    <span class="addon-name">Ceramic Wax Boost</span>
+                    <span class="addon-price">+RM45</span>
+                </div>
+                <div class="addon-item">
+                    <span class="addon-name">Odor Eliminator</span>
+                    <span class="addon-price">+RM35</span>
+                </div>
+                <div class="addon-item">
+                    <span class="addon-name">Leather Conditioning</span>
+                    <span class="addon-price">+RM50</span>
+                </div>
+                <div class="addon-item">
+                    <span class="addon-name">Glass Polish (all)</span>
+                    <span class="addon-price">+RM30</span>
+                </div>
+                <div class="addon-item">
+                    <span class="addon-name">Interior Sanitizing</span>
+                    <span class="addon-price">+RM35</span>
+                </div>
+            </div>
+            <p class="addon-note">*Nyatakan add-on yang diperlukan semasa booking</p>
+        </div>
+    </section>
+
+    <!-- Coverage Section -->
+    <section class="coverage" id="coverage">
+        <div class="container">
+            <h2>Kawasan & Polisi</h2>
             
-            <!-- Step 1: Car Size -->
-            <div class="step" id="step1">
-                <h3>1. Pilih Saiz Kereta</h3>
-                <div class="car-grid">
-                    <div class="car-card" data-size="kompak" data-quick="35" data-signature="60">
-                        <div class="car-icon">🚗</div>
-                        <h4>Kompak</h4>
-                        <p>Myvi, Axia, Bezza, Saga</p>
-                        <span class="from-price">Dari RM35</span>
-                    </div>
-                    
-                    <div class="car-card" data-size="sedan" data-quick="45" data-signature="75">
-                        <div class="car-icon">🚙</div>
-                        <h4>Sedan/SUV Kecil</h4>
-                        <p>City, Vios, HR-V, X50, Aruz</p>
-                        <span class="from-price">Dari RM45</span>
-                    </div>
-                    
-                    <div class="car-card" data-size="suv" data-quick="55" data-signature="90">
-                        <div class="car-icon">🚐</div>
-                        <h4>SUV Besar</h4>
-                        <p>CR-V, CX-5, X70, Fortuner</p>
-                        <span class="from-price">Dari RM55</span>
-                    </div>
-                    
-                    <div class="car-card" data-size="mpv" data-quick="65" data-signature="110">
-                        <div class="car-icon">🚌</div>
-                        <h4>MPV/Van</h4>
-                        <p>Alphard, Vellfire, Estima, Exora</p>
-                        <span class="from-price">Dari RM65</span>
-                    </div>
+            <div class="coverage-grid">
+                <div class="coverage-card free">
+                    <h3>📍 Percuma</h3>
+                    <p>Shah Alam, Subang, PJ</p>
+                </div>
+                <div class="coverage-card">
+                    <h3>💸 +RM10</h3>
+                    <p>Puchong, Klang</p>
+                </div>
+                <div class="coverage-card">
+                    <h3>💸 +RM15</h3>
+                    <p>Damansara, Sunway</p>
+                </div>
+                <div class="coverage-card">
+                    <h3>💸 +RM20-30</h3>
+                    <p>Luar 15km</p>
                 </div>
             </div>
 
-            <!-- Step 2: Package -->
-            <div class="step hidden" id="step2">
-                <h3>2. Pilih Pakej</h3>
-                <div class="package-options">
-                    <div class="package-card" data-package="quick" data-multiplier="1">
-                        <div class="package-header blue">
-                            <h4>QUICK WASH</h4>
-                            <div class="price-tag" id="quick-price">RM35</div>
-                        </div>
-                        <ul class="package-features">
-                            <li>✓ Cuci exterior</li>
-                            <li>✓ Wax & kilat</li>
-                            <li>✓ Lap cermin</li>
-                            <li>✓ Kilat tayar</li>
-                            <li class="time">⏱️ 30-45 minit</li>
-                        </ul>
-                    </div>
+            <div class="policy-box">
+                <h3>💳 Terma Pembayaran</h3>
+                <ul>
+                    <li>50% deposit untuk lock slot</li>
+                    <li>Baki 50% selepas cuci siap</li>
+                    <li><strong>Transfer/DuitNow sahaja (Tiada tunai)</strong></li>
+                </ul>
 
-                    <div class="package-card popular" data-package="signature" data-multiplier="1">
-                        <div class="package-header gold">
-                            <h4>SIGNATURE <span class="badge">POPULAR</span></h4>
-                            <div class="price-tag" id="signature-price">RM60</div>
-                        </div>
-                        <ul class="package-features">
-                            <li>✓ Semua Quick Wash</li>
-                            <li>✓ Vacuum interior</li>
-                            <li>✓ Lap dashboard</li>
-                            <li>✓ Seat wipe-down</li>
-                            <li>✓ Bau segar</li>
-                            <li class="time">⏱️ 60-90 minit</li>
-                        </ul>
-                    </div>
-                </div>
-                <button class="back-btn" onclick="backToStep(1)">← Kembali</button>
+                <h3>⏰ Polisi Pembatalan</h3>
+                <ul>
+                    <li>Reschedule >24 jam: Percuma</li>
+                    <li>Reschedule <24 jam: Deposit burn 50%</li>
+                    <li>No-show: Deposit hangus</li>
+                    <li>Kotoran berat tambah RM10-20</li>
+                </ul>
             </div>
 
-            <!-- Step 3: Add-ons -->
-            <div class="step hidden" id="step3">
-                <h3>3. Tambah Servis (Optional)</h3>
-                <div class="addons-list">
-                    <label class="addon-checkbox">
-                        <input type="checkbox" data-addon="engine" data-price="25">
-                        <span class="checkmark"></span>
-                        <div class="addon-info">
-                            <span class="addon-name">Engine Bay Cleaning</span>
-                            <span class="addon-price">+RM25</span>
-                        </div>
-                    </label>
-
-                    <label class="addon-checkbox">
-                        <input type="checkbox" data-addon="odor" data-price="35">
-                        <span class="checkmark"></span>
-                        <div class="addon-info">
-                            <span class="addon-name">Odor Eliminator</span>
-                            <span class="addon-price">+RM35</span>
-                        </div>
-                    </label>
-
-                    <label class="addon-checkbox">
-                        <input type="checkbox" data-addon="seat" data-price="20">
-                        <span class="checkmark"></span>
-                        <div class="addon-info">
-                            <span class="addon-name">Seat Shampoo (per seat)</span>
-                            <span class="addon-price">+RM20</span>
-                        </div>
-                    </label>
-
-                    <label class="addon-checkbox">
-                        <input type="checkbox" data-addon="leather" data-price="50">
-                        <span class="checkmark"></span>
-                        <div class="addon-info">
-                            <span class="addon-name">Leather Conditioning</span>
-                            <span class="addon-price">+RM50</span>
-                        </div>
-                    </label>
-
-                    <label class="addon-checkbox">
-                        <input type="checkbox" data-addon="headlight" data-price="40">
-                        <span class="checkmark"></span>
-                        <div class="addon-info">
-                            <span class="addon-name">Headlight Restoration</span>
-                            <span class="addon-price">+RM40</span>
-                        </div>
-                    </label>
-
-                    <label class="addon-checkbox">
-                        <input type="checkbox" data-addon="ceramic" data-price="45">
-                        <span class="checkmark"></span>
-                        <div class="addon-info">
-                            <span class="addon-name">Ceramic Wax Boost</span>
-                            <span class="addon-price">+RM45</span>
-                        </div>
-                    </label>
-                </div>
-                
-                <div class="step-buttons">
-                    <button class="back-btn" onclick="backToStep(2)">← Kembali</button>
-                    <button class="next-btn" onclick="goToStep(4)">Seterusnya →</button>
-                </div>
+            <div class="info-bar">
+                <p>🕐 Waktu Operasi: <strong>10AM - 6PM daily</strong></p>
+                <p>🚗 Kami datang ke lokasi anda • Tak perlu gerakkan kereta</p>
             </div>
-
-            <!-- Step 4: Details & Summary -->
-            <div class="step hidden" id="step4">
-                <h3>4. Maklumat & Bayaran</h3>
-                
-                <div class="summary-box">
-                    <h4>Ringkasan Tempahan</h4>
-                    <div id="booking-summary">
-                        <p>Sila pilih kereta dan pakej dahulu</p>
-                    </div>
-                    <div class="total-price">
-                        <span>Jumlah:</span>
-                        <span id="total-amount">RM0</span>
-                    </div>
-                    <div class="deposit-info">
-                        <p>💳 Bayaran: 50% deposit (RM<span id="deposit-amount">0</span>) untuk lock slot</p>
-                    </div>
-                </div>
-
-                <form id="booking-form" onsubmit="submitBooking(event)">
-                    <div class="form-group">
-                        <label>Nama Penuh *</label>
-                        <input type="text" id="customer-name" required placeholder="Muhammad Sollehin">
-                    </div>
-
-                    <div class="form-group">
-                        <label>No. Telefon *</label>
-                        <input type="tel" id="customer-phone" required placeholder="012-345-6789">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Lokasi/Alamat *</label>
-                        <textarea id="customer-location" required placeholder="Condo/Office, Nama Bangunan, Alamat Lengkap, Shah Alam"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Tarikh & Masa Preferred *</label>
-                        <input type="datetime-local" id="booking-datetime" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Nota Tambahan (Optional)</label>
-                        <textarea id="customer-notes" placeholder="Cth: Kereta warna putih, parking di basement, etc"></textarea>
-                    </div>
-
-                    <div class="form-buttons">
-                        <button type="button" class="back-btn" onclick="backToStep(3)">← Kembali</button>
-                        <button type="submit" class="submit-btn">Hantar ke WhatsApp →</button>
-                    </div>
-                </form>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Price Reference Section -->
-    <section class="price-reference">
-        <div class="container">
-            <h3>📋 Senarai Harga Penuh</h3>
-            <div class="price-table-container">
-                <table class="price-table">
-                    <thead>
-                        <tr>
-                            <th>Saiz Kereta</th>
-                            <th>Quick Wash</th>
-                            <th>Signature</th>
-                            <th>Elite (4x)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Kompak (Myvi/Axia)</td>
-                            <td>RM35</td>
-                            <td>RM60</td>
-                            <td>RM220</td>
-                        </tr>
-                        <tr>
-                            <td>Sedan/SUV Kecil</td>
-                            <td>RM45</td>
-                            <td>RM75</td>
-                            <td>RM280</td>
-                        </tr>
-                        <tr>
-                            <td>SUV Besar</td>
-                            <td>RM55</td>
-                            <td>RM90</td>
-                            <td>RM340</td>
-                        </tr>
-                        <tr>
-                            <td>MPV/Van</td>
-                            <td>RM65</td>
-                            <td>RM110</td>
-                            <td>RM420</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <p class="price-note">* Elite Club: 4 sesi + merchandise, tiada expiry</p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <p><strong>XD DAENGXZX LAGACY</strong> | SSM: JM1021889-K</p>
-            <p>📱 WhatsApp: 016-700-3569 | 📧 xddaengxzx@gmail.com</p>
-            <p class="small">10AM - 6PM daily | Shah Alam & Sekitar</p>
+            <div class="footer-content">
+                <div class="brand-section">
+                    <h3>XD WATERLESS</h3>
+                    <p>Premium Mobile Car Care</p>
+                </div>
+                
+                <div class="contact-section">
+                    <p>📱 <a href="https://wa.me/60167003569">016-700-3569</a></p>
+                    <p>✉️ xddaengxzx@gmail.com</p>
+                    <p>🏢 XD DAENGXZX LAGACY (JM1021889-K)</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 XD Waterless. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
