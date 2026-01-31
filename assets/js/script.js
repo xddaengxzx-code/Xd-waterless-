@@ -1,5 +1,3 @@
-// assets/js/script.js
-
 // Pricing Data Structure
 const pricing = {
     kompak: {
@@ -39,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initBookingButtons();
     updatePrices();
+    initSmoothScroll();
 });
 
 // Vehicle Tabs
@@ -47,15 +46,9 @@ function initVehicleTabs() {
     
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            // Remove active class from all
             tabs.forEach(t => t.classList.remove('active'));
-            // Add to clicked
             tab.classList.add('active');
-            
-            // Update current size
             currentSize = tab.dataset.size;
-            
-            // Update prices
             updatePrices();
         });
     });
@@ -170,10 +163,11 @@ function initMobileMenu() {
     const toggle = document.querySelector('.mobile-toggle');
     const menu = document.querySelector('.nav-menu');
     
+    if (!toggle || !menu) return;
+    
     toggle.addEventListener('click', () => {
         menu.classList.toggle('active');
         
-        // Animate hamburger
         const spans = toggle.querySelectorAll('span');
         if (menu.classList.contains('active')) {
             spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
@@ -186,7 +180,6 @@ function initMobileMenu() {
         }
     });
     
-    // Close menu when clicking links
     const links = menu.querySelectorAll('a');
     links.forEach(link => {
         link.addEventListener('click', () => {
@@ -195,6 +188,25 @@ function initMobileMenu() {
             spans[0].style.transform = 'none';
             spans[1].style.opacity = '1';
             spans[2].style.transform = 'none';
+        });
+    });
+}
+
+// Smooth Scroll
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const target = document.getElementById(targetId);
+            if (target) {
+                const offset = 120;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 }
@@ -208,21 +220,7 @@ function capitalize(str) {
     return str;
 }
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// Add scroll effect to navbar
+// Navbar scroll effect
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
