@@ -1,185 +1,231 @@
-// XD Waterless Booking System
-let bookingData = {
-    carSize: null,
-    carType: null,
-    package: null,
-    basePrice: 0,
-    addons: [],
-    addonTotal: 0,
-    total: 0,
-    deposit: 0
+// assets/js/script.js
+
+// Pricing Data Structure
+const pricing = {
+    kompak: {
+        vehicle: "Myvi, Axia, Bezza, Saga",
+        quick: { price: 35, time: 30, code: "QW-KOMPAK" },
+        signature: { price: 60, time: 60, code: "SIG-KOMPAK" },
+        elite: { price: 220, savings: 20, code: "ELITE-KOMPAK" }
+    },
+    sedan: {
+        vehicle: "City, Vios, HR-V, X50, Aruz",
+        quick: { price: 45, time: 35, code: "QW-SEDAN" },
+        signature: { price: 75, time: 70, code: "SIG-SEDAN" },
+        elite: { price: 280, savings: 20, code: "ELITE-SEDAN" }
+    },
+    suv: {
+        vehicle: "CR-V, CX-5, X70, Fortuner",
+        quick: { price: 55, time: 40, code: "QW-SUVB" },
+        signature: { price: 90, time: 80, code: "SIG-SUVB" },
+        elite: { price: 340, savings: 20, code: "ELITE-SUVB" }
+    },
+    mpv: {
+        vehicle: "Alphard, Vellfire, Estima",
+        quick: { price: 65, time: 45, code: "QW-MPV" },
+        signature: { price: 110, time: 90, code: "SIG-MPV" },
+        elite: { price: 420, savings: 20, code: "ELITE-MPV" }
+    }
 };
 
-// Car Selection
-document.querySelectorAll('.car-card').forEach(card => {
-    card.addEventListener('click', function() {
-        // Remove previous selection
-        document.querySelectorAll('.car-card').forEach(c => c.classList.remove('selected'));
-        
-        // Select this
-        this.classList.add('selected');
-        
-        // Save data
-        bookingData.carSize = this.dataset.size;
-        bookingData.carType = this.querySelector('h4').textContent;
-        bookingData.quickPrice = parseInt(this.dataset.quick);
-        bookingData.signaturePrice = parseInt(this.dataset.signature);
-        
-        // Update package prices display
-        document.getElementById('quick-price').textContent = 'RM' + bookingData.quickPrice;
-        document.getElementById('signature-price').textContent = 'RM' + bookingData.signaturePrice;
-        
-        // Go to next step
-        setTimeout(() => goToStep(2), 300);
-    });
+// State
+let currentSize = 'kompak';
+const phoneNumber = '60167003569';
+
+// DOM Elements
+document.addEventListener('DOMContentLoaded', () => {
+    initVehicleTabs();
+    initMobileMenu();
+    initBookingButtons();
+    updatePrices();
 });
 
-// Package Selection
-document.querySelectorAll('.package-card').forEach(card => {
-    card.addEventListener('click', function() {
-        document.querySelectorAll('.package-card').forEach(c => c.classList.remove('selected'));
-        this.classList.add('selected');
-        
-        bookingData.package = this.dataset.package;
-        bookingData.basePrice = this.dataset.package === 'quick' ? bookingData.quickPrice : bookingData.signaturePrice;
-        
-        calculateTotal();
-        setTimeout(() => goToStep(3), 300);
+// Vehicle Tabs
+function initVehicleTabs() {
+    const tabs = document.querySelectorAll('.vehicle-tab');
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all
+            tabs.forEach(t => t.classList.remove('active'));
+            // Add to clicked
+            tab.classList.add('active');
+            
+            // Update current size
+            currentSize = tab.dataset.size;
+            
+            // Update prices
+            updatePrices();
+        });
     });
-});
+}
 
-// Add-ons Selection
-document.querySelectorAll('.addon-checkbox input').forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-        const addon = {
-            name: this.parentElement.querySelector('.addon-name').textContent,
-            price: parseInt(this.dataset.price)
-        };
+// Update Prices based on selection
+function updatePrices() {
+    const data = pricing[currentSize];
+    
+    // Update Quick Wash
+    const quickPrice = document.querySelector('[data-service="quick"] .price');
+    const quickTime = document.querySelector('[data-service="quick"] [data-time]');
+    if (quickPrice) {
+        quickPrice.textContent = data.quick.price;
+        quickPrice.dataset.base = data.quick.price;
+    }
+    if (quickTime) {
+        quickTime.textContent = data.quick.time;
+        quickTime.dataset.time = data.quick.time;
+    }
+    
+    // Update Signature
+    const sigPrice = document.querySelector('[data-service="signature"] .price');
+    const sigTime = document.querySelector('[data-service="signature"] [data-time]');
+    if (sigPrice) {
+        sigPrice.textContent = data.signature.price;
+        sigPrice.dataset.base = data.signature.price;
+    }
+    if (sigTime) {
+        sigTime.textContent = data.signature.time;
+        sigTime.dataset.time = data.signature.time;
+    }
+    
+    // Update Elite
+    const elitePrice = document.querySelector('.elite-price .price');
+    const eliteVehicle = document.getElementById('elite-vehicle');
+    if (elitePrice) {
+        elitePrice.textContent = data.elite.price;
+        elitePrice.dataset.base = data.elite.price;
+    }
+    if (eliteVehicle) {
+        eliteVehicle.textContent = capitalize(currentSize);
+    }
+}
+
+// Initialize Booking Buttons
+function initBookingButtons() {
+    const buttons = document.querySelectorAll('.btn-book, .btn-elite');
+    
+    buttons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const service = e.target.dataset.service;
+            const data = pricing[currentSize];
+            let code, price, message;
+            
+            if (service === 'Quick Wash') {
+                code = data.quick.code;
+                price = data.quick.price;
+                message = generateWhatsAppMessage(service, code, price, data.vehicle);
+            } else if (service === 'Signature Detail') {
+                code = data.signature.code;
+                price = data.signature.price;
+                message = generateWhatsAppMessage(service, code, price, data.vehicle);
+            } else if (service === 'Elite Club') {
+                code = data.elite.code;
+                price = data.elite.price;
+                message = generateWhatsAppMessage(service, code, price, data.vehicle, true);
+            }
+            
+            openWhatsApp(message);
+        });
+    });
+}
+
+// Generate WhatsApp Message
+function generateWhatsAppMessage(service, code, price, vehicle, isElite = false) {
+    const date = new Date().toLocaleDateString('ms-MY');
+    
+    let text = `*BOOKING XD WATERLESS*%0A%0A`;
+    text += `📅 Tarikh: ${date}%0A`;
+    text += `🚗 Servis: ${service}%0A`;
+    text += `📋 Kod: ${code}%0A`;
+    text += `🚙 Kenderaan: ${vehicle}%0A`;
+    text += `💰 Harga: RM${price}%0A%0A`;
+    
+    if (isElite) {
+        text += `*ELITE CLUB BENEFITS:*%0A`;
+        text += `• 4x SesiSignature%0A`;
+        text += `• Free Merchandise%0A`;
+        text += `• Tiada expiry%0A%0A`;
+    }
+    
+    text += `*MAKLUMAT TAMBAHAN:*%0A`;
+    text += `Nama: %0A`;
+    text += `Alamat penuh: %0A`;
+    text += `Tarikh/Slot masa: %0A`;
+    text += `Add-ons (jika ada): %0A%0A`;
+    text += `Saya bayar 50% deposit untuk lock slot.`;
+    
+    return text;
+}
+
+// Open WhatsApp
+function openWhatsApp(message) {
+    const url = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(url, '_blank');
+}
+
+// Mobile Menu Toggle
+function initMobileMenu() {
+    const toggle = document.querySelector('.mobile-toggle');
+    const menu = document.querySelector('.nav-menu');
+    
+    toggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
         
-        if (this.checked) {
-            bookingData.addons.push(addon);
+        // Animate hamburger
+        const spans = toggle.querySelectorAll('span');
+        if (menu.classList.contains('active')) {
+            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
         } else {
-            bookingData.addons = bookingData.addons.filter(a => a.name !== addon.name);
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
         }
-        
-        calculateTotal();
-        updateSummary();
+    });
+    
+    // Close menu when clicking links
+    const links = menu.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('active');
+            const spans = toggle.querySelectorAll('span');
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        });
+    });
+}
+
+// Utility
+function capitalize(str) {
+    if (str === 'kompak') return 'Kompak';
+    if (str === 'sedan') return 'Sedan/SUV Kecil';
+    if (str === 'suv') return 'SUV Besar';
+    if (str === 'mpv') return 'MPV/Van';
+    return str;
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     });
 });
 
-// Calculate Total Price
-function calculateTotal() {
-    bookingData.addonTotal = bookingData.addons.reduce((sum, addon) => sum + addon.price, 0);
-    bookingData.total = bookingData.basePrice + bookingData.addonTotal;
-    bookingData.deposit = Math.round(bookingData.total * 0.5);
-    
-    document.getElementById('total-amount').textContent = 'RM' + bookingData.total;
-    document.getElementById('deposit-amount').textContent = bookingData.deposit;
-}
-
-// Update Summary Display
-function updateSummary() {
-    const summaryDiv = document.getElementById('booking-summary');
-    
-    if (!bookingData.carSize) {
-        summaryDiv.innerHTML = '<p>Sila pilih kereta dan pakej dahulu</p>';
-        return;
+// Add scroll effect to navbar
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+    } else {
+        navbar.style.boxShadow = 'none';
     }
-    
-    let html = `
-        <p><strong>Kereta:</strong> ${bookingData.carType}</p>
-        <p><strong>Pakej:</strong> ${bookingData.package === 'quick' ? 'Quick Wash' : 'Signature Detail'}</p>
-        <p><strong>Harga Asas:</strong> RM${bookingData.basePrice}</p>
-    `;
-    
-    if (bookingData.addons.length > 0) {
-        html += '<p><strong>Add-ons:</strong></p><ul style="margin-left: 20px; margin-bottom: 10px;">';
-        bookingData.addons.forEach(addon => {
-            html += `<li>${addon.name} (+RM${addon.price})</li>`;
-        });
-        html += '</ul>';
-    }
-    
-    summaryDiv.innerHTML = html;
-}
-
-// Navigation
-function goToStep(stepNum) {
-    // Hide all steps
-    document.querySelectorAll('.step').forEach(step => step.classList.add('hidden'));
-    
-    // Show target step
-    document.getElementById('step' + stepNum).classList.remove('hidden');
-    
-    // Scroll to booking section
-    document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
-    
-    // If going to summary step, update it
-    if (stepNum === 4) {
-        updateSummary();
-    }
-}
-
-function backToStep(stepNum) {
-    goToStep(stepNum);
-}
-
-// Submit to WhatsApp
-function submitBooking(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('customer-name').value;
-    const phone = document.getElementById('customer-phone').value;
-    const location = document.getElementById('customer-location').value;
-    const datetime = document.getElementById('booking-datetime').value;
-    const notes = document.getElementById('customer-notes').value;
-    
-    if (!bookingData.carSize || !bookingData.package) {
-        alert('Sila pilih saiz kereta dan pakej dahulu!');
-        return;
-    }
-    
-    // Format message
-    let message = `*Tempahan XD Waterless*\n\n`;
-    message += `*Nama:* ${name}\n`;
-    message += `*Telefon:* ${phone}\n`;
-    message += `*Lokasi:* ${location}\n`;
-    message += `*Tarikh/Masa:* ${datetime}\n\n`;
-    
-    message += `*Detail Cuci:*\n`;
-    message += `Kereta: ${bookingData.carType}\n`;
-    message += `Pakej: ${bookingData.package === 'quick' ? 'Quick Wash' : 'Signature Detail'}\n`;
-    message += `Harga: RM${bookingData.basePrice}\n`;
-    
-    if (bookingData.addons.length > 0) {
-        message += `\n*Add-ons:*\n`;
-        bookingData.addons.forEach(addon => {
-            message += `- ${addon.name}: RM${addon.price}\n`;
-        });
-    }
-    
-    message += `\n*Jumlah: RM${bookingData.total}*\n`;
-    message += `*Deposit (50%): RM${bookingData.deposit}*\n\n`;
-    
-    if (notes) {
-        message += `*Nota:* ${notes}\n\n`;
-    }
-    
-    message += `Saya confirm booking ini.`;
-    
-    // Encode and open WhatsApp
-    const encodedMsg = encodeURIComponent(message);
-    const whatsappURL = `https://wa.me/60167003569?text=${encodedMsg}`;
-    
-    window.open(whatsappURL, '_blank');
-}
-
-// Initialize
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('XD Waterless Booking System Ready');
-    
-    // Set min datetime to now
-    const now = new Date();
-    now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
-    document.getElementById('booking-datetime').min = now.toISOString().slice(0,16);
 });
