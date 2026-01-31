@@ -1,4 +1,6 @@
 // XD WATERLESS - Pricing & Booking System
+// Semua harga mengikut saiz
+
 const PRICES = {
     kompak:  { quick: 30, signature: 60, elite: 180 },
     sedan:   { quick: 35, signature: 70, elite: 210 },
@@ -26,26 +28,28 @@ let currentSize = 'kompak';
 document.addEventListener('DOMContentLoaded', () => {
     setSize('kompak');
     initSticky();
-    console.log('XD Waterless — Ready for battle. 💀⚡');
+    console.log('XD Waterless - Ready');
 });
 
-// Set Size Function
+// Set Size Function - Update semua harga
 function setSize(size) {
     currentSize = size;
     const price = PRICES[size];
     
-    // Update tabs
+    // Update active tab
     document.querySelectorAll('.size-tab').forEach(tab => {
         tab.classList.remove('active');
         if(tab.dataset.size === size) tab.classList.add('active');
     });
     
-    // Animate price changes
-    animateValue('sig-price', price.signature);
+    // Update QUICK price
     animateValue('quick-price', price.quick);
-    animateValue('elite-price', price.elite);
     
-    // Update Elite math
+    // Update SIGNATURE price
+    animateValue('sig-price', price.signature);
+    
+    // Update ELITE price & math
+    animateValue('elite-price', price.elite);
     document.querySelector('.elite-single').textContent = price.signature;
     document.querySelector('.elite-total').textContent = price.signature * 6;
     document.getElementById('elite-save').textContent = (price.signature * 6) - price.elite;
@@ -75,17 +79,17 @@ function bookSize(type) {
     const price = PRICES[currentSize][type];
     const sizeName = SIZE_NAMES[currentSize];
     const examples = SIZE_EXAMPLES[currentSize];
+    const deposit = Math.ceil(price / 2);
     
     let message = '';
     const greeting = `Hai XD Waterless,`;
     
-    if (type === 'signature') {
-        message = `${greeting}%0A%0ASaya nak book SIGNATURE untuk kereta ${sizeName}.%0A(Contoh: ${examples})%0A%0AHarga: RM${price}%0A%0A*Saya faham 50% deposit (RM${Math.ceil(price/2)}) diperlukan untuk lock slot.*%0A%0ANama: %0APlate No: %0ALokasi (Alamat penuh): %0ATarikh & Masa preferred: `;
-    } else if (type === 'quick') {
-        message = `${greeting}%0A%0ASaya nak book QUICK untuk kereta ${sizeName}.%0A(Contoh: ${examples})%0A%0AHarga: RM${price}%0A%0A*Saya faham 50% deposit (RM${Math.ceil(price/2)}) diperlukan untuk lock slot.*%0A%0ANama: %0APlate No: %0ALokasi (Alamat penuh): %0ATarikh & Masa preferred: `;
+    if (type === 'quick') {
+        message = `${greeting}%0A%0ASaya nak book QUICK untuk kereta ${sizeName}.%0A(Contoh: ${examples})%0A%0AHarga: RM${price}%0ADeposit 50%: RM${deposit}%0A%0ANama: %0APlate No: %0ALokasi: %0ATarikh & Masa: `;
+    } else if (type === 'signature') {
+        message = `${greeting}%0A%0ASaya nak book SIGNATURE untuk kereta ${sizeName}.%0A(Contoh: ${examples})%0A%0AHarga: RM${price}%0ADeposit 50%: RM${deposit}%0A%0ANama: %0APlate No: %0ALokasi: %0ATarikh & Masa: `;
     } else if (type === 'elite') {
-        const deposit = Math.ceil(price / 2);
-        message = `${greeting}%0A%0ASaya nak join ELITE CLUB untuk ${sizeName}.%0A%0AHarga: RM${price} (6 sesi SIGNATURE)%0ADeposit 50%: RM${deposit}%0A%0A*Saya faham syarat: pernah guna SIGNATURE sekali sebelum ini.*%0A%0ANama: %0APlate No: %0ABoleh explain cara bayar?`;
+        message = `${greeting}%0A%0ASaya nak join ELITE CLUB untuk ${sizeName}.%0A%0AHarga: RM${price} (6 sesi)%0ADeposit: RM${deposit}%0A%0ASyarat: Pernah guna SIGNATURE sekali.%0A%0ANama: %0APlate No: %0ABoleh explain cara bayar?`;
     }
     
     window.open(`https://wa.me/60167003569?text=${message}`, '_blank');
@@ -129,7 +133,8 @@ function initSticky() {
 
 // Button click effects
 document.querySelectorAll('.btn-main, .btn-secondary, .btn-elite').forEach(btn => {
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function(e) {
+        e.stopPropagation();
         this.style.transform = 'scale(0.98)';
         setTimeout(() => {
             this.style.transform = 'scale(1)';
