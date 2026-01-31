@@ -31,6 +31,7 @@ const pricing = {
 // State
 let currentSize = 'kompak';
 const phoneNumber = '60167003569';
+const tagline = "No hose, no buckets, just quick shine!";
 
 // DOM Elements
 document.addEventListener('DOMContentLoaded', () => {
@@ -133,7 +134,8 @@ function initBookingButtons() {
 function generateWhatsAppMessage(service, code, price, vehicle, isElite = false) {
     const date = new Date().toLocaleDateString('ms-MY');
     
-    let text = `*BOOKING XD WATERLESS*%0A%0A`;
+    let text = `*XD WATERLESS* %0A`;
+    text += `⚡ ${tagline} %0A%0A`;
     text += `📅 Tarikh: ${date}%0A`;
     text += `🚗 Servis: ${service}%0A`;
     text += `📋 Kod: ${code}%0A`;
@@ -142,7 +144,7 @@ function generateWhatsAppMessage(service, code, price, vehicle, isElite = false)
     
     if (isElite) {
         text += `*ELITE CLUB BENEFITS:*%0A`;
-        text += `• 4x SesiSignature%0A`;
+        text += `• 4x Sesi Signature%0A`;
         text += `• Free Merchandise%0A`;
         text += `• Tiada expiry%0A%0A`;
     }
