@@ -1,136 +1,139 @@
-// ========== CONFIG ==========
 const phone = "60167003569";
+
 const pricing = {
-  kompak: { lasak: 35, gempak: 60, terbaik: 95, lowkey: 120, highkey: 210, unlocked: 330 },
-  sedan:  { lasak: 45, gempak: 75, terbaik: 115, lowkey: 160, highkey: 270, unlocked: 410 },
-  suv:    { lasak: 55, gempak: 90, terbaik: 140, lowkey: 200, highkey: 330, unlocked: 510 },
-  mpv:    { lasak: 65, gempak: 110, terbaik: 165, lowkey: 240, highkey: 410, unlocked: 610 }
+    kompak: {
+        lasak: 35,
+        gempak: 60,
+        terbaik: 95,
+        lowkey: 120,
+        highkey: 210,
+        unlocked: 330
+    },
+    sedan: {
+        lasak: 45,
+        gempak: 75,
+        terbaik: 115,
+        lowkey: 160,
+        highkey: 270,
+        unlocked: 410
+    },
+    suv: {
+        lasak: 55,
+        gempak: 90,
+        terbaik: 140,
+        lowkey: 200,
+        highkey: 330,
+        unlocked: 510
+    },
+    mpv: {
+        lasak: 65,
+        gempak: 110,
+        terbaik: 165,
+        lowkey: 240,
+        highkey: 410,
+        unlocked: 610
+    }
 };
 
 let currentSize = "kompak";
-let addonsTotal = 0;
 
-// ========== SOUND EFFECT (Web Audio API) ==========
-let audioCtx = null;
-function playClickSound() {
-  try {
-    if (!audioCtx) {
-      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    }
-    if (audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
-    const osc = audioCtx.createOscillator();
-    const gainNode = audioCtx.createGain();
-    osc.type = 'sine';
-    osc.frequency.value = 800;
-    gainNode.gain.value = 0.1;
-    osc.connect(gainNode).connect(audioCtx.destination);
-    osc.start();
-    osc.stop(audioCtx.currentTime + 0.08);
-  } catch (e) {
-    // silently fail if audio not supported
-  }
-}
-
-// ========== ADD-ONS AUTO KIRA ==========
-function calcAddonsTotal() {
-  const checkboxes = document.querySelectorAll('.addon-checkbox');
-  let total = 0;
-  checkboxes.forEach(cb => {
-    if (cb.checked) total += parseInt(cb.dataset.price, 10);
-  });
-  return total;
-}
-
-function updateAddonsTotal() {
-  addonsTotal = calcAddonsTotal();
-  updatePrices();
-}
-
-// ========== PRICE UPDATE WITH ANIMATION ==========
-function updatePrices() {
-  const p = pricing[currentSize];
-  const priceElements = {
-    lasakPrice: p.lasak,
-    gempakPrice: p.gempak,
-    terbaikPrice: p.terbaik,
-    lowkeyPrice: p.lowkey,
-    highkeyPrice: p.highkey,
-    unlockedPrice: p.unlocked
-  };
-
-  for (let [id, base] of Object.entries(priceElements)) {
-    const el = document.getElementById(id);
-    const total = base + addonsTotal;
-    el.innerText = 'RM' + total;
-    // Trigger animation
-    el.classList.add('price-animate');
-    setTimeout(() => {
-      el.classList.remove('price-animate');
-    }, 300);
-  }
-}
-
-// ========== VEHICLE SELECTOR ==========
-document.querySelectorAll('.vehicle').forEach(btn => {
-  btn.addEventListener('click', () => {
-    playClickSound();
-    document.querySelectorAll('.vehicle').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    currentSize = btn.dataset.size;
-    updatePrices();
-  });
-});
-
-// ========== ADD-ONS LISTENERS ==========
-document.querySelectorAll('.addon-checkbox').forEach(cb => {
-  cb.addEventListener('change', () => {
-    playClickSound();
-    updateAddonsTotal();
-  });
-});
-
-// ========== BOOK BUTTON ==========
-document.querySelectorAll('.btn-book').forEach(btn => {
-  btn.addEventListener('click', () => {
-    playClickSound();
-    const pack = btn.dataset.package;
-    // extract base package name (e.g., "LASAK" from "ONZ LOWKEY" -> "lowkey")
-    let baseKey = pack.split(' ').pop().toLowerCase();
-    // handle normal packages
-    if (pack === 'LASAK') baseKey = 'lasak';
-    if (pack === 'GEMPAK') baseKey = 'gempak';
-    if (pack === 'TERBAIK') baseKey = 'terbaik';
-    
-    const basePrice = pricing[currentSize][baseKey];
-    const totalPrice = basePrice + addonsTotal;
-
-    // Build add-ons summary
-    let addonsText = '';
-    document.querySelectorAll('.addon-checkbox').forEach(cb => {
-      if (cb.checked) {
-        const label = cb.closest('.addon-item')?.innerText?.split('+')[0].trim() || 'Add-on';
-        addonsText += `\n  • ${label} (+RM${cb.dataset.price})`;
-      }
+// Vehicle selector
+document.querySelectorAll(".vehicle-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        // Remove active from all
+        document.querySelectorAll(".vehicle-btn").forEach(b => {
+            b.classList.remove("active");
+        });
+        
+        // Add active to clicked
+        btn.classList.add("active");
+        currentSize = btn.dataset.size;
+        
+        // Update prices with animation
+        updatePrices();
     });
-
-    let msg = `XD WATERLESS\n`;
-    msg += `Package: ${pack}\n`;
-    msg += `Saiz: ${currentSize}\n`;
-    msg += `Harga Asas: RM${basePrice}\n`;
-    if (addonsTotal > 0) {
-      msg += `Add-on:${addonsText}\n`;
-      msg += `Jumlah Add-on: RM${addonsTotal}\n`;
-    }
-    msg += `━━━━━━━━━━\n`;
-    msg += `*JUMLAH BAYARAN: RM${totalPrice}*\n\n`;
-    msg += `Nama:\nAlamat:\nTarikh & masa:\n\n`;
-    msg += `Saya bayar deposit minimum RM20 untuk lock slot.`;
-
-    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
-  });
 });
 
-// ========== INIT ==========
+function updatePrices() {
+    const p = pricing[currentSize];
+    const priceElements = {
+        lasakPrice: p.lasak,
+        gempakPrice: p.gempak,
+        terbaikPrice: p.terbaik,
+        lowkeyPrice: p.lowkey,
+        highkeyPrice: p.highkey,
+        unlockedPrice: p.unlocked
+    };
+
+    Object.entries(priceElements).forEach(([id, value]) => {
+        const el = document.getElementById(id);
+        if (el) {
+            // Add updating class for animation
+            el.classList.add("updating");
+            
+            setTimeout(() => {
+                el.textContent = value;
+                el.classList.remove("updating");
+            }, 150);
+        }
+    });
+}
+
+// Booking buttons
+document.querySelectorAll(".btn-book").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const pack = btn.dataset.package;
+        let price;
+        
+        // Get price based on package
+        if (pack.includes("ONZ")) {
+            const tier = pack.split(" ")[1].toLowerCase();
+            price = pricing[currentSize][tier];
+        } else {
+            price = pricing[currentSize][pack.toLowerCase()];
+        }
+
+        // Build WhatsApp message
+        let msg = `*XD WATERLESS BOOKING*\n`;
+        msg += `━━━━━━━━━━━━━━━\n\n`;
+        msg += `📦 Package: *${pack}*\n`;
+        msg += `🚗 Vehicle: *${currentSize.toUpperCase()}*\n`;
+        msg += `💰 Price: *RM${price}*\n\n`;
+        msg += `━━━━━━━━━━━━━━━\n\n`;
+        msg += `Please fill in:\n`;
+        msg += `👤 Name:\n`;
+        msg += `📍 Address/Location:\n`;
+        msg += `📅 Preferred Date:\n`;
+        msg += `⏰ Preferred Time:\n\n`;
+        msg += `💳 I'll pay RM20 deposit to lock my slot.`;
+
+        // Open WhatsApp
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, "_blank");
+    });
+});
+
+// Initialize
 updatePrices();
+
+// Add scroll reveal effect
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+}, observerOptions);
+
+// Observe all cards
+document.querySelectorAll(".package-card, .onz-card, .premium-card").forEach(card => {
+    card.style.opacity = "0";
+    card.style.transform = "translateY(30px)";
+    card.style.transition = "all 0.6s ease";
+    observer.observe(card);
+});
