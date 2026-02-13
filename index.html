@@ -1,129 +1,112 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XD Waterless | Industrial Premium</title>
-
-<link rel="stylesheet" href="assets/css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XD Waterless | Industrial Premium</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+  <div class="top-bar">NO HOSE • NO BUCKETS • JUST QUICK SHINE</div>
+  <div class="flyer">
+    <header class="header">
+      <!-- LOGO DITAMBAH DI SINI -->
+      <img src="file_00000000cdb872308dd42370e43cefaa.png" alt="XD Waterless Logo" class="logo">
+      <h1>XD WATERLESS</h1>
+      <p>Premium Maintenance Detailing • Shah Alam</p>
+    </header>
 
-<div class="top-bar">
-NO HOSE • NO BUCKETS • JUST QUICK SHINE
-</div>
+    <!-- VEHICLE SELECTOR -->
+    <div class="vehicle-selector">
+      <button class="vehicle active" data-size="kompak">Kompak</button>
+      <button class="vehicle" data-size="sedan">Sedan</button>
+      <button class="vehicle" data-size="suv">SUV</button>
+      <button class="vehicle" data-size="mpv">MPV</button>
+    </div>
 
-<div class="flyer">
+    <!-- PACKAGES -->
+    <div class="packages">
+      <div class="box">
+        <h2>⚡ LASAK</h2>
+        <ul>
+          <li>Exterior Waterless Wash</li>
+          <li>Rim Cleaning</li>
+          <li>Tire Shine</li>
+          <li>Glass Wipe</li>
+        </ul>
+        <div class="price" id="lasakPrice">RM35</div>
+        <button class="btn-book" data-package="LASAK">Book LASAK</button>
+      </div>
+      <div class="box">
+        <h2>🔥 GEMPAK</h2>
+        <ul>
+          <li>Semua LASAK +</li>
+          <li>Interior Vacuum</li>
+          <li>Dashboard Polish</li>
+          <li>Air Fresh Mist</li>
+        </ul>
+        <div class="price" id="gempakPrice">RM60</div>
+        <button class="btn-book" data-package="GEMPAK">Book GEMPAK</button>
+      </div>
+    </div>
 
-<header class="header">
-<h1>XD WATERLESS</h1>
-<p>Premium Maintenance Detailing • Shah Alam</p>
-</header>
+    <!-- PREMIUM -->
+    <div class="premium">
+      <h2>👑 TERBAIK</h2>
+      <ul>
+        <li>Semua GEMPAK +</li>
+        <li>Wax Boost Technology</li>
+        <li>Hydrophobic Shield</li>
+        <li>Deep Gloss Finish</li>
+      </ul>
+      <div class="price" id="terbaikPrice">RM95</div>
+      <button class="btn-book" data-package="TERBAIK">Book TERBAIK</button>
+    </div>
 
-<!-- VEHICLE SELECTOR -->
-<div class="vehicle-selector">
-<button class="vehicle active" data-size="kompak">Kompak</button>
-<button class="vehicle" data-size="sedan">Sedan</button>
-<button class="vehicle" data-size="suv">SUV</button>
-<button class="vehicle" data-size="mpv">MPV</button>
-</div>
+    <!-- ADD-ONS : AUTO KIRA -->
+    <div class="addons">
+      <h2>➕ TAMBAH PERKHIDMATAN</h2>
+      <div class="addons-grid">
+        <label class="addon-item">
+          <input type="checkbox" class="addon-checkbox" data-price="10"> 🧼 Interior Deep Clean + RM10
+        </label>
+        <label class="addon-item">
+          <input type="checkbox" class="addon-checkbox" data-price="15"> ✨ Wax Booster + RM15
+        </label>
+        <label class="addon-item">
+          <input type="checkbox" class="addon-checkbox" data-price="12"> 🛞 Rim Sealant + RM12
+        </label>
+      </div>
+    </div>
 
-<!-- PACKAGES -->
-<div class="packages">
+    <!-- ONZ CLUB -->
+    <div class="onz">
+      <h2>🔒 ONZ CLUB (4X SESI • SAH 12 BULAN)</h2>
+      <div class="onz-grid">
+        <div class="onz-box">
+          <h3>LOWKEY</h3>
+          <div class="price" id="lowkeyPrice">RM120</div>
+          <button class="btn-book" data-package="ONZ LOWKEY">Daftar</button>
+        </div>
+        <div class="onz-box highlight">
+          <h3>HIGHKEY</h3>
+          <div class="price" id="highkeyPrice">RM210</div>
+          <button class="btn-book" data-package="ONZ HIGHKEY">Daftar</button>
+        </div>
+        <div class="onz-box">
+          <h3>UNLOCKED</h3>
+          <div class="price" id="unlockedPrice">RM330</div>
+          <button class="btn-book" data-package="ONZ UNLOCKED">Daftar</button>
+        </div>
+      </div>
+    </div>
 
-<div class="box">
-<h2>⚡ LASAK</h2>
-<ul>
-<li>Exterior Waterless Wash</li>
-<li>Rim Cleaning</li>
-<li>Tire Shine</li>
-<li>Glass Wipe</li>
-</ul>
-<div class="price" id="lasakPrice">RM35</div>
-<button class="btn-book" data-package="LASAK">Book LASAK</button>
-</div>
-
-<div class="box">
-<h2>🔥 GEMPAK</h2>
-<ul>
-<li>Semua LASAK +</li>
-<li>Interior Vacuum</li>
-<li>Dashboard Polish</li>
-<li>Air Fresh Mist</li>
-</ul>
-<div class="price" id="gempakPrice">RM60</div>
-<button class="btn-book" data-package="GEMPAK">Book GEMPAK</button>
-</div>
-
-</div>
-
-<!-- ADD-ONS -->
-<div class="addons">
-<h2>➕ ADD-ONS (Pilih & Auto Kira)</h2>
-<div class="addon-item">
-<input type="checkbox" id="waxBoost" data-price="20">
-<label for="waxBoost">Wax Boost Extra (+RM20)</label>
-</div>
-<div class="addon-item">
-<input type="checkbox" id="deepClean" data-price="30">
-<label for="deepClean">Interior Deep Clean (+RM30)</label>
-</div>
-<div class="addon-item">
-<input type="checkbox" id="tireDress" data-price="15">
-<label for="tireDress">Tire Dressing (+RM15)</label>
-</div>
-<div class="total-addons">Total Add-ons: RM<span id="addonTotal">0</span></div>
-</div>
-
-<!-- PREMIUM -->
-<div class="premium">
-<h2>👑 TERBAIK</h2>
-<ul>
-<li>Semua GEMPAK +</li>
-<li>Wax Boost Technology</li>
-<li>Hydrophobic Shield</li>
-<li>Deep Gloss Finish</li>
-</ul>
-<div class="price" id="terbaikPrice">RM95</div>
-<button class="btn-book" data-package="TERBAIK">Book TERBAIK</button>
-</div>
-
-<!-- ONZ -->
-<div class="onz">
-<h2>🔒 ONZ CLUB (4X SESI • SAH 12 BULAN)</h2>
-
-<div class="onz-grid">
-
-<div class="onz-box">
-<h3>LOWKEY</h3>
-<div class="price" id="lowkeyPrice">RM120</div>
-<button class="btn-book" data-package="ONZ LOWKEY">Daftar</button>
-</div>
-
-<div class="onz-box highlight">
-<h3>HIGHKEY</h3>
-<div class="price" id="highkeyPrice">RM210</div>
-<button class="btn-book" data-package="ONZ HIGHKEY">Daftar</button>
-</div>
-
-<div class="onz-box">
-<h3>UNLOCKED</h3>
-<div class="price" id="unlockedPrice">RM330</div>
-<button class="btn-book" data-package="ONZ UNLOCKED">Daftar</button>
-</div>
-
-</div>
-</div>
-
-<div class="policy">
-Deposit minimum RM20 untuk lock booking.<br>
-ONZ dibayar penuh semasa sign-up.
-</div>
-
-</div>
-
-<script src="assets/js/script.js"></script>
+    <div class="policy">
+      Deposit minimum RM20 untuk lock booking.<br>
+      ONZ dibayar penuh semasa sign-up. Add-on dikira sekali.
+    </div>
+  </div>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
