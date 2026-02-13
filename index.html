@@ -1,420 +1,384 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XD Waterless | No hose. No buckets. Just quick shine.</title>
-    <meta name="description" content="XD Waterless - Premium mobile waterless car wash services in Shah Alam & surrounding areas. SSM Registered JM1021889-K. 45 mins, zero water, maximum shine.">
-    
-    <!-- WhatsApp/Open Graph Meta Tags -->
-    <meta property="og:title" content="XD Waterless | Cuci Kereta Tanpa Air Shah Alam">
-    <meta property="og:description" content="No hose. No buckets. Just quick shine. RM35 only. 45 mins at your doorstep. SSM Registered.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/xddaengxzx-code/Xd-waterless-/main/file_00000000cdb872308dd42370e43cefaa.png">
-    <meta property="og:url" content="https://xd-waterless.pages.dev/">
-    <meta property="og:type" content="website">
-    
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XD Waterless | No Hose. No Buckets.</title>
+<style>
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- URGENCY BANNER -->
-    <div class="urgency-banner">
-        ⏰ SLOT TERHAD: 10AM-6PM DAILY — WHATSAPP UNTUK LOCK TARIKH
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.flyer {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header styles */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed #e0e0e0;
+}
+
+.header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 2.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.header p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    font-weight: 600;
+}
+
+/* Packages section */
+.packages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.box {
+    flex: 1;
+    min-width: 250px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    background: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.box h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.box ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.box ul li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.box ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.price p {
+    margin: 8px 0;
+    font-weight: 600;
+}
+
+.price span {
+    color: #e74c3c;
+    font-weight: 700;
+}
+
+/* Premium section */
+.premium {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.premium h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.premium ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.premium ul li {
+    padding: 10px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.premium ul li:before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: gold;
+    font-weight: bold;
+}
+
+.premium .price {
+    text-align: center;
+}
+
+.premium .price p {
+    margin: 8px 0;
+    font-weight: 700;
+}
+
+.premium .price span {
+    color: #f1c40f;
+    font-weight: 800;
+}
+
+/* ONZ section */
+.onz {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px dashed #3498db;
+    border-radius: 10px;
+    background: #f8f9fa;
+}
+
+.onz h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.onz-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.onz-box {
+    flex: 1;
+    min-width: 180px;
+    padding: 20px;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    background: white;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.onz-box.highlight {
+    border-color: #e74c3c;
+    background: #fffbf0;
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.2);
+}
+
+.onz-box h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.onz-box p {
+    margin: 8px 0;
+    font-weight: 600;
+}
+
+.onz-box span {
+    color: #e74c3c;
+    font-weight: 700;
+}
+
+/* Policy section */
+.policy {
+    margin: 30px 0;
+    padding: 20px;
+    background: #fff8e1;
+    border-radius: 10px;
+    border-left: 4px solid #ffc107;
+    font-size: 0.9rem;
+}
+
+.policy p {
+    margin: 8px 0;
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px dashed #e0e0e0;
+}
+
+.footer a {
+    color: #27ae60;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #2ecc71;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .flyer {
+        padding: 20px;
+    }
+    
+    .header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .packages {
+        flex-direction: column;
+    }
+    
+    .onz-grid {
+        flex-direction: column;
+    }
+    
+    .box, .onz-box {
+        min-width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="flyer">
+    <div class="header">
+        <h1>XD WATERLESS</h1>
+        <p>NO HOSE • NO BUCKETS • JUST QUICK SHINE</p>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <span class="logo-xd">XD</span>
-                <div class="brand-text">
-                    <span class="logo-text">WATERLESS</span>
-                    <span class="tagline-mini">No hose. No buckets. Just shine.</span>
-                </div>
-            </div>
-            <button class="mobile-toggle" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="#services">Servis</a></li>
-                <li><a href="#pricing">Harga</a></li>
-                <li><a href="#elite">Elite Club</a></li>
-                <li><a href="#testimonials">Testimoni</a></li>
-                <li><a href="https://wa.me/60167003569" class="btn-nav" target="_blank">WhatsApp</a></li>
+    <div class="packages">
+        <div class="box">
+            <h2>⚡ LASAK</h2>
+            <ul>
+                <li>Exterior Waterless Wash</li>
+                <li>Rim Cleaning</li>
+                <li>Tire Shine</li>
+                <li>Glass Wipe</li>
             </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="badge">SSM Registered: JM1021889-K</div>
-                <h1>PREMIUM MOBILE CAR CARE</h1>
-                <p class="subtitle">Shah Alam & Sekitar</p>
-                <h2 class="hero-tagline">No hose. No buckets. Just quick shine.</h2>
-                <p class="description">Servis cuci kereta tanpa air profesional datang ke lokasi anda. Save water, save time, stay clean.</p>
-                
-                <div class="hero-buttons">
-                    <a href="#booking" class="btn-primary">Book Now</a>
-                    <a href="#services" class="btn-secondary">Lihat Servis</a>
-                </div>
-
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">30-90</span>
-                        <span class="stat-label">Minit</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">0</span>
-                        <span class="stat-label">Liter Air</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Shine</span>
-                    </div>
-                </div>
+            <div class="price">
+                <p>Kompak <span>RM35</span></p>
+                <p>Sedan <span>RM45</span></p>
+                <p>SUV <span>RM55</span></p>
+                <p>MPV <span>RM65</span></p>
             </div>
         </div>
-        <div class="hero-bg">
-            <img src="https://raw.githubusercontent.com/xddaengxzx-code/Xd-waterless-/main/file_00000000cdb872308dd42370e43cefaa.png" alt="XD Waterless Logo" class="floating-logo">
-            <div class="floating-text">NO HOSE • NO BUCKETS • QUICK SHINE</div>
-        </div>
-    </header>
 
-    <!-- Vehicle Size Selector (Sticky) -->
-    <section class="vehicle-selector" id="booking">
-        <div class="container">
-            <p class="selector-label">Pilih Saiz Kenderaan:</p>
-            <div class="vehicle-tabs">
-                <button class="vehicle-tab active" data-size="kompak" data-vehicle="Myvi, Axia, Bezza, Saga">
-                    <span class="vehicle-icon">🚗</span>
-                    <span class="vehicle-name">Kompak</span>
-                    <small>Myvi, Axia, etc</small>
-                </button>
-                <button class="vehicle-tab" data-size="sedan" data-vehicle="City, Vios, HR-V, X50">
-                    <span class="vehicle-icon">🚙</span>
-                    <span class="vehicle-name">Sedan/SUV Kecil</span>
-                    <small>City, HR-V, etc</small>
-                </button>
-                <button class="vehicle-tab" data-size="suv" data-vehicle="CR-V, CX-5, Fortuner">
-                    <span class="vehicle-icon">🚐</span>
-                    <span class="vehicle-name">SUV Besar</span>
-                    <small>CR-V, CX-5, etc</small>
-                </button>
-                <button class="vehicle-tab" data-size="mpv" data-vehicle="Alphard, Vellfire, Estima">
-                    <span class="vehicle-icon">🚎</span>
-                    <span class="vehicle-name">MPV/Van</span>
-                    <small>Alphard, etc</small>
-                </button>
+        <div class="box">
+            <h2>🔥 GEMPAK</h2>
+            <ul>
+                <li>Semua LASAK +</li>
+                <li>Full Interior Vacuum</li>
+                <li>Dashboard Polish</li>
+                <li>Air Fresh Mist</li>
+            </ul>
+            <div class="price">
+                <p>Kompak <span>RM60</span></p>
+                <p>Sedan <span>RM75</span></p>
+                <p>SUV <span>RM90</span></p>
+                <p>MPV <span>RM110</span></p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Pakej Servis</h2>
-                <p class="section-tagline">No hose. No buckets. Just quick shine.</p>
+    <div class="premium">
+        <h2>👑 TERBAIK</h2>
+        <ul>
+            <li>Semua GEMPAK +</li>
+            <li>Wax Boost Technology</li>
+            <li>Hydrophobic Protection</li>
+            <li>Deep Gloss Finish</li>
+        </ul>
+        <div class="price">
+            <p>Kompak <span>RM95</span></p>
+            <p>Sedan <span>RM115</span></p>
+            <p>SUV <span>RM140</span></p>
+            <p>MPV <span>RM165</span></p>
+        </div>
+    </div>
+
+    <div class="onz">
+        <h2>🔒 ONZ CLUB (4X SESI • SAH 12 BULAN)</h2>
+        <div class="onz-grid">
+            <div class="onz-box">
+                <h3>LOWKEY</h3>
+                <p>Kompak <span>RM120</span></p>
+                <p>Sedan <span>RM160</span></p>
+                <p>SUV <span>RM200</span></p>
+                <p>MPV <span>RM240</span></p>
             </div>
-
-            <div class="services-grid">
-                <!-- Quick Wash -->
-                <div class="service-card" data-service="quick">
-                    <div class="service-badge exterior">EXTERIOR ONLY</div>
-                    <h3>Quick Wash</h3>
-                    <p class="service-desc">Cuci pantas exterior sahaja untuk maintenance harian</p>
-                    
-                    <div class="price-display">
-                        <span class="currency">RM</span>
-                        <span class="price" data-base="35">35</span>
-                    </div>
-                    <span class="duration">⏱️ <span data-time="30">30</span> minit</span>
-
-                    <ul class="features">
-                        <li>✓ Cuci & wax exterior</li>
-                        <li>✓ Lap cermin & tingkap</li>
-                        <li>✓ Kilat tayar & rim</li>
-                    </ul>
-
-                    <button class="btn-book" data-service="Quick Wash" data-code="QW">Book via WhatsApp</button>
-                </div>
-
-                <!-- Signature Detail -->
-                <div class="service-card popular" data-service="signature">
-                    <div class="service-badge popular-badge">POPULAR</div>
-                    <h3>Signature Detail</h3>
-                    <p class="service-desc">Full detail interior & exterior lengkap</p>
-                    
-                    <div class="price-display">
-                        <span class="currency">RM</span>
-                        <span class="price" data-base="60">60</span>
-                    </div>
-                    <span class="duration">⏱️ <span data-time="60">60</span> minit</span>
-
-                    <ul class="features">
-                        <li>✓ Semua Quick Wash +</li>
-                        <li>✓ Vacuum & lap dashboard</li>
-                        <li>✓ Seat wipe-down & bau segar</li>
-                        <li class="highlight">✓ Priority booking</li>
-                    </ul>
-
-                    <button class="btn-book primary" data-service="Signature Detail" data-code="SIG">Book via WhatsApp</button>
-                </div>
+            <div class="onz-box highlight">
+                <h3>HIGHKEY</h3>
+                <p>Kompak <span>RM210</span></p>
+                <p>Sedan <span>RM270</span></p>
+                <p>SUV <span>RM330</span></p>
+                <p>MPV <span>RM410</span></p>
+            </div>
+            <div class="onz-box">
+                <h3>UNLOCKED</h3>
+                <p>Kompak <span>RM330</span></p>
+                <p>Sedan <span>RM410</span></p>
+                <p>SUV <span>RM510</span></p>
+                <p>MPV <span>RM610</span></p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Elite Club Section -->
-    <section class="elite-section" id="elite">
-        <div class="container">
-            <div class="elite-header">
-                <span class="elite-icon">💎</span>
-                <h2>ELITE CLUB</h2>
-                <p>4 Sesi + Official Merchandise</p>
-                <span class="tagline-sub">No hose. No buckets. Just quick shine.</span>
-            </div>
+    <div class="policy">
+        <p>Deposit minimum RM20 untuk lock booking.</p>
+        <p>ONZ Club dibayar penuh semasa sign-up.</p>
+        <p>Servis kategori maintenance (bukan deep cleaning).</p>
+    </div>
 
-            <div class="elite-card">
-                <div class="elite-content">
-                    <div class="elite-price-box">
-                        <div class="elite-price">
-                            <span class="currency">RM</span>
-                            <span class="price" data-base="220">220</span>
-                        </div>
-                        <span class="savings">Jimat RM20</span>
-                    </div>
-
-                    <div class="elite-details">
-                        <h3>Membership Pakej <span id="elite-vehicle">Kompak</span></h3>
-                        <ul>
-                            <li>✅ 4x Sesi Signature Detail</li>
-                            <li>✅ Official XD Merchandise</li>
-                            <li>✅ Tiada expiry date</li>
-                            <li>✅ Boleh transfer ke kenderaan lain</li>
-                            <li>✅ Full payment upfront</li>
-                        </ul>
-                        <button class="btn-elite" data-service="Elite Club" data-code="ELITE">Daftar Elite Club</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Add-ons Section -->
-    <section class="addons-section" id="addons">
-        <div class="container">
-            <h2>Servis Tambahan</h2>
-            <p class="section-tagline">No hose. No buckets. Just quick shine.</p>
-            <div class="addons-grid">
-                <div class="addon-item">
-                    <span class="addon-name">Engine Bay Clean</span>
-                    <span class="addon-price">+RM25</span>
-                </div>
-                <div class="addon-item">
-                    <span class="addon-name">Seat Shampoo (per seat)</span>
-                    <span class="addon-price">+RM20</span>
-                </div>
-                <div class="addon-item">
-                    <span class="addon-name">Headlight Restoration</span>
-                    <span class="addon-price">+RM40</span>
-                </div>
-                <div class="addon-item">
-                    <span class="addon-name">Ceramic Wax Boost</span>
-                    <span class="addon-price">+RM45</span>
-                </div>
-                <div class="addon-item">
-                    <span class="addon-name">Odor Eliminator</span>
-                    <span class="addon-price">+RM35</span>
-                </div>
-                <div class="addon-item">
-                    <span class="addon-name">Leather Conditioning</span>
-                    <span class="addon-price">+RM50</span>
-                </div>
-                <div class="addon-item">
-                    <span class="addon-name">Glass Polish (all)</span>
-                    <span class="addon-price">+RM30</span>
-                </div>
-                <div class="addon-item">
-                    <span class="addon-name">Interior Sanitizing</span>
-                    <span class="addon-price">+RM35</span>
-                </div>
-            </div>
-            <p class="addon-note">*Nyatakan add-on yang diperlukan semasa booking</p>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials-section" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>Testimoni Pelanggan</h2>
-                <p class="section-tagline">No hose. No buckets. Just quick shine.</p>
-            </div>
-
-            <div class="testimonials-grid">
-                <!-- Testimonial 1: Cik Ina -->
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="avatar">CI</div>
-                        <div class="customer-info">
-                            <h4>Cik Ina</h4>
-                            <span class="verified">✓ Verified Customer</span>
-                        </div>
-                        <div class="rating">⭐⭐⭐⭐⭐</div>
-                    </div>
-                    <div class="testimonial-content">
-                        <p>"Cepat & jimat masa. Servis sangat pantas dalam 45 minit, kereta terus nampak bersih berkilat tanpa perlu gerak ke kedai cuci."</p>
-                    </div>
-                    <div class="testimonial-meta">
-                        <span class="date">Januari 2025</span>
-                        <span class="service">Quick Wash • Kompak</span>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2: Abg Meng -->
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="avatar" style="background: #2a4d69;">ME</div>
-                        <div class="customer-info">
-                            <h4>Abg Meng</h4>
-                            <span class="verified">✓ Verified Customer</span>
-                        </div>
-                        <div class="rating">⭐⭐⭐⭐⭐</div>
-                    </div>
-                    <div class="testimonial-content">
-                        <p>"Kebersihan keseluruhan kereta sangat memuaskan. Kilat macam baru keluar showroom. Recommended!"</p>
-                    </div>
-                    <div class="testimonial-meta">
-                        <span class="date">Januari 2025</span>
-                        <span class="service">Signature Detail • SUV</span>
-                    </div>
-                </div>
-
-                <!-- CTA Card -->
-                <div class="testimonial-card highlight-card">
-                    <div class="testimonial-header">
-                        <div class="avatar" style="background: var(--accent); color: #000;">?</div>
-                        <div class="customer-info">
-                            <h4>Anda Seterusnya?</h4>
-                            <span class="verified" style="color: var(--accent);">📱 WhatsApp Now</span>
-                        </div>
-                        <div class="rating" style="opacity: 0.3;">⭐⭐⭐⭐⭐</div>
-                    </div>
-                    <div class="testimonial-content">
-                        <p style="font-style: italic; color: var(--accent);">"No hose. No buckets. Just quick shine."</p>
-                        <p class="testimonial-cta">Jadi antara 10 pelanggan pertama di Shah Alam & dapatkan <strong>RM5 off</strong> first trial.</p>
-                    </div>
-                    <div class="testimonial-meta">
-                        <a href="https://wa.me/60167003569" class="btn-testimonial">Book Sekarang →</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="trust-badges">
-                <div class="badge-item">
-                    <span class="badge-number">100%</span>
-                    <span class="badge-text">Satisfaction Rate</span>
-                </div>
-                <div class="badge-item">
-                    <span class="badge-number">5★</span>
-                    <span class="badge-text">Average Rating</span>
-                </div>
-                <div class="badge-item">
-                    <span class="badge-number">45</span>
-                    <span class="badge-text">Mins Average</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Coverage Section -->
-    <section class="coverage" id="coverage">
-        <div class="container">
-            <h2>Kawasan & Polisi</h2>
-            
-            <div class="coverage-grid">
-                <div class="coverage-card free">
-                    <h3>📍 Percuma</h3>
-                    <p>Shah Alam, Subang, PJ</p>
-                </div>
-                <div class="coverage-card">
-                    <h3>💸 +RM10</h3>
-                    <p>Puchong, Klang</p>
-                </div>
-                <div class="coverage-card">
-                    <h3>💸 +RM15</h3>
-                    <p>Damansara, Sunway</p>
-                </div>
-                <div class="coverage-card">
-                    <h3>💸 +RM20-30</h3>
-                    <p>Luar 15km</p>
-                </div>
-            </div>
-
-            <div class="tagline-box">
-                <p>⚡ No hose. No buckets. Just quick shine. ⚡</p>
-            </div>
-
-            <div class="policy-box">
-                <h3>💳 Terma Pembayaran</h3>
-                <ul>
-                    <li>50% deposit untuk lock slot</li>
-                    <li>Baki 50% selepas cuci siap</li>
-                    <li><strong>Transfer/DuitNow sahaja (Tiada tunai)</strong></li>
-                </ul>
-
-                <h3>⏰ Polisi Pembatalan</h3>
-                <ul>
-                    <li>Reschedule >24 jam: Percuma</li>
-                    <li>Reschedule <24 jam: Deposit burn 50%</li>
-                    <li>No-show: Deposit hangus</li>
-                    <li>Kotoran berat tambah RM10-20</li>
-                </ul>
-            </div>
-
-            <div class="info-bar">
-                <p>🕐 Waktu Operasi: <strong>10AM - 6PM daily</strong></p>
-                <p>🚗 Kami datang ke lokasi anda • Tak perlu gerakkan kereta</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="brand-section">
-                    <h3>XD WATERLESS</h3>
-                    <p class="footer-tagline">No hose. No buckets. Just quick shine.</p>
-                </div>
-                
-                <div class="contact-section">
-                    <p>📱 <a href="https://wa.me/60167003569">016-700-3569</a></p>
-                    <p>✉️ xddaengxzx@gmail.com</p>
-                    <p>🏢 XD DAENGXZX LAGACY (JM1021889-K)</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 XD Waterless. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/60167003569" class="whatsapp-float" target="_blank">
-        <svg viewBox="0 0 32 32" fill="currentColor">
-            <path d="M16 2C8.268 2 2 8.268 2 16c0 2.585.662 5.033 1.838 7.2L2 30l6.8-1.838A13.936 13.936 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.52 11.52 0 01-5.67-1.49l-.41-.22-4.11 1.11 1.1-4.01-.26-.42A11.554 11.554 0 014.4 16C4.4 9.607 9.607 4.4 16 4.4S27.6 9.607 27.6 16 22.393 27.6 16 27.6zm7.11-9.87c-.39-.2-2.32-1.15-2.68-1.28-.36-.13-.62-.2-.88.2s-1.13 1.28-1.39 1.54c-.26.26-.52.29-.91.1-.39-.2-1.64-.6-3.12-1.92-1.15-1.03-1.93-2.3-2.15-2.69-.22-.39-.02-.6.17-.79.17-.17.39-.44.58-.66.2-.22.26-.39.39-.66.13-.26.07-.48-.03-.67-.1-.2-.88-2.12-1.21-2.9-.32-.76-.65-.65-.88-.66l-.75-.01c-.26 0-.67.1-1.02.48-.35.39-1.34 1.31-1.34 3.19 0 1.88 1.37 3.7 1.56 3.95.2.26 2.69 4.11 6.52 5.76.91.39 1.62.62 2.17.8.91.29 1.74.25 2.39.15.73-.11 2.32-.95 2.65-1.87.32-.92.32-1.71.22-1.87-.1-.17-.29-.26-.58-.39z"/>
-        </svg>
-        <span>BOOK NOW</span>
-    </a>
-
-    <script src="assets/js/script.js"></script>
+    <div class="footer">
+        <a href="https://wa.me/60167003569" target="_blank">016-700-3569 • BOOK VIA WHATSAPP</a>
+    </div>
+</div>
 </body>
 </html>
