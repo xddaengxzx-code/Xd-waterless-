@@ -3,338 +3,278 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XD WATERLESS // CYBERPUNK 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+<title>XD Waterless</title>
+<link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<!-- WebGL Canvas Background -->
-<canvas id="webgl-bg"></canvas>
+<!-- Ambient Background -->
+<div class="ambient">
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
+</div>
 
-<!-- Neon Grid Floor -->
-<div class="neon-grid"></div>
+<!-- App Container -->
+<div class="app">
 
-<!-- Scanlines -->
-<div class="scanlines"></div>
-
-<!-- Cursor Trail -->
-<div class="cursor-trail" id="cursorTrail"></div>
-
-<!-- Main Container -->
-<div class="cyber-container">
-
-    <!-- Header HUD -->
-    <header class="cyber-header">
-        <div class="hud-line top"></div>
-        
-        <div class="logo-cyber">
-            <div class="logo-glitch" data-text="XD">XD</div>
-            <div class="logo-sub">WATERLESS</div>
-            <div class="logo-scramble" id="logoScramble">SYSTEM.ONLINE</div>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-mark">
+            <div class="logo-ring"></div>
+            <div class="logo-inner">XD</div>
         </div>
-
-        <div class="status-bar">
-            <div class="status-item">
-                <span class="status-dot live"></span>
-                <span class="status-text">LIVE</span>
-            </div>
-            <div class="status-item">
-                <span class="slot-count" id="slotCount">03</span>
-                <span class="status-label">SLOTS LEFT</span>
-            </div>
-            <div class="status-item time" id="liveTime">00:00:00</div>
+        <div class="brand">
+            <h1>Waterless</h1>
+            <span class="tagline">Premium Care</span>
         </div>
-
-        <div class="hud-line bottom"></div>
     </header>
 
-    <!-- Marquee Alert -->
-    <div class="alert-marquee">
-        <div class="marquee-track">
-            <span class="alert-text">⚠ NO HOSE DETECTED // NO BUCKETS FOUND // QUICK SHINE PROTOCOL ACTIVE ⚠</span>
-            <span class="alert-text">⚠ NO HOSE DETECTED // NO BUCKETS FOUND // QUICK SHINE PROTOCOL ACTIVE ⚠</span>
-        </div>
-    </div>
+    <!-- Hero Text -->
+    <section class="hero">
+        <p class="hero-text" id="heroText">No hose. No buckets. Just shine.</p>
+    </section>
 
-    <!-- Vehicle Terminal -->
-    <section class="terminal-section">
-        <div class="terminal-header">
-            <span class="terminal-icon">></span>
-            <span class="terminal-title">SELECT_VEHICLE_CLASS</span>
-            <span class="terminal-cursor">_</span>
-        </div>
-
-        <div class="vehicle-deck">
-            <div class="holo-card" data-size="kompak">
-                <div class="holo-frame">
-                    <div class="holo-content">
-                        <div class="vehicle-icon-cyber">🚗</div>
-                        <div class="holo-lines"></div>
-                        <div class="vehicle-data">
-                            <div class="data-row"><span>CLASS:</span><span>KOMPAK</span></div>
-                            <div class="data-row"><span>MODELS:</span><span>MYVI, AXIA, BEZZA</span></div>
-                            <div class="data-row"><span>BASE_PRICE:</span><span>RM35</span></div>
-                        </div>
-                    </div>
-                    <div class="holo-glow"></div>
+    <!-- Vehicle Selector -->
+    <section class="selector">
+        <div class="selector-track" id="vehicleTrack">
+            <button class="vehicle-card active" data-size="kompak">
+                <div class="vehicle-visual">
+                    <svg viewBox="0 0 100 60" class="vehicle-svg">
+                        <path d="M10,40 Q10,30 20,30 L30,30 L35,20 L65,20 L70,30 L80,30 Q90,30 90,40 L90,45 Q90,50 85,50 L15,50 Q10,50 10,45 Z" fill="currentColor"/>
+                        <circle cx="25" cy="50" r="8" fill="#1a1a1a"/>
+                        <circle cx="75" cy="50" r="8" fill="#1a1a1a"/>
+                    </svg>
                 </div>
-                <div class="select-btn">INITIALIZE</div>
-            </div>
+                <span class="vehicle-label">Kompak</span>
+                <span class="vehicle-sub">Myvi, Axia</span>
+            </button>
 
-            <div class="holo-card" data-size="sedan">
-                <div class="holo-frame">
-                    <div class="holo-content">
-                        <div class="vehicle-icon-cyber">🚙</div>
-                        <div class="holo-lines"></div>
-                        <div class="vehicle-data">
-                            <div class="data-row"><span>CLASS:</span><span>SEDAN</span></div>
-                            <div class="data-row"><span>MODELS:</span><span>CITY, VIOS, CIVIC</span></div>
-                            <div class="data-row"><span>BASE_PRICE:</span><span>RM45</span></div>
-                        </div>
-                    </div>
-                    <div class="holo-glow"></div>
+            <button class="vehicle-card" data-size="sedan">
+                <div class="vehicle-visual">
+                    <svg viewBox="0 0 100 60" class="vehicle-svg">
+                        <path d="M5,40 Q5,25 20,25 L35,25 L45,15 L75,15 L85,25 Q95,25 95,40 L95,45 Q95,50 90,50 L10,50 Q5,50 5,45 Z" fill="currentColor"/>
+                        <circle cx="25" cy="50" r="8" fill="#1a1a1a"/>
+                        <circle cx="75" cy="50" r="8" fill="#1a1a1a"/>
+                    </svg>
                 </div>
-                <div class="select-btn">INITIALIZE</div>
-            </div>
+                <span class="vehicle-label">Sedan</span>
+                <span class="vehicle-sub">City, Civic</span>
+            </button>
 
-            <div class="holo-card" data-size="suv">
-                <div class="holo-frame">
-                    <div class="holo-content">
-                        <div class="vehicle-icon-cyber">🚐</div>
-                        <div class="holo-lines"></div>
-                        <div class="vehicle-data">
-                            <div class="data-row"><span>CLASS:</span><span>SUV</span></div>
-                            <div class="data-row"><span>MODELS:</span><span>CR-V, X70, HARRIER</span></div>
-                            <div class="data-row"><span>BASE_PRICE:</span><span>RM55</span></div>
-                        </div>
-                    </div>
-                    <div class="holo-glow"></div>
+            <button class="vehicle-card" data-size="suv">
+                <div class="vehicle-visual">
+                    <svg viewBox="0 0 100 60" class="vehicle-svg">
+                        <path d="M5,35 Q5,20 20,20 L30,20 L40,10 L70,10 L80,20 L90,20 Q95,20 95,35 L95,45 Q95,50 90,50 L10,50 Q5,50 5,45 Z" fill="currentColor"/>
+                        <circle cx="25" cy="50" r="9" fill="#1a1a1a"/>
+                        <circle cx="75" cy="50" r="9" fill="#1a1a1a"/>
+                    </svg>
                 </div>
-                <div class="select-btn">INITIALIZE</div>
-            </div>
+                <span class="vehicle-label">SUV</span>
+                <span class="vehicle-sub">CR-V, X70</span>
+            </button>
 
-            <div class="holo-card" data-size="mpv">
-                <div class="holo-frame">
-                    <div class="holo-content">
-                        <div class="vehicle-icon-cyber">🚘</div>
-                        <div class="holo-lines"></div>
-                        <div class="vehicle-data">
-                            <div class="data-row"><span>CLASS:</span><span>MPV</span></div>
-                            <div class="data-row"><span>MODELS:</span><span>ALPHARD, VELLFIRE</span></div>
-                            <div class="data-row"><span>BASE_PRICE:</span><span>RM65</span></div>
-                        </div>
-                    </div>
-                    <div class="holo-glow"></div>
+            <button class="vehicle-card" data-size="mpv">
+                <div class="vehicle-visual">
+                    <svg viewBox="0 0 100 60" class="vehicle-svg">
+                        <path d="M5,40 Q5,15 25,15 L40,15 L50,10 L80,10 Q95,10 95,30 L95,45 Q95,50 90,50 L10,50 Q5,50 5,45 Z" fill="currentColor"/>
+                        <circle cx="25" cy="50" r="9" fill="#1a1a1a"/>
+                        <circle cx="75" cy="50" r="9" fill="#1a1a1a"/>
+                    </svg>
                 </div>
-                <div class="select-btn">INITIALIZE</div>
-            </div>
-        </div>
-
-        <div class="selected-display" id="selectedDisplay">
-            <span class="display-label">ACTIVE_CLASS:</span>
-            <span class="display-value" id="activeClass">NONE</span>
+                <span class="vehicle-label">MPV</span>
+                <span class="vehicle-sub">Alphard</span>
+            </button>
         </div>
     </section>
 
-    <!-- Package Matrix -->
-    <section class="matrix-section">
-        <div class="matrix-header">
-            <div class="header-line"></div>
-            <h2 class="matrix-title">SERVICE_MATRIX</h2>
-            <div class="header-line"></div>
-        </div>
+    <!-- Packages -->
+    <section class="packages">
 
-        <div class="matrix-grid">
+        <!-- Primary Cards -->
+        <div class="package-grid">
 
-            <!-- LASAK -->
-            <div class="matrix-node" data-tier="lasak">
-                <div class="node-border"></div>
-                <div class="node-content">
-                    <div class="node-icon">⚡</div>
-                    <h3 class="node-name">LASAK.exe</h3>
-                    <div class="node-stats">
-                        <div class="stat"><span class="stat-label">PWR:</span><div class="stat-bar"><div class="stat-fill" style="width:60%"></div></div></div>
-                        <div class="stat"><span class="stat-label">SPD:</span><div class="stat-bar"><div class="stat-fill fast" style="width:90%"></div></div></div>
-                        <div class="stat"><span class="stat-label">SHN:</span><div class="stat-bar"><div class="stat-fill" style="width:70%"></div></div></div>
-                    </div>
-                    <ul class="node-features">
-                        <li>[✓] Waterless_Protocol</li>
-                        <li>[✓] Rim_Cleanse</li>
-                        <li>[✓] Tire_Shine</li>
-                        <li>[✓] Glass_Wipe</li>
-                    </ul>
-                    <div class="node-time">EXEC_TIME: ~30min</div>
-                    <div class="node-price" id="lasakPrice">RM35</div>
-                    <button class="cyber-btn" data-package="LASAK">
-                        <span class="btn-text">EXECUTE</span>
-                        <span class="btn-glitch"></span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- GEMPAK -->
-            <div class="matrix-node featured" data-tier="gempak">
-                <div class="node-border hot"></div>
-                <div class="popular-hack">POPULAR_CHOICE</div>
-                <div class="node-content">
-                    <div class="node-icon fire">🔥</div>
-                    <h3 class="node-name hot-text">GEMPAK.exe</h3>
-                    <div class="node-stats">
-                        <div class="stat"><span class="stat-label">PWR:</span><div class="stat-bar hot"><div class="stat-fill" style="width:80%"></div></div></div>
-                        <div class="stat"><span class="stat-label">SPD:</span><div class="stat-bar hot"><div class="stat-fill fast" style="width:75%"></div></div></div>
-                        <div class="stat"><span class="stat-label">SHN:</span><div class="stat-bar hot"><div class="stat-fill" style="width:85%"></div></div></div>
-                    </div>
-                    <ul class="node-features hot-features">
-                        <li>[✓] All_LASAK +</li>
-                        <li>[✓] Vacuum_Protocol</li>
-                        <li>[✓] Dashboard_Polish</li>
-                        <li>[✓] Nano_Mist™</li>
-                    </ul>
-                    <div class="node-time hot-time">EXEC_TIME: ~45min</div>
-                    <div class="node-price hot-price" id="gempakPrice">RM60</div>
-                    <button class="cyber-btn hot" data-package="GEMPAK">
-                        <span class="btn-text">EXECUTE</span>
-                        <span class="btn-glitch"></span>
-                    </button>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- TERBAIK ULTRA -->
-        <div class="ultra-matrix">
-            <div class="ultra-frame">
-                <div class="corner tl"></div>
-                <div class="corner tr"></div>
-                <div class="corner bl"></div>
-                <div class="corner br"></div>
-                
-                <div class="ultra-content">
-                    <div class="ultra-crown">👑</div>
-                    <h3 class="ultra-name">TERBAIK.ULTIMATE</h3>
-                    <div class="ultra-sub">MAXIMUM_PROTECTION_PROTOCOL</div>
-                    
-                    <div class="ultra-specs">
-                        <div class="spec-item">
-                            <div class="spec-icon">🛡️</div>
-                            <div class="spec-text">Wax_Boost_Tech</div>
+            <div class="package-card" data-package="lasak">
+                <div class="card-glass">
+                    <div class="card-accent"></div>
+                    <div class="card-content">
+                        <div class="package-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
                         </div>
-                        <div class="spec-item">
-                            <div class="spec-icon">💧</div>
-                            <div class="spec-text">Hydrophobic_Shield</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-icon">✨</div>
-                            <div class="spec-text">Mirror_Finish</div>
-                        </div>
-                    </div>
+                        <h3 class="package-name">Lasak</h3>
+                        <p class="package-desc">Quick exterior refresh</p>
+                        
+                        <ul class="feature-list">
+                            <li>Waterless wash</li>
+                            <li>Rim clean</li>
+                            <li>Tire shine</li>
+                        </ul>
 
-                    <div class="ultra-bottom">
-                        <div class="ultra-time">~60min</div>
-                        <div class="ultra-price" id="terbaikPrice">RM95</div>
-                        <button class="cyber-btn ultra" data-package="TERBAIK">
-                            <span class="btn-text">INITIATE_ULTRA</span>
+                        <div class="package-meta">
+                            <span class="duration">30 min</span>
+                        </div>
+
+                        <div class="price-wrap">
+                            <span class="currency">RM</span>
+                            <span class="amount" id="lasakPrice">35</span>
+                        </div>
+
+                        <button class="action-btn" data-package="LASAK">
+                            <span>Book</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
                         </button>
                     </div>
                 </div>
-
-                <div class="ultra-scan"></div>
             </div>
+
+            <div class="package-card featured" data-package="gempak">
+                <div class="card-glass">
+                    <div class="card-accent hot"></div>
+                    <div class="popular-badge">Popular</div>
+                    <div class="card-content">
+                        <div class="package-icon hot">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2c0 0-7 4-7 11v3l-2 2h18l-2-2v-3c0-7-7-11-7-11z"/>
+                            </svg>
+                        </div>
+                        <h3 class="package-name">Gempak</h3>
+                        <p class="package-desc">Complete interior & exterior</p>
+                        
+                        <ul class="feature-list">
+                            <li>All Lasak services</li>
+                            <li>Full vacuum</li>
+                            <li>Dashboard polish</li>
+                            <li>Nano mist</li>
+                        </ul>
+
+                        <div class="package-meta">
+                            <span class="duration">45 min</span>
+                        </div>
+
+                        <div class="price-wrap">
+                            <span class="currency">RM</span>
+                            <span class="amount" id="gempakPrice">60</span>
+                        </div>
+
+                        <button class="action-btn primary" data-package="GEMPAK">
+                            <span>Book</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Premium Card -->
+        <div class="premium-wrap">
+            <div class="premium-card">
+                <div class="premium-glow"></div>
+                <div class="premium-content">
+                    <div class="premium-left">
+                        <div class="crown-icon">👑</div>
+                        <h3 class="premium-title">Terbaik</h3>
+                        <p class="premium-sub">Maximum protection & shine</p>
+                        
+                        <div class="premium-features">
+                            <span class="feature-tag">Wax Boost</span>
+                            <span class="feature-tag">3-Month Shield</span>
+                            <span class="feature-tag">Mirror Finish</span>
+                        </div>
+                    </div>
+
+                    <div class="premium-right">
+                        <div class="time-badge">60 min</div>
+                        <div class="price-large">
+                            <span class="currency-large">RM</span>
+                            <span class="amount-large" id="terbaikPrice">95</span>
+                        </div>
+                        <button class="action-btn premium" data-package="TERBAIK">
+                            <span>Book Premium</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Membership -->
+    <section class="membership">
+        <h2 class="section-title">Membership</h2>
+        <p class="section-sub">4 sessions • 12 months • Save more</p>
+
+        <div class="tier-list">
+
+            <div class="tier-card" data-tier="lowkey">
+                <div class="tier-glass">
+                    <div class="tier-header">
+                        <span class="tier-name">Lowkey</span>
+                        <span class="tier-save">Save 20</span>
+                    </div>
+                    <p class="tier-desc">4× Lasak</p>
+                    <div class="tier-price" id="lowkeyPrice">RM120</div>
+                    <button class="tier-btn" data-package="ONZ LOWKEY">Join</button>
+                </div>
+            </div>
+
+            <div class="tier-card featured" data-tier="highkey">
+                <div class="tier-glass">
+                    <div class="tier-badge">Best Value</div>
+                    <div class="tier-header">
+                        <span class="tier-name">Highkey</span>
+                        <span class="tier-save hot">Save 30</span>
+                    </div>
+                    <p class="tier-desc">4× Gempak</p>
+                    <div class="tier-price hot" id="highkeyPrice">RM210</div>
+                    <button class="tier-btn primary" data-package="ONZ HIGHKEY">Join</button>
+                </div>
+            </div>
+
+            <div class="tier-card" data-tier="unlocked">
+                <div class="tier-glass">
+                    <div class="tier-header">
+                        <span class="tier-name">Unlocked</span>
+                        <span class="tier-save">Save 50</span>
+                    </div>
+                    <p class="tier-desc">4× Terbaik</p>
+                    <div class="tier-price" id="unlockedPrice">RM330</div>
+                    <button class="tier-btn" data-package="ONZ UNLOCKED">Join</button>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- ONZ Protocol -->
-    <section class="protocol-section">
-        <div class="protocol-header">
-            <span class="protocol-icon">🔒</span>
-            <h2>ONZ_PROTOCOL // MEMBERSHIP</h2>
-            <span class="protocol-sub">4X_SESSIONS // 12_MONTHS_VALID</span>
-        </div>
-
-        <div class="protocol-towers">
-
-            <div class="tower" data-tier="lowkey">
-                <div class="tower-levels">
-                    <div class="level"></div>
-                    <div class="level"></div>
-                    <div class="level"></div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-glass">
+            <div class="footer-content">
+                <div class="footer-item">
+                    <span class="footer-value">016-700 3569</span>
+                    <span class="footer-label">WhatsApp</span>
                 </div>
-                <div class="tower-core">
-                    <div class="tower-name">LOWKEY</div>
-                    <div class="tower-tier">4X_LASAK</div>
-                    <div class="tower-save">SAVE_RM20</div>
-                    <div class="tower-price" id="lowkeyPrice">RM120</div>
-                    <button class="tower-btn" data-package="ONZ LOWKEY">ENROLL</button>
+                <div class="footer-divider"></div>
+                <div class="footer-item">
+                    <span class="footer-value">Shah Alam</span>
+                    <span class="footer-label">Location</span>
                 </div>
-                <div class="tower-beam"></div>
-            </div>
-
-            <div class="tower featured" data-tier="highkey">
-                <div class="tower-levels">
-                    <div class="level hot"></div>
-                    <div class="level hot"></div>
-                    <div class="level hot"></div>
-                    <div class="level hot"></div>
-                    <div class="level hot"></div>
+                <div class="footer-divider"></div>
+                <div class="footer-item">
+                    <span class="footer-value">RM20</span>
+                    <span class="footer-label">Deposit</span>
                 </div>
-                <div class="tower-core hot-core">
-                    <div class="tower-badge">OPTIMAL</div>
-                    <div class="tower-name">HIGHKEY</div>
-                    <div class="tower-tier">4X_GEMPAK</div>
-                    <div class="tower-save hot-save">SAVE_RM30</div>
-                    <div class="tower-price hot-price" id="highkeyPrice">RM210</div>
-                    <button class="tower-btn hot-btn" data-package="ONZ HIGHKEY">ENROLL</button>
-                </div>
-                <div class="tower-beam hot-beam"></div>
             </div>
-
-            <div class="tower" data-tier="unlocked">
-                <div class="tower-levels">
-                    <div class="level gold"></div>
-                    <div class="level gold"></div>
-                    <div class="level gold"></div>
-                    <div class="level gold"></div>
-                    <div class="level gold"></div>
-                    <div class="level gold"></div>
-                    <div class="level gold"></div>
-                </div>
-                <div class="tower-core gold-core">
-                    <div class="tower-name">UNLOCKED</div>
-                    <div class="tower-tier">4X_TERBAIK</div>
-                    <div class="tower-save gold-save">SAVE_RM50</div>
-                    <div class="tower-price gold-price" id="unlockedPrice">RM330</div>
-                    <button class="tower-btn gold-btn" data-package="ONZ UNLOCKED">ENROLL</button>
-                </div>
-                <div class="tower-beam gold-beam"></div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Footer Terminal -->
-    <footer class="cyber-footer">
-        <div class="footer-grid">
-            <div class="footer-node">
-                <div class="node-label">CONTACT</div>
-                <div class="node-value">016-700-3569</div>
-            </div>
-            <div class="footer-node">
-                <div class="node-label">LOCATION</div>
-                <div class="node-value">SHAH_ALAM</div>
-            </div>
-            <div class="footer-node">
-                <div class="node-label">DEPOSIT</div>
-                <div class="node-value">RM20_LOCK</div>
-            </div>
-            <div class="footer-node">
-                <div class="node-label">STATUS</div>
-                <div class="node-value live">ONLINE</div>
-            </div>
-        </div>
-        <div class="footer-branding">
-            <span class="brand-code">H.O.D_APPROVED</span>
-            <span class="brand-version">v3.0.2026</span>
         </div>
     </footer>
 
