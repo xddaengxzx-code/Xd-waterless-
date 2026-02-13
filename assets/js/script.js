@@ -8,126 +8,17 @@ const pricing = {
 };
 
 let currentSize = "kompak";
-let slotCount = 3;
 
-// WebGL Background
-function initWebGL() {
-    const canvas = document.getElementById('webgl-bg');
-    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-    
-    if (!gl) {
-        console.log('WebGL not supported, falling back to CSS');
-        return;
-    }
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    
-    // Simple shader for liquid effect
-    const vertexShader = `
-        attribute vec2 position;
-        void main() {
-            gl_Position = vec4(position, 0.0, 1.0);
-        }
-    `;
-    
-    const fragmentShader = `
-        precision mediump float;
-        uniform float time;
-        uniform vec2 resolution;
-        
-        void main() {
-            vec2 uv = gl_FragCoord.xy / resolution;
-            float wave = sin(uv.x * 10.0 + time) * 0.1;
-            wave += sin(uv.y * 8.0 + time * 0.5) * 0.1;
-            
-            vec3 color = vec3(0.0, 0.0, 0.0);
-            color += vec3(0.78, 1.0, 0.0) * wave * 0.3; // neon green
-            color += vec3(0.0, 0.94, 1.0) * sin(time * 0.5) * 0.05; // cyan accent
-            
-            gl_FragColor = vec4(color, 1.0);
-        }
-    `;
-    
-    // Compile shaders and create program (simplified)
-    // In production, use Three.js or similar
-    
-    // Fallback: CSS animation already handles visual
-}
-
-// Cursor Trail
-function initCursorTrail() {
-    const trail = document.getElementById('cursorTrail');
-    let mouseX = 0, mouseY = 0;
-    let trailX = 0, trailY = 0;
-    
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
-    
-    function animate() {
-        trailX += (mouseX - trailX) * 0.1;
-        trailY += (mouseY - trailY) * 0.1;
-        
-        trail.style.left = trailX - 10 + 'px';
-        trail.style.top = trailY - 10 + 'px';
-        
-        requestAnimationFrame(animate);
-    }
-    animate();
-}
-
-// Text Scramble Effect
-function scrambleText(element, finalText) {
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_';
-    let iterations = 0;
-    
-    const interval = setInterval(() => {
-        element.innerText = finalText
-            .split('')
-            .map((char, index) => {
-                if (index < iterations) return finalText[index];
-                return chars[Math.floor(Math.random() * chars.length)];
-            })
-            .join('');
-        
-        if (iterations >= finalText.length) clearInterval(interval);
-        iterations += 1/3;
-    }, 30);
-}
-
-// Live Clock
-function updateClock() {
-    const now = new Date();
-    const time = now.toLocaleTimeString('en-US', { 
-        hour12: false, 
-        hour: '2-digit', 
-        minute: '2-digit', 
-        second: '2-digit' 
-    });
-    document.getElementById('liveTime').textContent = time;
-}
-
-// Slot Counter Animation
-function updateSlots() {
-    const el = document.getElementById('slotCount');
-    el.classList.add('updating');
-    setTimeout(() => el.classList.remove('updating'), 300);
-}
-
-// Vehicle Selection
-document.querySelectorAll('.holo-card').forEach(card => {
+// Vehicle selection with smooth scroll
+document.querySelectorAll('.vehicle-card').forEach(card => {
     card.addEventListener('click', () => {
-        document.querySelectorAll('.holo-card').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.vehicle-card').forEach(c => c.classList.remove('active'));
         card.classList.add('active');
         currentSize = card.dataset.size;
-        
-        // Update display with scramble effect
-        const display = document.getElementById('activeClass');
-        scrambleText(display, currentSize.toUpperCase());
-        
         updatePrices();
+        
+        // Haptic feedback if available
+        if (navigator.vibrate) navigator.vibrate(10);
     });
 });
 
@@ -144,33 +35,61 @@ function updatePrices() {
 
     Object.entries(elements).forEach(([id, value]) => {
         const el = document.getElementById(id);
-        if (el) {
-            el.classList.add('price-updating');
-            setTimeout(() => {
-                // Typewriter effect for price
-                let current = 0;
-                const increment = Math.ceil(value / 10);
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= value) {
-                        current = value;
-                        clearInterval(timer);
-                        el.classList.remove('price-updating');
-                    }
-                    el.textContent = 'RM' + current;
-                }, 30);
-            }, 100);
+        if (!el) return;
+        
+        el.classList.add('updating');
+        
+        // Smooth count animation
+        const start = parseInt(el.textContent.replace(/\D/g, '')) || 0;
+        const duration = 400;
+        const startTime = performance.now();
+        
+        function animate(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+            const current = Math.round(start + (value - start) * ease);
+            
+            el.textContent = el.classList.contains('tier-price') ? 'RM' + current : current;
+            
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                el.classList.remove('updating');
+            }
         }
+        
+        requestAnimationFrame(animate);
     });
 }
 
-// Booking with glitch effect
-document.querySelectorAll('.cyber-btn, .tower-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        // Glitch animation
-        this.style.transform = 'scale(0.95)';
-        setTimeout(() => this.style.transform = 'scale(1)', 100);
+// Booking with smooth transition
+document.querySelectorAll('.action-btn, .tier-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        // Ripple effect
+        const ripple = document.createElement('span');
+        ripple.style.cssText = `
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        `;
         
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = e.clientX - rect.left - size/2 + 'px';
+        ripple.style.top = e.clientY - rect.top - size/2 + 'px';
+        
+        this.style.position = 'relative';
+        this.style.overflow = 'hidden';
+        this.appendChild(ripple);
+        
+        setTimeout(() => ripple.remove(), 600);
+        
+        // Prepare message
         const pack = this.dataset.package;
         let price;
         
@@ -181,60 +100,60 @@ document.querySelectorAll('.cyber-btn, .tower-btn').forEach(btn => {
             price = pricing[currentSize][pack.toLowerCase()];
         }
 
-        const vehicleNames = {
-            kompak: "KOMPAK_CLASS",
-            sedan: "SEDAN_CLASS", 
-            suv: "SUV_CLASS",
-            mpv: "MPV_CLASS"
+        const vehicleLabels = {
+            kompak: "Kompak",
+            sedan: "Sedan",
+            suv: "SUV",
+            mpv: "MPV"
         };
 
-        let msg = `⚡ XD_WATERLESS // BOOKING_REQUEST\n`;
-        msg += `━━━━━━━━━━━━━━━━━━━━━━\n\n`;
-        msg += `📦 PACKAGE: ${pack}\n`;
-        msg += `🚗 VEHICLE: ${vehicleNames[currentSize]}\n`;
-        msg += `💰 PRICE: RM${price}\n\n`;
-        msg += `━━━━━━━━━━━━━━━━━━━━━━\n\n`;
-        msg += `👤 OPERATOR_DATA:\n`;
-        msg += `NAME: [INPUT_REQUIRED]\n`;
-        msg += `LOCATION: [INPUT_REQUIRED]\n`;
-        msg += `TIMESTAMP: [INPUT_REQUIRED]\n\n`;
-        msg += `🔒 DEPOSIT_RM20_TO_SECURE_SLOT`;
+        const msg = `XD Waterless Booking\n\n` +
+                   `Package: ${pack}\n` +
+                   `Vehicle: ${vehicleLabels[currentSize]}\n` +
+                   `Price: RM${price}\n\n` +
+                   `Name:\nLocation:\nDate & Time:\n\n` +
+                   `Deposit RM20 to confirm.`;
 
         setTimeout(() => {
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, "_blank");
-        }, 500);
+        }, 300);
     });
 });
 
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-    initWebGL();
-    initCursorTrail();
-    setInterval(updateClock, 1000);
-    setInterval(updateSlots, 5000);
-    
-    // Initial scramble
-    setTimeout(() => {
-        const el = document.getElementById('logoScramble');
-        scrambleText(el, 'SYSTEM.ONLINE');
-    }, 1000);
-    
-    // Random slot fluctuation
-    setInterval(() => {
-        if (Math.random() > 0.7 && slotCount > 1) {
-            slotCount--;
-            document.getElementById('slotCount').textContent = '0' + slotCount;
+// Add ripple animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes ripple {
+        to {
+            transform: scale(4);
+            opacity: 0;
         }
-    }, 10000);
-    
-    updatePrices();
+    }
+`;
+document.head.appendChild(style);
+
+// Initialize
+updatePrices();
+
+// Smooth scroll for vehicle selector
+const track = document.getElementById('vehicleTrack');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+track.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
 });
 
-// Window resize
-window.addEventListener('resize', () => {
-    const canvas = document.getElementById('webgl-bg');
-    if (canvas) {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
+track.addEventListener('mouseleave', () => isDown = false);
+track.addEventListener('mouseup', () => isDown = false);
+
+track.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 2;
+    track.scrollLeft = scrollLeft - walk;
 });
