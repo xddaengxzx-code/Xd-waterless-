@@ -1,98 +1,75 @@
-// XD Waterless - Interactive Enhancements
-document.addEventListener('DOMContentLoaded', function() {
-  // Add smooth scrolling to all links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-  });
+const phone = "60167003569";
 
-  // Add hover effect to package boxes
-  const boxes = document.querySelectorAll('.box, .onz-box');
-  boxes.forEach(box => {
-    box.addEventListener('mouseenter', function() {
-      this.style.boxShadow = '0 5px 15px rgba(200, 255, 0, 0.2)';
-    });
-    
-    box.addEventListener('mouseleave', function() {
-      this.style.boxShadow = 'none';
-    });
-  });
+const pricing = {
+kompak:{lasak:35,gempak:60,terbaik:95,lowkey:120,highkey:210,unlocked:330},
+sedan:{lasak:45,gempak:75,terbaik:115,lowkey:160,highkey:270,unlocked:410},
+suv:{lasak:55,gempak:90,terbaik:140,lowkey:200,highkey:330,unlocked:510},
+mpv:{lasak:65,gempak:110,terbaik:165,lowkey:240,highkey:410,unlocked:610}
+};
 
-  // WhatsApp button animation
-  const whatsappLink = document.querySelector('.footer a');
-  whatsappLink.addEventListener('mouseover', function() {
-    this.style.background = '#a8d800';
-  });
-  
-  whatsappLink.addEventListener('mouseout', function() {
-    this.style.background = '#c8ff00';
-  });
+let currentSize="kompak";
+let addonTotal = 0;
 
-  // Add animation to content when it comes into view
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  };
+// Load sound (pastikan file click.wav ada di assets/sounds/)
+const clickSound = new Audio('assets/sounds/click.wav');
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, observerOptions);
-
-  // Observe all animated elements
-  const animatedElements = document.querySelectorAll('.box, .premium, .onz, .policy, .footer');
-  animatedElements.forEach(el => {
-    el.style.opacity = 0;
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
-  });
-
-  // Form validation for any future contact form
-  const form = document.querySelector('form');
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Add form validation logic here if needed
-      alert('Terima kasih! Pesanan anda akan diproses.');
-    });
-  }
-
-  // Mobile menu toggle (if needed)
-  const mobileMenuButton = document.createElement('button');
-  mobileMenuButton.textContent = '☰';
-  mobileMenuButton.style.display = 'none';
-  mobileMenuButton.style.position = 'fixed';
-  mobileMenuButton.style.top = '10px';
-  mobileMenuButton.style.right = '10px';
-  mobileMenuButton.style.zIndex = '1000';
-  mobileMenuButton.style.background = '#c8ff00';
-  mobileMenuButton.style.color = '#000';
-  mobileMenuButton.style.border = 'none';
-  mobileMenuButton.style.borderRadius = '5px';
-  mobileMenuButton.style.padding = '10px';
-  mobileMenuButton.style.cursor = 'pointer';
-  
-  document.body.appendChild(mobileMenuButton);
-  
-  // Responsive adjustments
-  function checkViewport() {
-    if (window.innerWidth < 768) {
-      mobileMenuButton.style.display = 'block';
-    } else {
-      mobileMenuButton.style.display = 'none';
-    }
-  }
-  
-  checkViewport();
-  window.addEventListener('resize', checkViewport);
+document.querySelectorAll(".vehicle").forEach(btn=>{
+btn.addEventListener("click",()=>{
+document.querySelectorAll(".vehicle").forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");
+currentSize=btn.dataset.size;
+updatePrices();
+playSound();
 });
+});
+
+function updatePrices(){
+const p=pricing[currentSize];
+document.getElementById("lasakPrice").innerText="RM"+p.lasak;
+document.getElementById("gempakPrice").innerText="RM"+p.gempak;
+document.getElementById("terbaikPrice").innerText="RM"+p.terbaik;
+document.getElementById("lowkeyPrice").innerText="RM"+p.lowkey;
+document.getElementById("highkeyPrice").innerText="RM"+p.highkey;
+document.getElementById("unlockedPrice").innerText="RM"+p.unlocked;
+updateAddonTotal(); // Update add-on total too
+}
+
+function playSound(){
+clickSound.currentTime = 0; // Reset sound
+clickSound.play().catch(e => console.log("Sound play failed:", e)); // Handle autoplay issues
+}
+
+// Add-on checkboxes
+document.querySelectorAll(".addon-item input").forEach(checkbox=>{
+checkbox.addEventListener("change", updateAddonTotal);
+});
+
+function updateAddonTotal(){
+addonTotal = 0;
+document.querySelectorAll(".addon-item input:checked").forEach(cb=>{
+addonTotal += parseInt(cb.dataset.price);
+});
+document.getElementById("addonTotal").innerText = addonTotal;
+}
+
+document.querySelectorAll(".btn-book").forEach(btn=>{
+btn.addEventListener("click",()=>{
+const pack=btn.dataset.package;
+const basePrice=pricing[currentSize][pack.split(" ")[0].toLowerCase()];
+const totalPrice = basePrice + addonTotal;
+let msg=`XD WATERLESS\n`;
+msg+=`Package: ${pack}\n`;
+msg+=`Saiz: ${currentSize}\n`;
+msg+=`Harga Package: RM${basePrice}\n`;
+if(addonTotal > 0){
+msg+=`Add-ons: RM${addonTotal}\n`;
+}
+msg+=`Total: RM${totalPrice}\n\n`;
+msg+=`Nama:\nAlamat:\nTarikh & masa:\n\n`;
+msg+=`Saya bayar deposit minimum RM20 untuk lock slot.`;
+window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`,"_blank");
+playSound();
+});
+});
+
+updatePrices();
