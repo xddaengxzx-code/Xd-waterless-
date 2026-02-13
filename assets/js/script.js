@@ -7,9 +7,16 @@ const pricing = {
     mpv: { lasak: 65, gempak: 110, terbaik: 165, lowkey: 240, highkey: 410, unlocked: 610 }
 };
 
+const vehicleLabels = {
+    kompak: "Kompak (Myvi, Axia, Bezza)",
+    sedan: "Sedan (City, Vios, Civic)",
+    suv: "SUV (CR-V, X70, Harrier)",
+    mpv: "MPV (Alphard, Vellfire)"
+};
+
 let currentSize = "kompak";
 
-// Vehicle selection with smooth scroll
+// Vehicle selection
 document.querySelectorAll('.vehicle-card').forEach(card => {
     card.addEventListener('click', () => {
         document.querySelectorAll('.vehicle-card').forEach(c => c.classList.remove('active'));
@@ -17,7 +24,6 @@ document.querySelectorAll('.vehicle-card').forEach(card => {
         currentSize = card.dataset.size;
         updatePrices();
         
-        // Haptic feedback if available
         if (navigator.vibrate) navigator.vibrate(10);
     });
 });
@@ -39,7 +45,6 @@ function updatePrices() {
         
         el.classList.add('updating');
         
-        // Smooth count animation
         const start = parseInt(el.textContent.replace(/\D/g, '')) || 0;
         const duration = 400;
         const startTime = performance.now();
@@ -47,7 +52,7 @@ function updatePrices() {
         function animate(currentTime) {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            const ease = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+            const ease = 1 - Math.pow(1 - progress, 3);
             const current = Math.round(start + (value - start) * ease);
             
             el.textContent = el.classList.contains('tier-price') ? 'RM' + current : current;
@@ -63,7 +68,62 @@ function updatePrices() {
     });
 }
 
-// Booking with smooth transition
+// Generate WhatsApp message
+function generateMessage(packageType, tier) {
+    const p = pricing[currentSize];
+    const isOnz = packageType === "ONZ";
+    let msg = "";
+    
+    if (isOnz) {
+        // ONZ Club Membership
+        const onzPrices = { lowkey: p.lowkey, highkey: p.highkey, unlocked: p.unlocked };
+        const savings = { lowkey: 20, highkey: 30, unlocked: 50 };
+        const singlePrices = { lowkey: p.lasak * 4, highkey: p.gempak * 4, unlocked: p.terbaik * 4 };
+        const sessions = { lowkey: "Lasak", highkey: "Gempak", unlocked: "Terbaik" };
+        
+        msg = `🔒 *ONZ CLUB MEMBERSHIP*\n`;
+        msg += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+        msg += `📋 *Plan:* ${tier.toUpperCase()}\n`;
+        msg += `🚗 *Vehicle:* ${vehicleLabels[currentSize]}\n`;
+        msg += `📦 *Includes:* 4× ${sessions[tier]} sessions\n`;
+        msg += `⏱ *Valid:* 12 months\n\n`;
+        msg += `💰 *Pricing:*\n`;
+        msg += `   Normal: RM${singlePrices[tier]}\n`;
+        msg += `   ONZ: RM${onzPrices[tier]}\n`;
+        msg += `   *You Save: RM${savings[tier]}*\n\n`;
+        msg += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+        msg += `👤 *Your Details:*\n`;
+        msg += `Name: \n`;
+        msg += `Phone: \n`;
+        msg += `Address: \n\n`;
+        msg += `💳 *Full payment RM${onzPrices[tier]} to activate.*\n\n`;
+        msg += `Send details to join ONZ Club.`;
+        
+    } else {
+        // Single Package
+        const singlePrices = { LASAK: p.lasak, GEMPAK: p.gempak, TERBAIK: p.terbaik };
+        const durations = { LASAK: "30 min", GEMPAK: "45 min", TERBAIK: "60 min" };
+        
+        msg = `⚡ *XD WATERLESS BOOKING*\n`;
+        msg += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+        msg += `📦 *Package:* ${packageType}\n`;
+        msg += `🚗 *Vehicle:* ${vehicleLabels[currentSize]}\n`;
+        msg += `⏱ *Duration:* ${durations[packageType]}\n`;
+        msg += `💰 *Price:* RM${singlePrices[packageType]}\n\n`;
+        msg += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+        msg += `👤 *Your Details:*\n`;
+        msg += `Name: \n`;
+        msg += `Location: \n`;
+        msg += `Date: \n`;
+        msg += `Time: \n\n`;
+        msg += `💳 *Deposit RM20 to lock slot.*\n\n`;
+        msg += `Reply to confirm booking.`;
+    }
+    
+    return msg;
+}
+
+// Booking handler
 document.querySelectorAll('.action-btn, .tier-btn').forEach(btn => {
     btn.addEventListener('click', function(e) {
         // Ripple effect
@@ -89,30 +149,16 @@ document.querySelectorAll('.action-btn, .tier-btn').forEach(btn => {
         
         setTimeout(() => ripple.remove(), 600);
         
-        // Prepare message
+        // Parse package
         const pack = this.dataset.package;
-        let price;
+        let msg;
         
         if (pack.includes("ONZ")) {
             const tier = pack.split(" ")[1].toLowerCase();
-            price = pricing[currentSize][tier];
+            msg = generateMessage("ONZ", tier);
         } else {
-            price = pricing[currentSize][pack.toLowerCase()];
+            msg = generateMessage(pack, null);
         }
-
-        const vehicleLabels = {
-            kompak: "Kompak",
-            sedan: "Sedan",
-            suv: "SUV",
-            mpv: "MPV"
-        };
-
-        const msg = `XD Waterless Booking\n\n` +
-                   `Package: ${pack}\n` +
-                   `Vehicle: ${vehicleLabels[currentSize]}\n` +
-                   `Price: RM${price}\n\n` +
-                   `Name:\nLocation:\nDate & Time:\n\n` +
-                   `Deposit RM20 to confirm.`;
 
         setTimeout(() => {
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, "_blank");
