@@ -1,78 +1,91 @@
+document.addEventListener("DOMContentLoaded", function () {
+
 const prices = {
 
-kompak:{
-lasak:45,
-gempak:80,
-terbaik:95
+kompak: {
+lasak: 45,
+gempak: 80,
+terbaik: 95
 },
 
-sedan:{
-lasak:55,
-gempak:95,
-terbaik:110
+sedan: {
+lasak: 55,
+gempak: 95,
+terbaik: 110
 },
 
-suv:{
-lasak:65,
-gempak:110,
-terbaik:120
+suv: {
+lasak: 65,
+gempak: 110,
+terbaik: 120
 },
 
-mpv:{
-lasak:75,
-gempak:130,
-terbaik:140
+mpv: {
+lasak: 75,
+gempak: 130,
+terbaik: 140
 }
 
-}
+};
 
 
-let currentSize="kompak"
-
-const vehicles=document.querySelectorAll(".vehicle")
+let currentSize = "kompak";
 
 
-vehicles.forEach(btn=>{
+const vehicles = document.querySelectorAll(".vehicle");
 
-btn.addEventListener("click",()=>{
 
-vehicles.forEach(v=>v.classList.remove("active"))
+vehicles.forEach(function(btn){
 
-btn.classList.add("active")
+btn.addEventListener("click", function(){
 
-currentSize=btn.dataset.size
+vehicles.forEach(function(v){
+v.classList.remove("active");
+});
 
-updatePrice()
+btn.classList.add("active");
 
-})
+currentSize = btn.dataset.size;
 
-})
+updatePrice();
+
+});
+
+});
 
 
 function updatePrice(){
 
-document.getElementById("lasakPrice").innerText=prices[currentSize].lasak
+const lasak = document.getElementById("lasakPrice");
+const gempak = document.getElementById("gempakPrice");
+const terbaik = document.getElementById("terbaikPrice");
 
-document.getElementById("gempakPrice").innerText=prices[currentSize].gempak
+if(!lasak || !gempak || !terbaik) return;
 
-document.getElementById("terbaikPrice").innerText=prices[currentSize].terbaik
+lasak.textContent = prices[currentSize].lasak;
+gempak.textContent = prices[currentSize].gempak;
+terbaik.textContent = prices[currentSize].terbaik;
 
 }
 
 
-function book(pkg){
+window.book = function(pkg){
 
-const phone="60167003569"
+const phone = "60167003569";
 
-const text=`Booking XD Waterless
+const message =
+`Booking XD Waterless
 Package: ${pkg}
-Vehicle: ${currentSize}`
+Vehicle: ${currentSize}`;
 
-const url=`https://wa.me/${phone}?text=${encodeURIComponent(text)}`
+const url =
+`https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
-window.open(url)
+window.open(url, "_blank");
 
-}
+};
 
 
-updatePrice()
+updatePrice();
+
+});
