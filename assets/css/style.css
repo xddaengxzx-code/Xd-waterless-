@@ -1,64 +1,189 @@
 body{
-font-family: Arial, sans-serif;
-background:#0e0e0e;
-color:white;
+
+font-family:'Inter',sans-serif;
 margin:0;
-}
-
-header{
-text-align:center;
-padding:40px 20px;
-}
-
-.selector{
-display:flex;
-justify-content:center;
-gap:10px;
-margin:20px;
-}
-
-.vehicle{
-padding:10px 20px;
-border:none;
-background:#222;
+background:#0c0f14;
 color:white;
-cursor:pointer;
+
 }
 
-.vehicle.active{
-background:#00ff99;
+
+.nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:#111;
+
+}
+
+
+.logo{
+
+font-weight:600;
+letter-spacing:2px;
+
+}
+
+
+.nav-btn{
+
+background:#00ff9f;
+padding:10px 20px;
+border-radius:30px;
 color:black;
+text-decoration:none;
+
 }
 
-.packages{
+
+
+.hero{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+padding:80px;
+gap:40px;
+
+}
+
+.hero img{
+
+width:100%;
+border-radius:10px;
+
+}
+
+
+.cta{
+
+display:inline-block;
+margin-top:20px;
+padding:12px 26px;
+background:#00ff9f;
+border-radius:30px;
+color:black;
+text-decoration:none;
+
+}
+
+
+
+.vehicle-select{
+
+padding:60px 40px;
+text-align:center;
+
+}
+
+.vehicle-grid{
+
 display:flex;
 justify-content:center;
 gap:20px;
-padding:40px;
-flex-wrap:wrap;
+
 }
 
-.card{
-background:#1a1a1a;
+.vehicle{
+
+background:#161a21;
 padding:20px;
-width:200px;
+border:none;
+color:white;
 border-radius:10px;
+cursor:pointer;
+
+}
+
+.vehicle.active{
+
+border:2px solid #00ff9f;
+
+}
+
+
+.packages{
+
+padding:80px 40px;
 text-align:center;
+
 }
 
-.card.premium{
-border:2px solid gold;
+.package-grid{
+
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+
 }
 
-button{
-background:#00ff99;
+
+.package{
+
+background:#151922;
+padding:30px;
+border-radius:12px;
+width:220px;
+
+}
+
+.package.premium{
+
+border:2px solid #00ff9f;
+
+}
+
+.price{
+
+font-size:28px;
+margin:10px 0;
+
+}
+
+
+.package button{
+
+background:#00ff9f;
 border:none;
 padding:10px 20px;
 cursor:pointer;
-margin-top:10px;
+
 }
 
-footer{
+
+
+.coating{
+
+padding:80px 40px;
 text-align:center;
+
+}
+
+.coating-grid{
+
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+
+}
+
+.coat{
+
+background:#151922;
 padding:30px;
+border-radius:10px;
+width:220px;
+
+}
+
+
+footer{
+
+text-align:center;
+padding:40px;
+background:#111;
+
 }
