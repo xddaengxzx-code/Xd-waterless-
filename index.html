@@ -1,232 +1,67 @@
 <!DOCTYPE html>
 <html lang="ms">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XD WATERLESS</title>
 
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>XD WATERLESS</title>
-
-<link rel="stylesheet" href="assets/css/style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-
 <header class="nav">
-
-<div class="logo">
-
-XD WATERLESS
-
-</div>
-
-<a href="https://wa.me/60167003569" class="book-btn">
-
-Book Now
-
-</a>
-
+  <div class="logo">XD WATERLESS</div>
+  <a href="https://wa.me/60167003569" class="book-btn">Book Now</a>
 </header>
 
-
-
-<section class="hero">
-
-<h1>No Hose. No Buckets.</h1>
-
-<p>Premium Waterless Car Care</p>
-
-</section>
-
-
-
 <section class="vehicle-select">
+  <h2>Select Vehicle</h2>
 
-<h2>Select Vehicle</h2>
+  <div class="vehicle-grid">
 
-<div class="vehicle-grid">
+    <button class="vehicle active" data-size="kompak">
+      Kompak
+    </button>
 
-<button class="vehicle active" data-size="kompak">
+    <button class="vehicle" data-size="sedan">
+      Sedan
+    </button>
 
-Kompak
+    <button class="vehicle" data-size="suv">
+      SUV
+    </button>
 
-<span>Axia / Myvi</span>
+    <button class="vehicle" data-size="mpv">
+      MPV
+    </button>
 
-</button>
-
-<button class="vehicle" data-size="sedan">
-
-Sedan
-
-<span>City / Civic</span>
-
-</button>
-
-<button class="vehicle" data-size="suv">
-
-SUV
-
-<span>X50 / CRV</span>
-
-</button>
-
-<button class="vehicle" data-size="mpv">
-
-MPV
-
-<span>Alphard</span>
-
-</button>
-
-</div>
-
+  </div>
 </section>
-
-
 
 <section class="packages">
 
-<h2>Maintenance Packages</h2>
+  <div class="package">
+    <h3>Lasak</h3>
+    <div class="price">RM <span id="lasakPrice">45</span></div>
+    <button onclick="book('Lasak')">Book</button>
+  </div>
 
-<div class="package-grid">
+  <div class="package">
+    <h3>Gempak</h3>
+    <div class="price">RM <span id="gempakPrice">80</span></div>
+    <button onclick="book('Gempak')">Book</button>
+  </div>
 
-
-<div class="package">
-
-<h3>Lasak</h3>
-
-<p>Exterior Waterless Wash</p>
-
-<div class="price">
-
-RM <span id="lasakPrice">45</span>
-
-</div>
-
-<button onclick="book('Lasak')">
-
-Book
-
-</button>
-
-</div>
-
-
-<div class="package">
-
-<h3>Gempak</h3>
-
-<p>Exterior + Interior</p>
-
-<div class="price">
-
-RM <span id="gempakPrice">80</span>
-
-</div>
-
-<button onclick="book('Gempak')">
-
-Book
-
-</button>
-
-</div>
-
-
-
-<div class="package premium">
-
-<h3>Terbaik</h3>
-
-<p>Combo + Wax Boost</p>
-
-<div class="price">
-
-RM <span id="terbaikPrice">95</span>
-
-</div>
-
-<button onclick="book('Terbaik')">
-
-Book
-
-</button>
-
-</div>
-
-</div>
+  <div class="package">
+    <h3>Terbaik</h3>
+    <div class="price">RM <span id="terbaikPrice">95</span></div>
+    <button onclick="book('Terbaik')">Book</button>
+  </div>
 
 </section>
 
-
-
-<section class="coating">
-
-<h2>Ceramic Protection</h2>
-
-<div class="coating-grid">
-
-
-<div class="coat">
-
-<h3>Basic Ceramic</h3>
-
-<p>Up to 1 Year</p>
-
-<span>From RM600</span>
-
-</div>
-
-
-<div class="coat">
-
-<h3>Premium Ceramic</h3>
-
-<p>Up to 3 Years</p>
-
-<span>From RM1400</span>
-
-</div>
-
-
-
-<div class="coat">
-
-<h3>Ultimate Graphene</h3>
-
-<p>Up to 5 Years</p>
-
-<span>From RM2000</span>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<footer>
-
-<p>XD WATERLESS</p>
-
-<p>Shah Alam</p>
-
-<p>WhatsApp 016-7003569</p>
-
-</footer>
-
-
-
-<script src="assets/js/script.js"></script>
+<script src="assets/js/script.js" defer></script>
 
 </body>
-
 </html>
