@@ -1,64 +1,65 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // DOM elements
-    const vehicleButtons = document.querySelectorAll('.vehicle');
-    const lasakPriceSpan = document.getElementById('lasakPrice');
-    const gempakPriceSpan = document.getElementById('gempakPrice');
-    const terbaikPriceSpan = document.getElementById('terbaikPrice');
+// ===== GLOBAL VARIABLES & FUNCTIONS =====
+// These are available immediately, even before DOMContentLoaded
 
-    // Base prices (for Kompak)
-    const basePrices = {
-        lasak: 45,
-        gempak: 80,
-        terbaik: 95
-    };
+// Price list for each vehicle size
+const prices = {
+    kompak: { lasak: 45, gempak: 80, terbaik: 95 },
+    sedan:  { lasak: 55, gempak: 95, terbaik: 110 },
+    suv:    { lasak: 65, gempak: 110, terbaik: 120 },
+    mpv:    { lasak: 75, gempak: 130, terbaik: 140 }
+};
 
-    // Price adjustments for other vehicles
-    const priceAddOn = {
-        kompak:  { lasak: 0, gempak: 0, terbaik: 0 },
-        sedan:   { lasak: 5, gempak: 5, terbaik: 5 },
-        suv:     { lasak: 10, gempak: 10, terbaik: 10 },
-        mpv:     { lasak: 15, gempak: 15, terbaik: 15 }
-    };
+// Currently selected vehicle size (default = kompak)
+let currentSize = "kompak";
 
-    // Get currently selected vehicle
-    function getSelectedVehicle() {
-        const activeBtn = document.querySelector('.vehicle.active');
-        return activeBtn ? activeBtn.dataset.size : 'kompak';
-    }
+// Function to update the price displays on the page
+function updatePrice() {
+    const lasakSpan = document.getElementById("lasakPrice");
+    const gempakSpan = document.getElementById("gempakPrice");
+    const terbaikSpan = document.getElementById("terbaikPrice");
 
-    // Update price displays
-    function updatePrices(vehicleSize) {
-        const add = priceAddOn[vehicleSize] || priceAddOn.kompak;
-        lasakPriceSpan.textContent = basePrices.lasak + add.lasak;
-        gempakPriceSpan.textContent = basePrices.gempak + add.gempak;
-        terbaikPriceSpan.textContent = basePrices.terbaik + add.terbaik;
-    }
+    // Guard: exit if elements aren't in the DOM yet
+    if (!lasakSpan || !gempakSpan || !terbaikSpan) return;
 
-    // Vehicle button click handler
-    vehicleButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            vehicleButtons.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            updatePrices(this.dataset.size);
+    // Update text content with prices for current vehicle
+    lasakSpan.textContent = prices[currentSize].lasak;
+    gempakSpan.textContent = prices[currentSize].gempak;
+    terbaikSpan.textContent = prices[currentSize].terbaik;
+}
+
+// Global book function (called directly from onclick in HTML)
+window.book = function(pkg) {
+    const phone = "60167003569";
+    const message = `Booking XD Waterless\nPackage: ${pkg}\nVehicle: ${currentSize}`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+};
+
+// ===== SETUP AFTER DOM IS READY =====
+document.addEventListener("DOMContentLoaded", function() {
+    // Get all vehicle buttons
+    const vehicles = document.querySelectorAll(".vehicle");
+
+    // Attach click handler to each button
+    vehicles.forEach(function(btn) {
+        btn.addEventListener("click", function() {
+            // Remove 'active' class from all buttons
+            vehicles.forEach(function(v) {
+                v.classList.remove("active");
+            });
+            // Add 'active' class to the clicked button
+            btn.classList.add("active");
+            // Update current size and refresh prices
+            currentSize = btn.dataset.size;
+            updatePrice();
         });
     });
 
-    // Initial price update
-    updatePrices(getSelectedVehicle());
-
-    // Global book function (called from onclick)
-    window.book = function(packageName) {
-        const vehicleSize = getSelectedVehicle();
-        const vehicleDisplay = {
-            kompak: 'Kompak (Axia / Myvi)',
-            sedan: 'Sedan (City / Civic)',
-            suv: 'SUV (X50 / CRV)',
-            mpv: 'MPV (Alphard)'
-        };
-        const vehicleText = vehicleDisplay[vehicleSize] || vehicleSize;
-
-        const message = `Hi XD WATERLESS, I would like to book the *${packageName}* package for my *${vehicleText}*.`;
-        const whatsappURL = `https://wa.me/60167003569?text=${encodeURIComponent(message)}`;
-        window.open(whatsappURL, '_blank');
-    };
+    // Initial price display (based on default active button)
+    // Find the button that already has the 'active' class (if any)
+    const activeBtn = document.querySelector(".vehicle.active");
+    if (activeBtn) {
+        currentSize = activeBtn.dataset.size;
+    }
+    updatePrice();
 });
